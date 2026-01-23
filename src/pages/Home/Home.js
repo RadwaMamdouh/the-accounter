@@ -1,3 +1,4 @@
+import Page from "components/Page/Page";
 import FrequentlyQuestions from "./components/FrequentlyQuestions/FrequentlyQuestions";
 import GetStarted from "./components/GetStarted/GetStarted";
 import GetStartedToday from "./components/GetStartedToday/GetStartedToday";
@@ -11,7 +12,7 @@ import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 
 const Home = () => {
 	return (
-		<>
+		<Page title="Home">
 			<Hero />
 			<OfficialPartners />
 			<WhyChooseUs />
@@ -22,7 +23,7 @@ const Home = () => {
 			<OverBusinessesUse />
 			<FrequentlyQuestions />
 			<GetStartedToday />
-		</>
+		</Page>
 	);
 };
 
