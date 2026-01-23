@@ -1,0 +1,51 @@
+.menu {
+	@apply flex flex-col;
+
+	.menu_link {
+		@apply py-3 px-4 text-sm text-dark transition duration-300 hover:bg-ghost-white;
+
+		&:global(.active) {
+			@apply bg-ghost-white;
+		}
+	}
+}
+
+.sidebar_accordion {
+	:global(.p-accordion-header) {
+		:global(.p-accordion-header-link) {
+			@apply py-3 px-4 text-sm text-dark flex items-center justify-between;
+
+			:global(.p-accordion-toggle-icon) {
+				@apply order-1 rotate-90 transition-all duration-300;
+			}
+		}
+	}
+
+	:global(.p-accordion-content) {
+		@apply flex flex-col;
+	}
+
+	:global(.p-accordion-tab-active) {
+		:global(.p-accordion-header) {
+			:global(.p-accordion-header-link) {
+				@apply bg-ghost-white;
+
+				:global(.p-accordion-toggle-icon) {
+					@apply rotate-180;
+				}
+			}
+		}
+
+		:global(.p-accordion-content) {
+			@apply px-4 pt-3;
+		}
+	}
+}
+
+.accordion_menu_link {
+	@apply py-3 px-4 text-sm text-dark transition duration-300 hover:bg-ghost-white;
+
+	&:global(.active) {
+		@apply bg-ghost-white;
+	}
+}

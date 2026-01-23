@@ -1,0 +1,16 @@
+.partner_card {
+	@apply shrink-0 flex flex-col items-center justify-center p-3 bg-white border border-border-light rounded-xl min-w-52;
+	box-shadow: 0px 4px 6px 0px #1f29370a;
+
+	img {
+		@apply h-[120px] lg:h-36 mb-[10px];
+	}
+
+	h3 {
+		@apply max-lg:text-xs font-bold text-dark text-center mb-1;
+	}
+
+	p {
+		@apply text-xs lg:text-sm text-muted text-center;
+	}
+}

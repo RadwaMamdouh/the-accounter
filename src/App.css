@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+	scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+	margin: 0;
+
+	&:dir(ltr) {
+		@apply font-inter;
+	}
+
+	&:dir(rtl) {
+		@apply font-alexandria;
+	}
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+[dir="ltr"] {
+	direction: ltr;
 }
 
-.App-link {
-  color: #61dafb;
+[dir="rtl"] {
+	direction: rtl;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#root {
+	min-height: 100vh;
+}
+
+/* custom Scrollbar */
+*::-webkit-scrollbar {
+	width: 4px;
+	height: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: darkgray;
+	border-radius: 4px;
+}
+
+*::-webkit-scrollbar-track {
+	background-color: #f1f1f1;
+}
+
+/* Custom Scrollbar for Firefox */
+@-moz-document url-prefix() {
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: darkgray #f1f1f1;
+	}
+}
+
+/* global styles */
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.no-scrollbar {
+	-ms-overflow-style: none; /* IE/Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.input_holder {
+	@apply flex flex-col gap-2;
+
+	h6 {
+		@apply text-sm text-dark;
+
+		&.required {
+			@apply after:content-["*"] after:inline-block after:ms-[6px] after:text-red after:font-bold after:text-sm;
+		}
+	}
+
+	.p-inputtext {
+		@apply w-full block bg-white p-3 border border-border-light rounded-md text-sm transition-all duration-300 hover:border-primary-hover;
+
+		&:focus,
+		&:focus-visible {
+			@apply border-primary-hover outline-none;
+			box-shadow: 0px 4px 6px 0px #1f29370a;
+		}
+	}
+
+	.p-inputtextarea {
+		@apply h-[100px];
+	}
 }

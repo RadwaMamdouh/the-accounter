@@ -1,0 +1,11 @@
+.rate {
+	@apply flex items-center justify-start;
+
+	:global(.p-rating-item) {
+		@apply shrink-0 w-6 h-6 p-1 flex items-center justify-center;
+
+		svg {
+			@apply w-full h-full text-orange;
+		}
+	}
+}
