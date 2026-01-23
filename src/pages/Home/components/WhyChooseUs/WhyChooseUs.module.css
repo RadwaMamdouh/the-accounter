@@ -1,23 +1,23 @@
 .why_row {
 	@apply flex items-center justify-between max-lg:flex-col gap-6 lg:gap-[100px] lg:even:flex-row-reverse;
+}
 
-	.info {
-		@apply flex flex-col gap-3;
+.why_row .info {
+	@apply flex flex-col gap-3;
+}
 
-		.badge {
-			@apply bg-primary-bg border border-primary-light rounded-[26px] flex items-center justify-center py-1 px-2 w-fit text-xs text-dark font-medium;
-		}
+.why_row .info .badge {
+	@apply bg-primary-bg border border-primary-light rounded-[26px] flex items-center justify-center py-1 px-2 w-fit text-xs text-dark font-medium;
+}
 
-		h3 {
-			@apply text-lg lg:text-xl font-bold text-dark;
-		}
+.why_row .info h3 {
+	@apply text-lg lg:text-xl font-bold text-dark;
+}
 
-		p {
-			@apply text-sm text-dark;
-		}
-	}
+.why_row .info p {
+	@apply text-sm text-dark;
+}
 
-	img {
-		@apply shrink-0 w-[400px] max-w-full rounded-2xl;
-	}
+.why_row .info img {
+	@apply shrink-0 w-[400px] max-w-full rounded-2xl;
 }
