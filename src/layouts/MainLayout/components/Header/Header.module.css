@@ -1,47 +1,45 @@
 .menu {
 	@apply px-4 items-center gap-3 hidden lg:flex;
+}
 
-	.menu_link {
-		@apply text-xs xl:text-sm font-medium pb-1 text-dark relative transition duration-300 hover:text-gray;
+.menu .menu_link {
+	@apply text-xs xl:text-sm font-medium pb-1 text-dark relative transition duration-300 hover:text-gray;
+}
 
-		&::after {
-			@apply content-[""] w-4 h-[3px] rounded-[32px] bg-orange block absolute bottom-0 left-1/2 -translate-x-1/2 opacity-0 transition duration-300;
-		}
+.menu .menu_link::after {
+	@apply content-[""] w-4 h-[3px] rounded-[32px] bg-orange block absolute bottom-0 left-1/2 -translate-x-1/2 opacity-0 transition duration-300;
+}
 
-		&:global(.active) {
-			@apply font-semibold text-primary;
+.menu .menu_link:global(.active) {
+	@apply font-semibold text-primary;
+}
 
-			&::after {
-				@apply opacity-100;
-			}
-		}
-	}
+.menu .menu_link:global(.active)::after {
+	@apply opacity-100;
+}
 
-	.ddl_lbl {
-		@apply text-xs xl:text-sm font-medium pb-1 text-dark relative transition duration-300 hover:text-gray;
+.menu .ddl_lbl {
+	@apply text-xs xl:text-sm font-medium pb-1 text-dark relative transition duration-300 hover:text-gray;
+}
 
-		:global(.p-button-label) {
-			@apply relative;
+.menu .ddl_lbl :global(.p-button-label) {
+	@apply relative;
+}
 
-			&::after {
-				@apply content-[""] w-4 h-[3px] rounded-[32px] bg-orange block absolute -bottom-1 left-1/2 -translate-x-1/2 opacity-0 transition duration-300;
-			}
-		}
+.menu .ddl_lbl :global(.p-button-label)::after {
+	@apply content-[""] w-4 h-[3px] rounded-[32px] bg-orange block absolute -bottom-1 left-1/2 -translate-x-1/2 opacity-0 transition duration-300;
+}
 
-		&.show {
-			@apply text-gray;
-		}
+.menu .ddl_lbl.show {
+	@apply text-gray;
+}
 
-		&.active {
-			@apply font-semibold text-primary;
+.menu .ddl_lbl.active {
+	@apply font-semibold text-primary;
+}
 
-			:global(.p-button-label) {
-				&::after {
-					@apply opacity-100;
-				}
-			}
-		}
-	}
+.menu .ddl_lbl.active :global(.p-button-label)::after {
+	@apply opacity-100;
 }
 
 .ddl_menu::before,
@@ -54,12 +52,12 @@
 	box-shadow:
 		0px 10px 20px 0px #1f293729,
 		0px 0px 6px 0px #1f29370d;
+}
 
-	.ddl_menu_link {
-		@apply py-3 px-4 flex items-center justify-start text-sm text-dark transition duration-300 hover:bg-ghost-white;
+.ddl_menu .ddl_menu_link {
+	@apply py-3 px-4 flex items-center justify-start text-sm text-dark transition duration-300 hover:bg-ghost-white;
+}
 
-		&.active {
-			@apply bg-ghost-white;
-		}
-	}
+.ddl_menu .ddl_menu_link.active {
+	@apply bg-ghost-white;
 }

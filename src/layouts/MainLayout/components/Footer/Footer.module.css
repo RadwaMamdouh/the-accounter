@@ -1,17 +1,15 @@
 .footer_links {
 	@apply flex flex-col gap-4;
+}
 
-	.footer_link {
-		@apply text-sm text-white w-fit relative transition duration-300 hover:text-primary;
+.footer_links .footer_link {
+	@apply text-sm text-white w-fit relative transition duration-300 hover:text-primary;
+}
 
-		&::after {
-			@apply content-[""] h-px bg-primary absolute bottom-0 inset-x-0 w-0 transition-all duration-300;
-		}
+.footer_links .footer_link::after {
+	@apply content-[""] h-px bg-primary absolute bottom-0 inset-x-0 w-0 transition-all duration-300;
+}
 
-		&:hover {
-			&::after {
-				@apply w-full;
-			}
-		}
-	}
+.footer_links .footer_link:hover::after {
+	@apply w-full;
 }

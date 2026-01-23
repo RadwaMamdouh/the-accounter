@@ -1,15 +1,15 @@
 .dark_button {
 	@apply py-2.5 px-4 bg-dark rounded-lg flex items-center justify-center gap-1 text-white text-sm font-semibold transition-all duration-300 hover:bg-dark-hover;
+}
 
-	.button_text {
-		@apply text-inherit;
-	}
+.dark_button .button_text {
+	@apply text-inherit;
+}
 
-	.button_icon {
-		@apply shrink-0 w-5 h-5;
+.dark_button .button_icon {
+	@apply shrink-0 w-5 h-5;
+}
 
-		svg {
-			@apply w-5 h-5;
-		}
-	}
+.dark_button .button_icon svg {
+	@apply w-5 h-5;
 }

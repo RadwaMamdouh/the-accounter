@@ -9,14 +9,14 @@ html {
 
 body {
 	margin: 0;
+}
 
-	&:dir(ltr) {
-		@apply font-inter;
-	}
+[dir="ltr"] body {
+	@apply font-inter;
+}
 
-	&:dir(rtl) {
-		@apply font-alexandria;
-	}
+[dir="rtl"] body {
+	@apply font-alexandria;
 }
 
 [dir="ltr"] {
@@ -66,26 +66,26 @@ body {
 
 .input_holder {
 	@apply flex flex-col gap-2;
+}
 
-	h6 {
-		@apply text-sm text-dark;
+.input_holder h6 {
+	@apply text-sm text-dark;
+}
 
-		&.required {
-			@apply after:content-["*"] after:inline-block after:ms-[6px] after:text-red after:font-bold after:text-sm;
-		}
-	}
+.input_holder h6.required {
+	@apply after:content-["*"] after:inline-block after:ms-[6px] after:text-red after:font-bold after:text-sm;
+}
 
-	.p-inputtext {
-		@apply w-full block bg-white p-3 border border-border-light rounded-md text-sm transition-all duration-300 hover:border-primary-hover;
+.input_holder .p-inputtext {
+	@apply w-full block bg-white p-3 border border-border-light rounded-md text-sm transition-all duration-300 hover:border-primary-hover;
+}
 
-		&:focus,
-		&:focus-visible {
-			@apply border-primary-hover outline-none;
-			box-shadow: 0px 4px 6px 0px #1f29370a;
-		}
-	}
+.input_holder .p-inputtext:focus,
+.input_holder .p-inputtext:focus-visible {
+	@apply border-primary-hover outline-none;
+	box-shadow: 0px 4px 6px 0px #1f29370a;
+}
 
-	.p-inputtextarea {
-		@apply h-[100px];
-	}
+.input_holder .p-inputtextarea {
+	@apply h-[100px];
 }

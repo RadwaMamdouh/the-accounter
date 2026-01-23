@@ -1,16 +1,22 @@
 .hero {
 	@apply py-8 lg:py-[100px] bg-no-repeat bg-center bg-cover relative;
 	background-image: url("/public/images/hero-bg.png");
+}
 
-	:global(.hero-swiper-pagination) {
-		@apply flex items-center justify-center lg:justify-end gap-2.5 lg:pe-[25%];
+.hero :global(.hero-swiper-pagination) {
+	@apply flex items-center justify-center lg:justify-end gap-2.5 lg:pe-[25%];
+}
 
-		:global(.swiper-pagination-bullet) {
-			@apply !m-0 w-2 h-2 rounded-full bg-white border border-dark opacity-100 transition-all duration-300;
+.hero :global(.hero-swiper-pagination) :global(.swiper-pagination-bullet) {
+	@apply !m-0 w-2 h-2 rounded-full bg-white border border-dark opacity-100 transition-all duration-300;
 
-			&:global(.swiper-pagination-bullet-active) {
-				@apply bg-primary border-primary;
-			}
-		}
+	&:global(.swiper-pagination-bullet-active) {
+		@apply bg-primary border-primary;
 	}
+}
+
+.hero
+	:global(.hero-swiper-pagination)
+	:global(.swiper-pagination-bullet.swiper-pagination-bullet-active) {
+	@apply bg-primary border-primary;
 }

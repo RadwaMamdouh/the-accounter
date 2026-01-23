@@ -20,14 +20,14 @@ body {
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
 
-	&:dir(ltr) {
-		@apply font-inter;
-	}
+[dir="ltr"] body {
+	@apply font-inter;
+}
 
-	&:dir(rtl) {
-		@apply font-alexandria;
-	}
+[dir="rtl"] body {
+	@apply font-alexandria;
 }
 
 [dir="ltr"] {
