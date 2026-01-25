@@ -76,16 +76,50 @@ body {
 	@apply after:content-["*"] after:inline-block after:ms-[6px] after:text-red after:font-bold after:text-sm;
 }
 
-.input_holder .p-inputtext {
+.input_holder:not(:has(.p-dropdown)) .p-inputtext {
 	@apply w-full block bg-white p-3 border border-border-light rounded-md text-sm transition-all duration-300 hover:border-primary-hover;
 }
 
-.input_holder .p-inputtext:focus,
-.input_holder .p-inputtext:focus-visible {
-	@apply border-primary-hover outline-none;
+.input_holder:not(:has(.p-dropdown)) .p-inputtext:focus,
+.input_holder:not(:has(.p-dropdown)) .p-inputtext:focus-visible {
+	@apply border-primary-hover outline-0;
 	box-shadow: 0px 4px 6px 0px #1f29370a;
 }
 
 .input_holder .p-inputtextarea {
 	@apply h-[100px];
+}
+
+.input_holder .p-dropdown {
+	@apply w-full bg-white border border-border-light rounded-md transition-all duration-300 hover:border-primary-hover;
+}
+
+.input_holder .p-dropdown.p-inputwrapper-focus {
+	@apply border-primary-hover outline-0;
+	box-shadow: 0px 4px 6px 0px #1f29370a;
+}
+
+.input_holder .p-dropdown .p-dropdown-label {
+	@apply p-3 text-sm;
+}
+
+.input_holder .p-dropdown .p-dropdown-trigger {
+	@apply w-12;
+}
+
+.dropdown_menu {
+	@apply rounded-md;
+	box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dropdown_menu .p-dropdown-items {
+	@apply bg-white rounded-md py-3;
+}
+
+.dropdown_menu .p-dropdown-items .p-dropdown-item {
+	@apply py-3 px-5 text-sm text-dark transition-all duration-300 hover:bg-ghost-white;
+}
+
+.dropdown_menu .p-dropdown-items .p-dropdown-item.p-highlight {
+	@apply bg-primary-bg;
 }

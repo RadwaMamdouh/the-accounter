@@ -10,7 +10,7 @@ const GetStartedToday = () => {
 		initialValues: {
 			name: "",
 			email: "",
-			pnone: "",
+			phone: "",
 			companyName: "",
 			message: "",
 		},
@@ -103,7 +103,7 @@ const GetStartedToday = () => {
 										<h6 className="required">Name</h6>
 										<InputText
 											type="text"
-											value={formik.name}
+											value={formik.values.name}
 											onChange={formik.handleChange}
 											placeholder="Your name"
 											name="name"
@@ -113,7 +113,7 @@ const GetStartedToday = () => {
 										<h6 className="required">Email</h6>
 										<InputText
 											type="email"
-											value={formik.email}
+											value={formik.values.email}
 											onChange={formik.handleChange}
 											placeholder="Your email"
 											name="email"
@@ -123,7 +123,7 @@ const GetStartedToday = () => {
 										<h6 className="required">Phone Number</h6>
 										<InputText
 											type="text"
-											value={formik.phone}
+											value={formik.values.phone}
 											onChange={formik.handleChange}
 											placeholder="Your phone number"
 											name="phone"
@@ -133,7 +133,7 @@ const GetStartedToday = () => {
 										<h6 className="required">Company Name</h6>
 										<InputText
 											type="text"
-											value={formik.companyName}
+											value={formik.values.companyName}
 											onChange={formik.handleChange}
 											placeholder="Company Name"
 											name="companyName"
@@ -142,7 +142,7 @@ const GetStartedToday = () => {
 									<div className="input_holder">
 										<h6>Message</h6>
 										<InputTextarea
-											value={formik.message}
+											value={formik.values.message}
 											onChange={formik.handleChange}
 											placeholder="Enter a message"
 											name="message"

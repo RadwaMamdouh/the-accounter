@@ -1,6 +1,11 @@
+import RegistrationRequestModal from "components/RegistrationRequestModal/RegistrationRequestModal";
 import styles from "./OfficialPartners.module.css";
+import { useState } from "react";
 
 const OfficialPartners = ({ isFlexCol }) => {
+	const [visible, setVisible] = useState(false);
+	const [clickedPartner, setClickedPartner] = useState(null);
+
 	const partners = [
 		{
 			id: 1,
@@ -28,24 +33,45 @@ const OfficialPartners = ({ isFlexCol }) => {
 		},
 	];
 
+	const onShow = (partner) => {
+		setVisible(true);
+		setClickedPartner(partner);
+	};
+
+	const onHide = () => {
+		setVisible(false);
+	};
+
 	return (
-		<section className="py-8 lg:py-[72px]">
-			<div className="container mx-auto px-4">
-				<h2 className="mb-8 lg:mb-[50px] text-xl lg:text-[32px] text-dark font-bold text-center">
-					Official Partners of UAE's Leading Organizations
-				</h2>
-				<div
-					className={`flex lg:justify-center gap-4 lg:gap-6 ${!isFlexCol ? "overflow-y-auto no-scrollbar" : "max-lg:flex-col"}`}>
-					{partners.map((partner) => (
-						<div key={partner.id} className={styles.partner_card}>
-							<img src={partner.img} alt={partner.name} />
-							<h3>{partner.name}</h3>
-							<p>{partner.desc}</p>
-						</div>
-					))}
+		<>
+			<section className="py-8 lg:py-[72px]">
+				<div className="container mx-auto px-4">
+					<h2 className="mb-8 lg:mb-[50px] text-xl lg:text-[32px] text-dark font-bold text-center">
+						Official Partners of UAE's Leading Organizations
+					</h2>
+					<div
+						className={`flex lg:justify-center gap-4 lg:gap-6 ${!isFlexCol ? "overflow-y-auto no-scrollbar" : "max-lg:flex-col"}`}>
+						{partners.map((partner) => (
+							<div
+								key={partner.id}
+								className={styles.partner_card}
+								onClick={() => onShow(partner.name)}>
+								<img src={partner.img} alt={partner.name} />
+								<h3>{partner.name}</h3>
+								<p>{partner.desc}</p>
+							</div>
+						))}
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+
+			{/* Registration Request Modal */}
+			<RegistrationRequestModal
+				visible={visible}
+				onHide={onHide}
+				clickedPartner={clickedPartner}
+			/>
+		</>
 	);
 };
 
