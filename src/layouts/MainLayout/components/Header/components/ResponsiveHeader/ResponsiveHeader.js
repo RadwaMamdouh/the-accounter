@@ -6,20 +6,20 @@ import LangBtn from "components/LangBtn/LangBtn";
 import { Button } from "primereact/button";
 import { useEffect, useState } from "react";
 
+const resourcesLinks = [
+	{ label: "Blogs", href: "/blogs" },
+	{ label: "About us", href: "/about" },
+	{ label: "Partners", href: "/partners" },
+	{ label: "Tutorials", href: "/tutorials" },
+	{ label: "FAQs", href: "/faq" },
+	{ label: "Our Team", href: "/team" },
+	{ label: "Our Videos", href: "/videos" },
+	{ label: "Our Gallery", href: "/gallery" },
+];
+
 const ResponsiveHeader = ({ isShow, onClose }) => {
 	const location = useLocation();
 	const [activeIndex, setActiveIndex] = useState(null);
-
-	const resourcesLinks = [
-		{ label: "Blogs", href: "/blogs" },
-		{ label: "About us", href: "/about" },
-		{ label: "Partners", href: "/partners" },
-		{ label: "Tutorials", href: "/tutorials" },
-		{ label: "FAQs", href: "/faq" },
-		{ label: "Our Team", href: "/team" },
-		{ label: "Our Videos", href: "/videos" },
-		{ label: "Our Gallery", href: "/gallery" },
-	];
 
 	useEffect(() => {
 		const isResourcesRoute = resourcesLinks.some((link) =>
