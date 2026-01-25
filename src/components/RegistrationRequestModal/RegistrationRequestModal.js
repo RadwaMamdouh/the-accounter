@@ -88,11 +88,11 @@ const RegistrationRequestModal = ({
 			header={headerElement}
 			footer={footerContent}
 			maskClassName="bg-black/60"
-			className="bg-white border border-border-light py-8 rounded-lg">
+			className="bg-white border border-border-light py-6 sm:py-8 rounded-lg">
 			<form
 				ref={formRef}
 				onSubmit={formik.handleSubmit}
-				className="py-6 px-8 grid grid-cols-1 gap-5">
+				className="py-4 sm:py-6 px-6 sm:px-8 grid grid-cols-1 gap-5">
 				<div className="input_holder">
 					<h6 className="required">Name</h6>
 					<InputText
