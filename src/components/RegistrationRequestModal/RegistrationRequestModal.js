@@ -1,5 +1,4 @@
 import { Dialog } from "primereact/dialog";
-import styles from "./RegistrationRequestModal.module.css";
 import DarkButton from "components/DarkButton/DarkButton";
 import WhiteButton from "components/WhiteButton/WhiteButton";
 import { useFormik } from "formik";
