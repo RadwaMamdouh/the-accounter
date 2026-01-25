@@ -56,12 +56,12 @@ const Footer = () => {
 										{twitter}
 									</Link>
 									<Link
-										href=""
+										to=""
 										className="shrink-0 flex items-center justify-center w-10 h-[38px] bg-white rounded-md text-dark transition duration-300 hover:bg-border-light">
 										{linkedin}
 									</Link>
 									<Link
-										href=""
+										to=""
 										className="shrink-0 flex items-center justify-center w-10 h-[38px] bg-white rounded-md text-dark transition duration-300 hover:bg-border-light">
 										{instagram}
 									</Link>
@@ -72,19 +72,19 @@ const Footer = () => {
 							<div>
 								<h5 className="test-sm font-bold text-light mb-6">Services</h5>
 								<div className={styles.footer_links}>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										Complete Bookkeeping
 									</Link>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										Track Expenses
 									</Link>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										Custom Invoicing
 									</Link>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										VAT Services
 									</Link>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										Insights and reports
 									</Link>
 								</div>
@@ -92,25 +92,25 @@ const Footer = () => {
 							<div>
 								<h5 className="test-sm font-bold text-light mb-6">Resources</h5>
 								<div className={styles.footer_links}>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										About us
 									</Link>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										Blog
 									</Link>
-									<Link href="" className={styles.footer_link}>
+									<Link to="/partners" className={styles.footer_link}>
 										Partners
 									</Link>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										Tutorials
 									</Link>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										FAQs
 									</Link>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										Careers
 									</Link>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										Our Team
 									</Link>
 								</div>
@@ -118,16 +118,16 @@ const Footer = () => {
 							<div>
 								<h5 className="test-sm font-bold text-light mb-6">Other</h5>
 								<div className={styles.footer_links}>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										Pricing
 									</Link>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										Contact us
 									</Link>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										Privacy Policy
 									</Link>
-									<Link href="" className={styles.footer_link}>
+									<Link to="" className={styles.footer_link}>
 										Terms of use
 									</Link>
 								</div>
