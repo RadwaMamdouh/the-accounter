@@ -15,8 +15,7 @@ const AppRouter = () => {
 					element: <Home />,
 				},
 				{
-					index: true,
-					path: "/partners",
+					path: "partners",
 					element: <Partners />,
 				},
 			],
