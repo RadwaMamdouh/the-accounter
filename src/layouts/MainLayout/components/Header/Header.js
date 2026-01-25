@@ -1,8 +1,8 @@
 import { Button } from "primereact/button";
 import { OverlayPanel } from "primereact/overlaypanel";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { arrowDropDown } from "icons/index";
 import LangBtn from "components/LangBtn/LangBtn";
 import ResponsiveHeader from "./components/ResponsiveHeader/ResponsiveHeader";
@@ -11,6 +11,7 @@ const Header = () => {
 	const [isShow, setIsShow] = useState(false);
 	const [isShowSidebar, setIsShowSidebar] = useState(false);
 	const op = useRef(null);
+	const location = useLocation();
 
 	const resourcesLinks = [
 		{ label: "Blogs", href: "/blogs" },
@@ -22,6 +23,16 @@ const Header = () => {
 		{ label: "Our Videos", href: "/videos" },
 		{ label: "Our Gallery", href: "/gallery" },
 	];
+
+	const isResourcesActive = resourcesLinks.some((link) =>
+		location.pathname.startsWith(link.href),
+	);
+
+	useEffect(() => {
+		// close dropdown when route changes
+		op.current?.hide();
+		setIsShow(false);
+	}, [location.pathname]);
 
 	const onOpenSidebar = () => {
 		setIsShowSidebar(true);
@@ -62,7 +73,7 @@ const Header = () => {
 									type="button"
 									label="Resources"
 									onClick={(e) => op.current?.toggle(e)}
-									className={`${styles.ddl_lbl} ${isShow ? styles.show : ""}`}>
+									className={`${styles.ddl_lbl} ${isShow ? styles.show : ""} ${isResourcesActive ? styles.active : ""}`}>
 									{arrowDropDown}
 								</Button>
 
@@ -72,12 +83,12 @@ const Header = () => {
 									onShow={() => setIsShow(true)}
 									onHide={() => setIsShow(false)}>
 									{resourcesLinks.map((link) => (
-										<Link
+										<NavLink
 											key={link.href}
-											href={link.href}
+											to={link.href}
 											className={`${styles.ddl_menu_link}`}>
 											{link.label}
-										</Link>
+										</NavLink>
 									))}
 								</OverlayPanel>
 							</>

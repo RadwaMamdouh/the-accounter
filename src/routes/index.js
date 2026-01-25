@@ -1,5 +1,6 @@
 import MainLayout from "layouts/MainLayout/MainLayout";
 import Home from "pages/Home/Home";
+import Partners from "pages/Partners/Partners";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const AppRouter = () => {
@@ -12,6 +13,11 @@ const AppRouter = () => {
 					index: true,
 					path: "",
 					element: <Home />,
+				},
+				{
+					index: true,
+					path: "/partners",
+					element: <Partners />,
 				},
 			],
 		},

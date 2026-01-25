@@ -1,11 +1,15 @@
 import { cancel } from "icons/index";
 import styles from "./ResponsiveHeader.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { Accordion, AccordionTab } from "primereact/accordion";
 import LangBtn from "components/LangBtn/LangBtn";
 import { Button } from "primereact/button";
+import { useEffect, useState } from "react";
 
 const ResponsiveHeader = ({ isShow, onClose }) => {
+	const location = useLocation();
+	const [activeIndex, setActiveIndex] = useState(null);
+
 	const resourcesLinks = [
 		{ label: "Blogs", href: "/blogs" },
 		{ label: "About us", href: "/about" },
@@ -16,6 +20,18 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 		{ label: "Our Videos", href: "/videos" },
 		{ label: "Our Gallery", href: "/gallery" },
 	];
+
+	useEffect(() => {
+		const isResourcesRoute = resourcesLinks.some((link) =>
+			location.pathname.startsWith(link.href),
+		);
+
+		if (isResourcesRoute) {
+			setActiveIndex(0); // open
+		} else {
+			setActiveIndex(null); // close (home or any other page)
+		}
+	}, [location.pathname]);
 
 	const handleNavigate = () => {
 		onClose();
@@ -60,7 +76,10 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 							onClick={handleNavigate}>
 							Pricing
 						</NavLink>
-						<Accordion className={styles.sidebar_accordion}>
+						<Accordion
+							className={styles.sidebar_accordion}
+							activeIndex={activeIndex}
+							onTabChange={(e) => setActiveIndex(e.index)}>
 							<AccordionTab header="Resources">
 								{resourcesLinks.map((link) => (
 									<NavLink

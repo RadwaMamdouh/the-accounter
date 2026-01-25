@@ -1,6 +1,5 @@
 .partner_card {
 	@apply shrink-0 flex flex-col items-center justify-center p-3 bg-white border border-border-light rounded-xl min-w-52;
-	box-shadow: 0px 4px 6px 0px #1f29370a;
 }
 
 .partner_card img {

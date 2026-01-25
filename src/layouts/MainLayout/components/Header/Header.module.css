@@ -58,6 +58,6 @@
 	@apply py-3 px-4 flex items-center justify-start text-sm text-dark transition duration-300 hover:bg-ghost-white;
 }
 
-.ddl_menu .ddl_menu_link.active {
+.ddl_menu .ddl_menu_link:global(.active) {
 	@apply bg-ghost-white;
 }
