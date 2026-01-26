@@ -15,7 +15,7 @@ const Hero = () => {
 
 	return (
 		<section className={styles.hero}>
-			<div className="container mx-auto px-4">
+			<div className="container">
 				<Swiper
 					key={currentLanguage}
 					dir={currentLanguage === "ar" ? "rtl" : "ltr"}

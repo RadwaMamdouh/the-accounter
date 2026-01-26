@@ -51,7 +51,7 @@ const Header = () => {
 					<div className="flex items-center justify-between gap-2 xl:gap-6">
 						<Link
 							to="/"
-							className="flex items-center justify-center shrink-0 overflow-hidden h-8 lg:h-10">
+							className="flex items-center justify-center shrink-0 overflow-hidden h-8 xl:h-10">
 							<img
 								src="/images/logo.svg"
 								alt="The Accounter"

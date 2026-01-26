@@ -4,7 +4,7 @@ import styles from "./HowItWorks.module.css";
 const HowItWorks = () => {
 	return (
 		<section className="py-8 lg:py-[72px]">
-			<div className="container mx-auto px-4">
+			<div className="container">
 				<div className="mb-8 lg:mb-[72px]">
 					<h2 className="text-xl lg:text-[32px] lg:leading-relaxed text-dark font-bold text-center mb-3">
 						How it works?

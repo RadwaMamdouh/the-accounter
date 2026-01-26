@@ -3,7 +3,7 @@ import DarkButton from "components/DarkButton/DarkButton";
 const GetStarted = () => {
 	return (
 		<section className="py-8 lg:py-[100px] bg-primary-bg">
-			<div className="container mx-auto px-4">
+			<div className="container">
 				<h2 className="text-xl lg:text-4xl font-bold text-dark text-center mb-6">
 					Ready to Get Started?
 				</h2>

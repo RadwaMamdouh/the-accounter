@@ -62,7 +62,7 @@ const Testimonials = () => {
 
 	return (
 		<section className="py-8 lg:py-[72px]">
-			<div className="container mx-auto px-4">
+			<div className="container">
 				<div className="mb-8 lg:mb-[54px] flex flex-col gap-3">
 					<h6 className="text-sm text-primary text-center">Testimonials</h6>
 					<h2 className="text-xl lg:text-[32px] lg:leading-relaxed text-dark font-bold text-center">

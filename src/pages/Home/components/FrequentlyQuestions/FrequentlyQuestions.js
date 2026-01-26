@@ -4,7 +4,7 @@ import styles from "./FrequentlyQuestions.module.css";
 const FrequentlyQuestions = () => {
 	return (
 		<section className="py-8 lg:py-[100px]">
-			<div className="container mx-auto px-4">
+			<div className="container">
 				<div className="mb-8 lg:mb-[50px]">
 					<h2 className="text-xl lg:text-[32px] lg:leading-relaxed font-bold text-dark text-center mb-3">
 						Frequently Asked Questions

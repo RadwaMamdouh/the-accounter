@@ -33,6 +33,14 @@ module.exports = {
 				alexandria: ["Alexandria", "sans-serif"],
 			},
 		},
+		container: {
+			center: true,
+			padding: {
+				DEFAULT: "1rem", // 16px
+				sm: "1.5rem", // 24px
+				lg: "2rem", // 32px
+			},
+		},
 	},
 	plugins: [],
 };

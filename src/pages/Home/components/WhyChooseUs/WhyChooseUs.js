@@ -48,7 +48,7 @@ const WhyChooseUs = () => {
 
 	return (
 		<section className="py-8 lg:py-[72px]">
-			<div className="container mx-auto px-4">
+			<div className="container">
 				<div className="mb-8 lg:mb-[72px]">
 					<h6 className="text-sm text-primary text-center mb-1 lg:mb-3">
 						Why Choose Us?

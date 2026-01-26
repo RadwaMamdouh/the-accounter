@@ -1,7 +1,7 @@
 const OverBusinessesUse = () => {
 	return (
 		<section className="bg-dark py-8 lg:py-[72px]">
-			<div className="container mx-auto px-4">
+			<div className="container">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[100px] items-center">
 					<div>
 						<h1 className="text-xl lg:text-[32px] lg:leading-relaxed font-bold text-white text-center lg:text-start mb-3">

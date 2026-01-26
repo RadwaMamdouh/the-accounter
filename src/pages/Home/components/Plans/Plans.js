@@ -33,7 +33,7 @@ const Plans = () => {
 	return (
 		<section className={styles.plans}>
 			<div className={styles.plans_head}>
-				<div className="container mx-auto px-4">
+				<div className="container">
 					<h2 className="text-xl lg:text-[32px] lg:leading-relaxed font-bold text-dark text-center mb-4">
 						Plans for Every Business Size
 					</h2>
@@ -59,7 +59,7 @@ const Plans = () => {
 					</div>
 				</div>
 			</div>
-			<div className="container mx-auto px-4">
+			<div className="container">
 				<div className="flex justify-center gap-6 -mt-[58px] max-md:flex-col">
 					{plans.map((plan) => (
 						<div className={styles.plan_card} key={plan.id}>

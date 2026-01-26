@@ -45,12 +45,12 @@ const OfficialPartners = ({ isFlexCol }) => {
 	return (
 		<>
 			<section className="py-8 lg:py-[72px]">
-				<div className="container mx-auto px-4">
+				<div className="container">
 					<h2 className="mb-8 lg:mb-[50px] text-xl lg:text-[32px] text-dark font-bold text-center">
 						Official Partners of UAE's Leading Organizations
 					</h2>
 					<div
-						className={`flex lg:justify-center gap-4 lg:gap-6 ${!isFlexCol ? "overflow-y-auto no-scrollbar" : "max-lg:flex-col"}`}>
+						className={`flex lg:justify-center gap-4 lg:gap-6 ${!isFlexCol ? "overflow-y-auto no-scrollbar" : "flex-wrap max-lg:flex-col"}`}>
 						{partners.map((partner) => (
 							<div
 								key={partner.id}

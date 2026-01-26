@@ -22,14 +22,14 @@ const GetStartedToday = () => {
 	return (
 		<section className="pb-28">
 			<div className={styles.started_head}>
-				<div className="container mx-auto px-4">
+				<div className="container">
 					<h2 className="text-xl lg:text-4xl font-bold text-dark text-center lg:text-start lg:w-[27%] max-w-full">
 						Get Started With The Accounter Today!
 					</h2>
 				</div>
 			</div>
 			<div className={styles.started_body}>
-				<div className="container mx-auto px-4">
+				<div className="container">
 					<div className="flex items-start justify-between gap-6 lg:gap-[100px] max-lg:flex-col">
 						<div className="pt-6 lg:pt-10 w-full">
 							<p className="text-sm text-dark mb-8">
