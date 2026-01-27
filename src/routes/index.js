@@ -1,5 +1,6 @@
 import MainLayout from "layouts/MainLayout/MainLayout";
 import Home from "pages/Home/Home";
+import OurTeam from "pages/OurTeam/OurTeam";
 import Partners from "pages/Partners/Partners";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -17,6 +18,10 @@ const AppRouter = () => {
 				{
 					path: "partners",
 					element: <Partners />,
+				},
+				{
+					path: "team",
+					element: <OurTeam />,
 				},
 			],
 		},

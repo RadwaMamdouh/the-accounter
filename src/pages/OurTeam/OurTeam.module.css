@@ -1,0 +1,4 @@
+.our_team {
+	@apply bg-primary-bg pt-8 lg:pt-[72px] max-lg:pb-8 bg-no-repeat bg-center bg-cover;
+	background-image: url("/public/images/plans-pattern.svg");
+}

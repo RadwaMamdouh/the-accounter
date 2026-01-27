@@ -46,7 +46,7 @@ const OfficialPartners = ({ isFlexCol }) => {
 		<>
 			<section className="py-8 lg:py-[72px]">
 				<div className="container">
-					<h2 className="mb-8 lg:mb-[50px] text-xl lg:text-[32px] text-dark font-bold text-center">
+					<h2 className="mb-8 lg:mb-[50px] text-xl lg:text-[32px] lg:leading-normal text-dark font-bold text-center">
 						Official Partners of UAE's Leading Organizations
 					</h2>
 					<div
