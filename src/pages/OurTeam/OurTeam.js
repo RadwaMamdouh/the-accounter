@@ -60,7 +60,7 @@ const OurTeam = () => {
 			<section className="py-8 lg:py-[100px]">
 				<div className="container">
 					<div className="mb-8 lg:mb-[50px]">
-						<h2 className="text-xl lg:text-[32px] lg:leading-normal text-dark font-bold text-center mb-2 lg:mb-3">
+						<h2 className="text-xl lg:text-[32px] text-dark font-bold text-center mb-2 lg:mb-3">
 							Our Team
 						</h2>
 						<p className="text-sm text-dark text-center">
