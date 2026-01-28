@@ -122,7 +122,7 @@ const Footer = () => {
 							<div>
 								<h5 className="test-sm font-bold text-light mb-6">Other</h5>
 								<div className={styles.footer_links}>
-									<Link to="" className={styles.footer_link}>
+									<Link to="/pricing" className={styles.footer_link}>
 										Pricing
 									</Link>
 									<Link to="" className={styles.footer_link}>

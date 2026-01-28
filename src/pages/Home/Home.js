@@ -6,7 +6,7 @@ import Hero from "./components/Hero/Hero";
 import OfficialPartners from "components/OfficialPartners/OfficialPartners";
 import HowItWorks from "./components/HowItWorks/HowItWorks";
 import OverBusinessesUse from "./components/OverBusinessesUse/OverBusinessesUse";
-import Plans from "./components/Plans/Plans";
+import Plans from "components/Plans/Plans";
 import Testimonials from "./components/Testimonials/Testimonials";
 import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 

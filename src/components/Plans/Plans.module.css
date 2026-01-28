@@ -1,5 +1,5 @@
 .plans {
-	@apply pb-[72px];
+	@apply pb-8 lg:pb-[72px];
 }
 
 .plans .plans_head {
@@ -17,5 +17,5 @@
 }
 
 .plan_card p {
-	@apply text-sm text-muted text-center lg:w-[95%] max-w-full mx-auto;
+	@apply text-sm text-muted text-center max-w-full mx-auto;
 }

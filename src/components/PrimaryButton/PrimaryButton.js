@@ -25,7 +25,7 @@ const PrimaryButton = ({
 			)}
 		</button>
 	) : (
-		<Link href={to} className={`${styles.primary_button} ${classes}`}>
+		<Link to={to} className={`${styles.primary_button} ${classes}`}>
 			<span className={styles.button_text}>{label}</span>
 			{icon && (
 				<span
