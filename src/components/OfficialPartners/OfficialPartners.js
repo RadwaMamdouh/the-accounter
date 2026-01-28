@@ -33,7 +33,7 @@ const OfficialPartners = ({ isFlexCol }) => {
 		},
 		{
 			id: 5,
-			img: "/images/eea.jpeg",
+			img: "/images/eea.svg",
 			name: "EEA",
 			desc: "This is a description.",
 		},
@@ -56,7 +56,7 @@ const OfficialPartners = ({ isFlexCol }) => {
 						Official Partners of UAE's Leading Organizations
 					</h2>
 					<div
-						className={`gap-4 lg:gap-6 ${!isFlexCol ? "flex overflow-y-auto no-scrollbar" : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"}`}>
+						className={`gap-4 lg:gap-6 ${!isFlexCol ? "flex overflow-y-auto no-scrollbar" : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"}`}>
 						{partners.map((partner) => (
 							<div
 								key={partner.id}
