@@ -1,4 +1,5 @@
 import MainLayout from "layouts/MainLayout/MainLayout";
+import ContactUs from "pages/ContactUs/ContactUs";
 import Home from "pages/Home/Home";
 import OurTeam from "pages/OurTeam/OurTeam";
 import Partners from "pages/Partners/Partners";
@@ -32,6 +33,10 @@ const AppRouter = () => {
 				{
 					path: "pricing",
 					element: <Pricing />,
+				},
+				{
+					path: "contact-us",
+					element: <ContactUs />,
 				},
 			],
 		},

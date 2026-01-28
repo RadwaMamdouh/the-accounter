@@ -93,7 +93,7 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 							</AccordionTab>
 						</Accordion>
 						<NavLink
-							to="/contact"
+							to="/contact-us"
 							className={styles.menu_link}
 							onClick={handleNavigate}>
 							Contact Us

@@ -92,7 +92,7 @@ const Header = () => {
 									))}
 								</OverlayPanel>
 							</>
-							<NavLink to="/contact" className={styles.menu_link}>
+							<NavLink to="/contact-us" className={styles.menu_link}>
 								Contact Us
 							</NavLink>
 						</div>
