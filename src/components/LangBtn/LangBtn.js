@@ -17,9 +17,9 @@ const LangBtn = ({ classes }) => {
 			onClick={() => toggleLanguage(currentLang === "ar" ? "en" : "ar")}>
 			<img
 				src={
-					currentLang === "ar" ? "/images/flag-ar.svg" : "/images/flag-en.svg"
+					currentLang === "ar" ? "/images/flag-en.svg" : "/images/flag-ar.svg"
 				}
-				alt={currentLang === "ar" ? "Flag AED" : "Flag USD"}
+				alt={currentLang === "ar" ? "Flag USD" : "Flag AED"}
 				className="shrink-0 w-[18px] h-[18px]"
 			/>
 			<span

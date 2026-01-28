@@ -96,16 +96,18 @@ const Header = () => {
 								Contact Us
 							</NavLink>
 						</div>
-						<div className="hidden lg:flex items-center gap-2">
-							<div className="py-[3px] px-2 bg-green rounded-[4px] flex items-center justify-center text-[10px] xl:text-xs font-medium text-white">
+						<a
+							href="tel:+971585873082"
+							className="hidden lg:flex items-center gap-2">
+							<span className="py-[3px] px-2 bg-green rounded-[4px] flex items-center justify-center text-[10px] xl:text-xs font-medium text-white">
 								Call Sales
-							</div>
-							<div
+							</span>
+							<span
 								className="text-xs xl:text-[13px] font-semibold text-dark"
 								dir="ltr">
 								+971 58 5873082
-							</div>
-						</div>
+							</span>
+						</a>
 						<div className="hidden lg:flex items-center gap-3">
 							<LangBtn />
 							<Button

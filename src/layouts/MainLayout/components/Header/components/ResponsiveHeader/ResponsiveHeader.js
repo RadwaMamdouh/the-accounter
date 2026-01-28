@@ -99,14 +99,16 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 							Contact Us
 						</NavLink>
 					</div>
-					<div className="py-3 px-4 flex items-center gap-3">
-						<div className="text-sm text-dark" dir="ltr">
+					<a
+						href="tel:+971585873082"
+						className="py-3 px-4 flex items-center gap-3">
+						<span className="text-sm text-dark" dir="ltr">
 							+971 58 5873082
-						</div>
-						<div className="py-[3px] px-2 bg-green rounded-[26px] flex items-center justify-center text-xs font-medium text-white">
+						</span>
+						<span className="py-[3px] px-2 bg-green rounded-[26px] flex items-center justify-center text-xs font-medium text-white">
 							Call Sales
-						</div>
-					</div>
+						</span>
+					</a>
 					<LangBtn classes="py-2.5 px-4" />
 				</div>
 

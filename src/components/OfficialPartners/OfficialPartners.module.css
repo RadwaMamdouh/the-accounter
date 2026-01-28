@@ -1,5 +1,5 @@
 .partner_card {
-	@apply shrink-0 flex flex-col items-center justify-center p-3 bg-white border border-border-light rounded-xl min-w-52;
+	@apply shrink-0 flex flex-col items-center justify-center p-3 bg-white border border-border-light rounded-xl min-w-52 transition-all duration-300;
 }
 
 .partner_card img {
@@ -12,4 +12,8 @@
 
 .partner_card p {
 	@apply text-xs lg:text-sm text-muted text-center;
+}
+
+.partner_card:hover {
+	@apply shadow-[0px_4px_6px_0px_#1F29370A] cursor-pointer;
 }

@@ -17,6 +17,7 @@ const RegistrationRequestModal = ({
 		{ name: "DIFC", value: "DIFC" },
 		{ name: "WEWORK", value: "WEWORK" },
 		{ name: "Ruwad", value: "Ruwad" },
+		{ name: "EEA", value: "EEA" },
 	];
 
 	const formik = useFormik({
@@ -130,7 +131,7 @@ const RegistrationRequestModal = ({
 					/>
 				</div>
 				<div className="input_holder">
-					<h6 className="required">File Number (with Khalifa Fund)</h6>
+					<h6 className="required">File Number (with {clickedPartner})</h6>
 					<InputText
 						type="text"
 						value={formik.values.fileNumber}

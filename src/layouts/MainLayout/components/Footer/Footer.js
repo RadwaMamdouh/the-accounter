@@ -114,7 +114,7 @@ const Footer = () => {
 									<Link to="" className={styles.footer_link}>
 										Careers
 									</Link>
-									<Link to="" className={styles.footer_link}>
+									<Link to="/team" className={styles.footer_link}>
 										Our Team
 									</Link>
 								</div>
