@@ -8,7 +8,7 @@ const ContactUs = () => {
 	return (
 		<Page title="Contact Us">
 			<section className="pb-8 lg:pb-[72px]">
-				<div className={styles.started_head}>
+				<div className={styles.head}>
 					<div className="container">
 						<h1 className="text-xl lg:text-4xl font-bold text-dark text-center lg:text-start mb-1">
 							Ready to give it a try?
