@@ -1,30 +1,24 @@
 import Page from "components/Page/Page";
-import Hero from "./components/Hero/Hero";
-import OfficialPartners from "components/OfficialPartners/OfficialPartners";
-import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
+import CalculateSavings from "./components/CalculateSavings/CalculateSavings";
 import GetStarted from "components/GetStarted/GetStarted";
-import HowItWorks from "./components/HowItWorks/HowItWorks";
 import Testimonials from "components/Testimonials/Testimonials";
 import Plans from "components/Plans/Plans";
-import OverBusinessesUse from "./components/OverBusinessesUse/OverBusinessesUse";
+import OfficialPartners from "components/OfficialPartners/OfficialPartners";
 import FrequentlyQuestions from "components/FrequentlyQuestions/FrequentlyQuestions";
 import GetStartedToday from "components/GetStartedToday/GetStartedToday";
 
-const Home = () => {
+const CalculateYourSavings = () => {
 	return (
-		<Page title="Home">
-			<Hero />
-			<OfficialPartners />
-			<WhyChooseUs />
+		<Page title="Calculate Your Savings">
+			<CalculateSavings />
 			<GetStarted />
-			<HowItWorks />
 			<Testimonials />
 			<Plans />
-			<OverBusinessesUse />
+			<OfficialPartners />
 			<FrequentlyQuestions />
 			<GetStartedToday />
 		</Page>
 	);
 };
 
-export default Home;
+export default CalculateYourSavings;

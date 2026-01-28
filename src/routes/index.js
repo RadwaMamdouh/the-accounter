@@ -1,4 +1,5 @@
 import MainLayout from "layouts/MainLayout/MainLayout";
+import CalculateYourSavings from "pages/CalculateYourSavings/CalculateYourSavings";
 import ContactUs from "pages/ContactUs/ContactUs";
 import Home from "pages/Home/Home";
 import OurTeam from "pages/OurTeam/OurTeam";
@@ -37,6 +38,10 @@ const AppRouter = () => {
 				{
 					path: "contact-us",
 					element: <ContactUs />,
+				},
+				{
+					path: "calculate-your-savings",
+					element: <CalculateYourSavings />,
 				},
 			],
 		},

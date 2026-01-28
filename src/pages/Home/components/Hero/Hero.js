@@ -46,11 +46,11 @@ const Hero = () => {
 										classes="max-lg:w-full"
 									/>
 									<DarkButton
-										isBtn
 										label="Calculate My Savings"
 										icon={arrow_right}
 										classes="max-lg:w-full"
 										rotateIcon
+										to="/calculate-your-savings"
 									/>
 								</div>
 								<ul className="[&>li]:not-last:mb-1">
@@ -114,10 +114,11 @@ const Hero = () => {
 										classes="max-lg:w-full"
 									/>
 									<DarkButton
-										isBtn
 										label="Calculate My Savings"
 										icon={arrow_right}
 										classes="max-lg:w-full"
+										rotateIcon
+										to="/calculate-your-savings"
 									/>
 								</div>
 								<ul className="[&>li]:not-last:mb-1">
