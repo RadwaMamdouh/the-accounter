@@ -1,9 +1,49 @@
 import FaqsTutorialsHead from "components/FaqsTutorialsHead/FaqsTutorialsHead";
 import Page from "components/Page/Page";
+import TutorialCard from "components/TutorialCard/TutorialCard";
 import { search } from "icons/index";
 import { InputText } from "primereact/inputtext";
 
 const Tutorials = () => {
+	const tutorials = [
+		{
+			id: 1,
+			image: "/images/tutorial1.jpg",
+			title: "How to Leverage Artificial Intelligence for Your Small Business",
+			postedOn: "March 7, 2023",
+		},
+		{
+			id: 2,
+			image: "/images/tutorial2.jpg",
+			title: "How to Leverage Artificial Intelligence for Your Small Business",
+			postedOn: "March 7, 2023",
+		},
+		{
+			id: 3,
+			image: "/images/tutorial3.jpg",
+			title: "How to Leverage Artificial Intelligence for Your Small Business",
+			postedOn: "March 7, 2023",
+		},
+		{
+			id: 4,
+			image: "/images/tutorial4.jpg",
+			title: "How to Leverage Artificial Intelligence for Your Small Business",
+			postedOn: "March 7, 2023",
+		},
+		{
+			id: 5,
+			image: "/images/tutorial5.jpg",
+			title: "How to Leverage Artificial Intelligence for Your Small Business",
+			postedOn: "March 7, 2023",
+		},
+		{
+			id: 6,
+			image: "/images/tutorial6.jpg",
+			title: "How to Leverage Artificial Intelligence for Your Small Business",
+			postedOn: "March 7, 2023",
+		},
+	];
+
 	return (
 		<Page title="Tutorials">
 			<FaqsTutorialsHead
@@ -25,10 +65,15 @@ const Tutorials = () => {
 			{/* Tutorials */}
 			<section className="py-8 lg:py-14">
 				<div className="container">
-					<div className="w-4/5 max-w-full mx-auto">
+					<div className="lg:w-4/5 max-w-full mx-auto">
 						<h2 className="text-xl font-bold text-dark mb-12">
 							About The Accounter
 						</h2>
+						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+							{tutorials.map((tutorial) => (
+								<TutorialCard key={tutorial.id} data={tutorial} />
+							))}
+						</div>
 					</div>
 				</div>
 			</section>
