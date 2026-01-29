@@ -12,7 +12,11 @@ const GetStarted = () => {
 					maecenas. Lobortis elementum nibh tellus molestie nunc non. Aliquet
 					bibendum
 				</p>
-				<DarkButton label="Get Started" classes="w-fit mx-auto" />
+				<DarkButton
+					label="Get Started"
+					classes="w-fit mx-auto"
+					to="/contact-us"
+				/>
 			</div>
 		</section>
 	);

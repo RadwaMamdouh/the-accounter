@@ -66,7 +66,11 @@ const HowItWorks = () => {
 						</div>
 						<img src="/images/how-works-3.svg" alt="Step 3" />
 					</div>
-					<PrimaryButton label="Get Started Today!" classes="w-fit mx-auto" />
+					<PrimaryButton
+						label="Get Started Today!"
+						classes="w-fit mx-auto"
+						to="/contact-us"
+					/>
 				</div>
 			</div>
 		</section>

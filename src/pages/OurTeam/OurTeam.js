@@ -47,6 +47,7 @@ const OurTeam = () => {
 							<PrimaryButton
 								label="Get started today"
 								classes="w-fit max-lg:mx-auto"
+								to="/contact-us"
 							/>
 						</div>
 						<img

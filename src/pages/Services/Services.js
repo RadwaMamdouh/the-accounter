@@ -65,7 +65,7 @@ const Services = () => {
 							</p>
 							<div className="flex items-center justify-center lg:justify-start gap-4">
 								<WhiteButton label="Login" />
-								<PrimaryButton label="Get Started" />
+								<PrimaryButton label="Get Started" to="/contact-us" />
 							</div>
 						</div>
 						<img
