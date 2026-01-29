@@ -1,0 +1,16 @@
+.head {
+	@apply py-8 lg:py-[72px] bg-primary-bg bg-no-repeat bg-center bg-cover;
+	background-image: url("/public/images/plans-pattern.svg");
+}
+
+.links_holder {
+	@apply w-fit mx-auto bg-white border border-primary rounded-lg p-2 flex items-center justify-center gap-[3px];
+}
+
+.link {
+	@apply shrink-0 flex items-center justify-center rounded-md bg-white p-2 w-[146px] lg:w-[150px] h-[38px] lg:h-14 text-dark font-semibold lg:font-bold max-lg:text-sm max-w-full transition-all duration-300;
+}
+
+.link:global(.active) {
+	@apply bg-primary-soft;
+}

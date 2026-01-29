@@ -3,12 +3,14 @@ import MainLayout from "layouts/MainLayout/MainLayout";
 import AboutUs from "pages/AboutUs/AboutUs";
 import CalculateYourSavings from "pages/CalculateYourSavings/CalculateYourSavings";
 import ContactUs from "pages/ContactUs/ContactUs";
+import FAQs from "pages/FAQs/FAQs";
 import Home from "pages/Home/Home";
 import OurTeam from "pages/OurTeam/OurTeam";
 import Partners from "pages/Partners/Partners";
 import Pricing from "pages/Pricing/Pricing";
 import PrivacyPolicy from "pages/PrivacyPolicy/PrivacyPolicy";
 import Services from "pages/Services/Services";
+import Tutorials from "pages/Tutorials/Tutorials";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const AppRouter = () => {
@@ -45,6 +47,14 @@ const AppRouter = () => {
 				{
 					path: "calculate-your-savings",
 					element: <CalculateYourSavings />,
+				},
+				{
+					path: "/faqs",
+					element: <FAQs />,
+				},
+				{
+					path: "tutorials",
+					element: <Tutorials />,
 				},
 			],
 		},

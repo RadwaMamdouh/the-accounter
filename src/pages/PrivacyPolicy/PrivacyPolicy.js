@@ -1,6 +1,8 @@
+import Page from "components/Page/Page";
+
 const PrivacyPolicy = () => {
 	return (
-		<>
+		<Page title="Privacy Policy">
 			<h1 className="text-2xl lg:text-[32px] font-bold text-dark mb-6">
 				Privacy Policy
 			</h1>
@@ -111,7 +113,7 @@ const PrivacyPolicy = () => {
 					within the Service
 				</li>
 			</ul>
-		</>
+		</Page>
 	);
 };
 

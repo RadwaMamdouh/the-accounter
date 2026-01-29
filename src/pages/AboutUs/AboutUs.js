@@ -1,6 +1,8 @@
+import Page from "components/Page/Page";
+
 const AboutUs = () => {
 	return (
-		<>
+		<Page title="About us">
 			<h1 className="text-2xl lg:text-[32px] font-bold text-dark mb-6">
 				About us
 			</h1>
@@ -94,7 +96,7 @@ const AboutUs = () => {
 					within the Service
 				</li>
 			</ul>
-		</>
+		</Page>
 	);
 };
 

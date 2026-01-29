@@ -105,10 +105,10 @@ const Footer = () => {
 									<Link to="/partners" className={styles.footer_link}>
 										Partners
 									</Link>
-									<Link to="" className={styles.footer_link}>
+									<Link to="/tutorials" className={styles.footer_link}>
 										Tutorials
 									</Link>
-									<Link to="" className={styles.footer_link}>
+									<Link to="/faqs" className={styles.footer_link}>
 										FAQs
 									</Link>
 									<Link to="" className={styles.footer_link}>

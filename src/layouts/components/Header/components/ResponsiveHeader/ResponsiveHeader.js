@@ -11,7 +11,7 @@ const resourcesLinks = [
 	{ label: "About us", href: "/about-us" },
 	{ label: "Partners", href: "/partners" },
 	{ label: "Tutorials", href: "/tutorials" },
-	{ label: "FAQs", href: "/faq" },
+	{ label: "FAQs", href: "/faqs" },
 	{ label: "Our Team", href: "/team" },
 	{ label: "Our Videos", href: "/videos" },
 	{ label: "Our Gallery", href: "/gallery" },
