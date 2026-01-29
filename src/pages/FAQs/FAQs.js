@@ -74,7 +74,7 @@ const FAQs = () => {
 			{/* FAQs */}
 			<section className="py-8 lg:py-14">
 				<div className="container">
-					<div className="w-4/5 max-w-full mx-auto">
+					<div className="lg:w-4/5 max-w-full mx-auto">
 						<h2 className="text-xl font-bold text-dark mb-6">
 							About The Accounter
 						</h2>
