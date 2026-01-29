@@ -1,0 +1,7 @@
+.aside_link {
+	@apply py-2 transition-all duration-300 hover:bg-ghost-white;
+}
+
+.aside_link:global(.active) span {
+	@apply border-primary font-bold;
+}

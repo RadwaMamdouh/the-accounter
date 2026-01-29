@@ -15,7 +15,7 @@ const Header = () => {
 
 	const resourcesLinks = [
 		{ label: "Blogs", href: "/blogs" },
-		{ label: "About us", href: "/about" },
+		{ label: "About us", href: "/about-us" },
 		{ label: "Partners", href: "/partners" },
 		{ label: "Tutorials", href: "/tutorials" },
 		{ label: "FAQs", href: "/faq" },

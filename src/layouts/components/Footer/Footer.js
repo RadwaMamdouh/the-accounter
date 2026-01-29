@@ -96,7 +96,7 @@ const Footer = () => {
 							<div>
 								<h5 className="test-sm font-bold text-light mb-6">Resources</h5>
 								<div className={styles.footer_links}>
-									<Link to="" className={styles.footer_link}>
+									<Link to="/about-us" className={styles.footer_link}>
 										About us
 									</Link>
 									<Link to="" className={styles.footer_link}>
@@ -128,7 +128,7 @@ const Footer = () => {
 									<Link to="/contact-us" className={styles.footer_link}>
 										Contact us
 									</Link>
-									<Link to="" className={styles.footer_link}>
+									<Link to="/privacy-policy" className={styles.footer_link}>
 										Privacy Policy
 									</Link>
 									<Link to="" className={styles.footer_link}>
