@@ -5,6 +5,7 @@ import CalculateYourSavings from "pages/CalculateYourSavings/CalculateYourSaving
 import ContactUs from "pages/ContactUs/ContactUs";
 import FAQs from "pages/FAQs/FAQs";
 import Home from "pages/Home/Home";
+import OurGallery from "pages/OurGallery/OurGallery";
 import OurTeam from "pages/OurTeam/OurTeam";
 import Partners from "pages/Partners/Partners";
 import Pricing from "pages/Pricing/Pricing";
@@ -55,6 +56,10 @@ const AppRouter = () => {
 				{
 					path: "tutorials",
 					element: <Tutorials />,
+				},
+				{
+					path: "gallery",
+					element: <OurGallery />,
 				},
 			],
 		},

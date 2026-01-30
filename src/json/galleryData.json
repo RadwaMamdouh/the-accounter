@@ -1,0 +1,130 @@
+[
+	{
+		"id": 1,
+		"image": "/images/gallery1.png",
+		"title": "Accounting Desk",
+		"isFavourite": true,
+		"isNew": false,
+		"isEvent": false
+	},
+	{
+		"id": 2,
+		"image": "/images/gallery2.png",
+		"title": "Tax Planning",
+		"isFavourite": false,
+		"isNew": true,
+		"isEvent": false
+	},
+	{
+		"id": 3,
+		"image": "/images/gallery3.png",
+		"title": "Finance Meetup",
+		"isFavourite": false,
+		"isNew": false,
+		"isEvent": true
+	},
+	{
+		"id": 4,
+		"image": "/images/gallery4.png",
+		"title": "Office Setup",
+		"isFavourite": true,
+		"isNew": true,
+		"isEvent": false
+	},
+	{
+		"id": 5,
+		"image": "/images/gallery5.png",
+		"title": "Accounting Desk",
+		"isFavourite": true,
+		"isNew": false,
+		"isEvent": false
+	},
+	{
+		"id": 6,
+		"image": "/images/gallery6.png",
+		"title": "Tax Planning",
+		"isFavourite": false,
+		"isNew": true,
+		"isEvent": false
+	},
+	{
+		"id": 7,
+		"image": "/images/gallery7.png",
+		"title": "Finance Meetup",
+		"isFavourite": false,
+		"isNew": false,
+		"isEvent": true
+	},
+	{
+		"id": 8,
+		"image": "/images/gallery8.png",
+		"title": "Office Setup",
+		"isFavourite": true,
+		"isNew": true,
+		"isEvent": false
+	},
+	{
+		"id": 9,
+		"image": "/images/gallery1.png",
+		"title": "Accounting Desk",
+		"isFavourite": true,
+		"isNew": false,
+		"isEvent": false
+	},
+	{
+		"id": 10,
+		"image": "/images/gallery2.png",
+		"title": "Tax Planning",
+		"isFavourite": false,
+		"isNew": true,
+		"isEvent": false
+	},
+	{
+		"id": 11,
+		"image": "/images/gallery3.png",
+		"title": "Finance Meetup",
+		"isFavourite": false,
+		"isNew": false,
+		"isEvent": true
+	},
+	{
+		"id": 12,
+		"image": "/images/gallery4.png",
+		"title": "Office Setup",
+		"isFavourite": true,
+		"isNew": true,
+		"isEvent": false
+	},
+	{
+		"id": 13,
+		"image": "/images/gallery5.png",
+		"title": "Accounting Desk",
+		"isFavourite": true,
+		"isNew": false,
+		"isEvent": false
+	},
+	{
+		"id": 14,
+		"image": "/images/gallery6.png",
+		"title": "Tax Planning",
+		"isFavourite": false,
+		"isNew": true,
+		"isEvent": false
+	},
+	{
+		"id": 15,
+		"image": "/images/gallery7.png",
+		"title": "Finance Meetup",
+		"isFavourite": false,
+		"isNew": false,
+		"isEvent": true
+	},
+	{
+		"id": 16,
+		"image": "/images/gallery8.png",
+		"title": "Office Setup",
+		"isFavourite": true,
+		"isNew": true,
+		"isEvent": false
+	}
+]
