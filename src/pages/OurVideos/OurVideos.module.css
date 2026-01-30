@@ -1,0 +1,24 @@
+.filters_tabs {
+	@apply flex items-center justify-start gap-4 overflow-x-auto;
+}
+
+.filters_tabs :global(.p-button) {
+	@apply shrink-0 flex items-center justify-center gap-2 bg-white py-2 px-4 border border-border-light rounded-[68px] text-sm text-muted transition-all duration-300 hover:bg-ghost-white;
+}
+
+.filters_tabs :global(.p-button.p-highlight) {
+	@apply bg-primary text-white font-medium border-transparent;
+}
+
+:global(.p-galleria-mask.p-galleria-visible) {
+	@apply bg-black/80;
+}
+
+.gallery_show :global(.p-galleria-close) {
+	@apply w-10 h-10 text-white *:w-6 *:h-6 m-3 rounded-full transition-all duration-300 hover:bg-black/30;
+}
+
+.gallery_show :global(.p-galleria-item-prev),
+.gallery_show :global(.p-galleria-item-next) {
+	@apply w-10 h-10 text-white *:w-6 *:h-6 m-3 rounded-full transition-all duration-300 hover:bg-black/30;
+}

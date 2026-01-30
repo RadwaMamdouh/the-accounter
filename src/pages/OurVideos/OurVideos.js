@@ -1,17 +1,17 @@
 import Page from "components/Page/Page";
 import { SelectButton } from "primereact/selectbutton";
+import videosItems from "json/videosData.json";
 import { useRef, useState } from "react";
-import galleryItems from "json/galleryData.json";
 import { FILTERS } from "utils/filters";
+import styles from "./OurVideos.module.css";
 import { motion, AnimatePresence } from "framer-motion";
-import styles from "./OurGallery.module.css";
-import { search, star, starOutlined } from "icons/index";
+import { play_circle, star, starOutlined } from "icons/index";
 import { Ripple } from "primereact/ripple";
-import { Galleria } from "primereact/galleria";
 import PrimaryButton from "components/PrimaryButton/PrimaryButton";
+import { Galleria } from "primereact/galleria";
 
-const OurGallery = () => {
-	const [items, setItems] = useState(galleryItems);
+const OurVideos = () => {
+	const [items, setItems] = useState(videosItems);
 	const [activeFilter, setActiveFilter] = useState("all");
 	const [activeIndex, setActiveIndex] = useState(0);
 	const galleria = useRef(null);
@@ -61,11 +61,11 @@ const OurGallery = () => {
 	};
 
 	return (
-		<Page title="Our Gallery">
+		<Page title="Our Videos">
 			<section className="pt-8 lg:pt-[100px] pb-6 lg:pb-[72px]">
 				<div className="container">
 					<h1 className="text-lg lg:text-[32px] font-bold text-dark mb-6">
-						Our Gallery
+						Our Videos
 					</h1>
 					<p className="text-sm text-dark mb-6">
 						Lorem ipsum dolor sit amet consectetur. Mi porta mauris eu quisque
@@ -96,9 +96,10 @@ const OurGallery = () => {
 					item={itemTemplate}
 					className={styles.gallery_show}
 				/>
+
 				<div className="container">
 					<AnimatePresence mode="popLayout">
-						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 							{filteredItems.map((item, index) => (
 								<motion.div
 									key={item.id}
@@ -107,7 +108,7 @@ const OurGallery = () => {
 									animate={{ opacity: 1, scale: 1 }}
 									exit={{ opacity: 0, scale: 0.9 }}
 									transition={{ duration: 0.3, ease: "easeOut" }}
-									className="w-full max-w-full h-[264px] border border-border-light rounded-[4px] flex items-center justify-center overflow-hidden relative group">
+									className="w-full max-w-full h-[240px] border border-border-light rounded-[4px] flex items-center justify-center overflow-hidden relative group">
 									<img
 										src={item.image}
 										alt="gallery Pic"
@@ -122,13 +123,13 @@ const OurGallery = () => {
 									</button>
 									<button
 										type="button"
-										className="w-10 h-10 rounded-md flex items-center justify-center *:w-[22px] *:h-[22px] bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden opacity-0 transition-all duration-300 group-hover:opacity-100 text-dark"
+										className="w-12 h-12 rounded-full flex items-center justify-center *:w-full *:h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden text-white"
 										onClick={() => {
 											setActiveIndex(index);
 											galleria.current.show();
 										}}>
 										<Ripple />
-										{search}
+										{play_circle}
 									</button>
 								</motion.div>
 							))}
@@ -141,4 +142,4 @@ const OurGallery = () => {
 	);
 };
 
-export default OurGallery;
+export default OurVideos;

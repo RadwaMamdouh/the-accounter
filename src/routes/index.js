@@ -7,6 +7,7 @@ import FAQs from "pages/FAQs/FAQs";
 import Home from "pages/Home/Home";
 import OurGallery from "pages/OurGallery/OurGallery";
 import OurTeam from "pages/OurTeam/OurTeam";
+import OurVideos from "pages/OurVideos/OurVideos";
 import Partners from "pages/Partners/Partners";
 import Pricing from "pages/Pricing/Pricing";
 import PrivacyPolicy from "pages/PrivacyPolicy/PrivacyPolicy";
@@ -60,6 +61,10 @@ const AppRouter = () => {
 				{
 					path: "gallery",
 					element: <OurGallery />,
+				},
+				{
+					path: "videos",
+					element: <OurVideos />,
 				},
 			],
 		},
