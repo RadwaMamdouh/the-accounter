@@ -69,7 +69,8 @@ const HowItWorks = () => {
 					<PrimaryButton
 						label="Get Started Today!"
 						classes="w-fit mx-auto"
-						to="/contact-us"
+						to="/#getStartedToday"
+						isAHref
 					/>
 				</div>
 			</div>

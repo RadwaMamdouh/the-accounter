@@ -15,7 +15,8 @@ const GetStarted = () => {
 				<DarkButton
 					label="Get Started"
 					classes="w-fit mx-auto"
-					to="/contact-us"
+					to="/#getStartedToday"
+					isAHref
 				/>
 			</div>
 		</section>

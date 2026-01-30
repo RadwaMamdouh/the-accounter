@@ -4,7 +4,7 @@ import LeaveMessageForm from "components/LeaveMessageForm/LeaveMessageForm";
 
 const GetStartedToday = () => {
 	return (
-		<section className="pb-28">
+		<section className="pb-28" id="getStartedToday">
 			<div className={styles.started_head}>
 				<div className="container">
 					<h2 className="text-xl lg:text-4xl font-bold text-dark text-center lg:text-start lg:w-[27%] max-w-full">

@@ -41,7 +41,8 @@ const Hero = () => {
 								</p>
 								<div className="flex items-center justify-start gap-4 mb-6 flex-wrap">
 									<PrimaryButton
-										isBtn
+										isAHref
+										to="/#getStartedToday"
 										label="Book Free Consultation"
 										classes="max-lg:w-full"
 									/>
@@ -109,7 +110,8 @@ const Hero = () => {
 								</p>
 								<div className="flex items-center justify-start gap-4 mb-6 flex-wrap">
 									<PrimaryButton
-										isBtn
+										isAHref
+										to="/#getStartedToday"
 										label="Book Free Consultation"
 										classes="max-lg:w-full"
 									/>

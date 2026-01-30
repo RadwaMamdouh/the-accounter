@@ -10,6 +10,7 @@ const DarkButton = ({
 	icon,
 	to,
 	rotateIcon,
+	isAHref,
 }) => {
 	return isBtn ? (
 		<button
@@ -24,6 +25,16 @@ const DarkButton = ({
 				</span>
 			)}
 		</button>
+	) : isAHref ? (
+		<a href={to} className={`${styles.dark_button} ${classes}`}>
+			<span className={styles.button_text}>{label}</span>
+			{icon && (
+				<span
+					className={`${styles.button_icon} ${rotateIcon ? "rtl:rotate-180" : ""}`}>
+					{icon}
+				</span>
+			)}
+		</a>
 	) : (
 		<Link to={to} className={`${styles.dark_button} ${classes}`}>
 			<span className={styles.button_text}>{label}</span>
