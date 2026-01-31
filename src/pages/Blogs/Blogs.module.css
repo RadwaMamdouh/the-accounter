@@ -1,0 +1,11 @@
+.filters_tabs {
+	@apply flex items-center justify-start gap-4 overflow-x-auto;
+}
+
+.filters_tabs :global(.p-button) {
+	@apply shrink-0 flex items-center justify-center gap-2 bg-white py-2 px-4 border border-border-light rounded-[68px] text-sm text-muted transition-all duration-300 hover:bg-ghost-white;
+}
+
+.filters_tabs :global(.p-button.p-highlight) {
+	@apply bg-primary text-white font-medium border-transparent;
+}

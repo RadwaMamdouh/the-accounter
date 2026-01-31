@@ -1,6 +1,8 @@
 import GlobalPagesLayout from "layouts/GlobalPagesLayout/GlobalPagesLayout";
 import MainLayout from "layouts/MainLayout/MainLayout";
 import AboutUs from "pages/AboutUs/AboutUs";
+import BlogDetails from "pages/BlogDetails/BlogDetails";
+import Blogs from "pages/Blogs/Blogs";
 import CalculateYourSavings from "pages/CalculateYourSavings/CalculateYourSavings";
 import ContactUs from "pages/ContactUs/ContactUs";
 import FAQs from "pages/FAQs/FAQs";
@@ -65,6 +67,14 @@ const AppRouter = () => {
 				{
 					path: "videos",
 					element: <OurVideos />,
+				},
+				{
+					path: "blogs",
+					element: <Blogs />,
+				},
+				{
+					path: "blogs/:id",
+					element: <BlogDetails />,
 				},
 			],
 		},

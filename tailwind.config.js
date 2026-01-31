@@ -17,6 +17,8 @@ module.exports = {
 				"primary-hover": "#33bdd0",
 				"primary-soft": "#CCEEF3",
 				green: "#48bb78",
+				"green-bg": "#EDF8F2",
+				"green-light": "#91D6AE",
 				white: "#fff",
 				orange: "#f2921d",
 				"ghost-white": "#f5f7fa",
