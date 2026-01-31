@@ -99,7 +99,7 @@ const Footer = () => {
 									<Link to="/about-us" className={styles.footer_link}>
 										About us
 									</Link>
-									<Link to="" className={styles.footer_link}>
+									<Link to="/blogs" className={styles.footer_link}>
 										Blog
 									</Link>
 									<Link to="/partners" className={styles.footer_link}>
