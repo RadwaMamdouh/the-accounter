@@ -1,6 +1,6 @@
 import Page from "components/Page/Page";
-import { useState } from "react";
-import blogsItems from "json/blogsData.json";
+import { useEffect, useState } from "react";
+// import blogsItems from "json/blogsData.json";
 import { SelectButton } from "primereact/selectbutton";
 import { BLOGSFILTERS } from "utils/blogsFilters";
 import styles from "./Blogs.module.css";
@@ -11,10 +11,40 @@ import PrimaryButton from "components/PrimaryButton/PrimaryButton";
 import WhiteButton from "components/WhiteButton/WhiteButton";
 import { Link } from "react-router-dom";
 import SubscribeBlog from "components/SubscribeBlog/SubscribeBlog";
+import { sanityClient } from "sanityClient";
+import imageUrlBuilder from "@sanity/image-url";
+import { formatDate } from "utils/formateDate";
+
+const builder = imageUrlBuilder(sanityClient);
+
+export const urlFor = (source) => builder.image(source);
 
 const Blogs = () => {
-	const [items, setItems] = useState(blogsItems);
+	// const [items, setItems] = useState(blogsItems);
 	const [activeFilter, setActiveFilter] = useState("all");
+
+	const [posts, setPosts] = useState([]);
+	useEffect(() => {
+		console.log(sanityClient.config());
+
+		sanityClient
+			.fetch(
+				`*[_type == "post"] | order(publishedAt desc) {
+        _id,
+        title,
+        slug,
+        publishedAt,
+		image,
+		isFavourite,
+		isEvent,
+		isFeatureReleases,
+		isAnnouncements,
+		isPressReleases,
+      }`,
+			)
+			.then(setPosts)
+			.catch(console.error);
+	}, []);
 
 	const justifyTemplate = (option) => {
 		return (
@@ -29,7 +59,7 @@ const Blogs = () => {
 		);
 	};
 
-	const filteredItems = items.filter((item) => {
+	const filteredItems = posts.filter((item) => {
 		switch (activeFilter) {
 			case "favourite":
 				return item.isFavourite;
@@ -56,9 +86,9 @@ const Blogs = () => {
 	};
 
 	const toggleFavourite = (id) => {
-		setItems((prev) =>
+		setPosts((prev) =>
 			prev.map((item) =>
-				item.id === id ? { ...item, isFavourite: !item.isFavourite } : item,
+				item._id === id ? { ...item, isFavourite: !item.isFavourite } : item,
 			),
 		);
 	};
@@ -93,7 +123,7 @@ const Blogs = () => {
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 									{filteredItems.map((item) => (
 										<motion.div
-											key={item.id}
+											key={item._id}
 											layout
 											initial={{ opacity: 0, scale: 0.95 }}
 											animate={{ opacity: 1, scale: 1 }}
@@ -102,14 +132,14 @@ const Blogs = () => {
 											className="group">
 											<div className="w-full max-w-full h-[250px] rounded-lg flex items-center justify-center overflow-hidden relative mb-4">
 												<img
-													src={item.image}
+													src={urlFor(item.image).url()}
 													alt="Blog Pic"
 													className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
 												/>
 												<button
 													type="button"
 													className="w-10 h-10 rounded-full flex items-center justify-center *:w-6 *:h-6 bg-white bg-opacity-[0.59] backdrop-blur-2xl absolute top-[10px] ltr:right-[10px] rtl:left-[10px] overflow-hidden text-muted"
-													onClick={() => toggleFavourite(item.id)}>
+													onClick={() => toggleFavourite(item._id)}>
 													<Ripple />
 													{item.isFavourite ? star : starOutlined}
 												</button>
@@ -122,12 +152,12 @@ const Blogs = () => {
 												{item.title}
 											</h3>
 											<p className="text-sm text-muted mb-4">
-												Posted on {item.date}
+												Posted on {formatDate(item?.publishedAt)}
 											</p>
 											<WhiteButton
 												label="Read More"
 												classes="!shadow-none w-fit"
-												to={`/blogs/${item.id}`}
+												to={`/blogs/${item.slug.current}`}
 											/>
 										</motion.div>
 									))}

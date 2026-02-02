@@ -73,9 +73,13 @@ const AppRouter = () => {
 					element: <Blogs />,
 				},
 				{
-					path: "blogs/:id",
+					path: "blogs/:slug",
 					element: <BlogDetails />,
 				},
+				// {
+				// 	path: "blogs/:id",
+				// 	element: <BlogDetails />,
+				// },
 			],
 		},
 		{
