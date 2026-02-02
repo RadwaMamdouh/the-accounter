@@ -44,6 +44,12 @@ const en = {
 		"100% COMPLIANT: We pay any fines if we make an error",
 	officialPartnersOfUaeLeadingOrganizations:
 		"Official Partners of UAE's Leading Organizations",
+	whyChooseUs: "Why Choose Us?",
+	whySmartUaeBusinessesChooseTheAccounter:
+		"Why Smart UAE Businesses Choose The Accounter",
+	moreThanJustAccountingYourCompleteComplianceAndFinancialPartner:
+		"More than just accounting - your complete compliance and financial partner",
+	seeYourExactSavings: "See your exact savings",
 };
 
 export default en;

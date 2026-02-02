@@ -44,6 +44,12 @@ const ar = {
 		"التزام كامل 100%: ندفع نحن أي غرامات إذا أخطأنا",
 	officialPartnersOfUaeLeadingOrganizations:
 		"الشركاء الرسميون لأبرز المؤسسات في الإمارات",
+	whyChooseUs: "ما الذي يميزنا؟",
+	whySmartUaeBusinessesChooseTheAccounter:
+		"لماذا تختار الشركات الذكية في الإمارات ذا أكاونتر",
+	moreThanJustAccountingYourCompleteComplianceAndFinancialPartner:
+		"أكثر من مجرد محاسبة - شريكك الكامل في الامتثال والشؤون المالية",
+	seeYourExactSavings: "اكتشف قيمة التوفير الفعلية",
 };
 
 export default ar;
