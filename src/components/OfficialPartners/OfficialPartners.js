@@ -1,10 +1,12 @@
 import RegistrationRequestModal from "components/RegistrationRequestModal/RegistrationRequestModal";
 import styles from "./OfficialPartners.module.css";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const OfficialPartners = ({ isFlexCol }) => {
 	const [visible, setVisible] = useState(false);
 	const [clickedPartner, setClickedPartner] = useState(null);
+	const { t } = useTranslation();
 
 	const partners = [
 		{
@@ -53,7 +55,7 @@ const OfficialPartners = ({ isFlexCol }) => {
 			<section className="py-8 lg:py-[72px]">
 				<div className="container">
 					<h2 className="mb-8 lg:mb-[50px] text-xl lg:text-[32px] lg:leading-normal text-dark font-bold text-center">
-						Official Partners of UAE's Leading Organizations
+						{t("officialPartnersOfUaeLeadingOrganizations")}
 					</h2>
 					<div
 						className={`gap-4 lg:gap-6 ${!isFlexCol ? "flex overflow-y-auto no-scrollbar" : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"}`}>

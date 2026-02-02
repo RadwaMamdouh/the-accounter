@@ -42,6 +42,8 @@ const en = {
 	zeroAccountingKnowledgeNeeded: "Zero Accounting Knowledge needed",
 	wePayAnyFinesIfWeMakeAnError:
 		"100% COMPLIANT: We pay any fines if we make an error",
+	officialPartnersOfUaeLeadingOrganizations:
+		"Official Partners of UAE's Leading Organizations",
 };
 
 export default en;

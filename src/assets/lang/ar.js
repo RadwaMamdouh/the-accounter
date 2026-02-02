@@ -42,6 +42,8 @@ const ar = {
 	zeroAccountingKnowledgeNeeded: "لا حاجة لأي معرفة محاسبية",
 	wePayAnyFinesIfWeMakeAnError:
 		"التزام كامل 100%: ندفع نحن أي غرامات إذا أخطأنا",
+	officialPartnersOfUaeLeadingOrganizations:
+		"الشركاء الرسميون لأبرز المؤسسات في الإمارات",
 };
 
 export default ar;
