@@ -7,6 +7,7 @@ import CalculateYourSavings from "pages/CalculateYourSavings/CalculateYourSaving
 import ContactUs from "pages/ContactUs/ContactUs";
 import FAQs from "pages/FAQs/FAQs";
 import Home from "pages/Home/Home";
+import NotFound from "pages/NotFound/NotFound";
 import OurGallery from "pages/OurGallery/OurGallery";
 import OurTeam from "pages/OurTeam/OurTeam";
 import OurVideos from "pages/OurVideos/OurVideos";
@@ -91,6 +92,10 @@ const AppRouter = () => {
 					element: <AboutUs />,
 				},
 			],
+		},
+		{
+			path: "*",
+			element: <NotFound />,
 		},
 	]);
 
