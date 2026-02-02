@@ -50,6 +50,7 @@ const en = {
 	moreThanJustAccountingYourCompleteComplianceAndFinancialPartner:
 		"More than just accounting - your complete compliance and financial partner",
 	seeYourExactSavings: "See your exact savings",
+	readyToGetStarted: "Ready to Get Started?",
 };
 
 export default en;

@@ -50,6 +50,7 @@ const ar = {
 	moreThanJustAccountingYourCompleteComplianceAndFinancialPartner:
 		"أكثر من مجرد محاسبة - شريكك الكامل في الامتثال والشؤون المالية",
 	seeYourExactSavings: "اكتشف قيمة التوفير الفعلية",
+	readyToGetStarted: "هل أنت مستعد للبدء؟",
 };
 
 export default ar;
