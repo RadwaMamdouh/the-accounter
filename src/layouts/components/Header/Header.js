@@ -6,22 +6,24 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { arrowDropDown } from "icons/index";
 import LangBtn from "components/LangBtn/LangBtn";
 import ResponsiveHeader from "./components/ResponsiveHeader/ResponsiveHeader";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
 	const [isShow, setIsShow] = useState(false);
 	const [isShowSidebar, setIsShowSidebar] = useState(false);
 	const op = useRef(null);
 	const location = useLocation();
+	const { t } = useTranslation();
 
 	const resourcesLinks = [
-		{ label: "Blogs", href: "/blogs" },
-		{ label: "About us", href: "/about-us" },
-		{ label: "Partners", href: "/partners" },
-		{ label: "Tutorials", href: "/tutorials" },
-		{ label: "FAQs", href: "/faqs" },
-		{ label: "Our Team", href: "/team" },
-		{ label: "Our Videos", href: "/videos" },
-		{ label: "Our Gallery", href: "/gallery" },
+		{ label: t("blogs"), href: "/blogs" },
+		{ label: t("aboutUs"), href: "/about-us" },
+		{ label: t("partners"), href: "/partners" },
+		{ label: t("tutorials"), href: "/tutorials" },
+		{ label: t("faqs"), href: "/faqs" },
+		{ label: t("ourTeam"), href: "/team" },
+		{ label: t("ourVideos"), href: "/videos" },
+		{ label: t("ourGallery"), href: "/gallery" },
 	];
 
 	const isResourcesActive = resourcesLinks.some((link) =>
@@ -60,18 +62,18 @@ const Header = () => {
 						</Link>
 						<div className={styles.menu}>
 							<NavLink to="/" className={styles.menu_link}>
-								Home
+								{t("home")}
 							</NavLink>
 							<NavLink to="/services" className={styles.menu_link}>
-								Services
+								{t("services")}
 							</NavLink>
 							<NavLink to="/pricing" className={styles.menu_link}>
-								Pricing
+								{t("pricing")}
 							</NavLink>
 							<>
 								<Button
 									type="button"
-									label="Resources"
+									label={t("resources")}
 									onClick={(e) => op.current?.toggle(e)}
 									className={`${styles.ddl_lbl} ${isShow ? styles.show : ""} ${isResourcesActive ? styles.active : ""}`}>
 									{arrowDropDown}
@@ -93,14 +95,14 @@ const Header = () => {
 								</OverlayPanel>
 							</>
 							<NavLink to="/contact-us" className={styles.menu_link}>
-								Contact Us
+								{t("contactUs")}
 							</NavLink>
 						</div>
 						<a
 							href="tel:+971585873082"
 							className="hidden lg:flex items-center gap-2">
 							<span className="py-[3px] px-2 bg-green rounded-[4px] flex items-center justify-center text-[10px] xl:text-xs font-medium text-white">
-								Call Sales
+								{t("callSales")}
 							</span>
 							<span
 								className="text-xs xl:text-[13px] font-semibold text-dark"
@@ -112,14 +114,14 @@ const Header = () => {
 							<LangBtn />
 							<Button
 								type="button"
-								label="Login"
+								label={t("login")}
 								className="bg-white py-2.5 px-3 rounded-md flex items-center justify-center border border-dark text-xs xl:text-[13px] font-semibold text-dark transition duration-300 hover:bg-dark-bg"
 							/>
-							<Button
-								type="button"
-								label="Get Started"
-								className="bg-dark py-2.5 px-3 rounded-md flex items-center justify-center border border-transparent text-xs xl:text-[13px] font-semibold text-white transition duration-300 hover:bg-dark-hover"
-							/>
+							<Link
+								to="/contact-us"
+								className="bg-dark py-2.5 px-3 rounded-md flex items-center justify-center border border-transparent text-xs xl:text-[13px] font-semibold text-white transition duration-300 hover:bg-dark-hover">
+								{t("getStarted")}
+							</Link>
 						</div>
 						<button
 							type="button"

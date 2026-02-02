@@ -1,25 +1,27 @@
 import { cancel } from "icons/index";
 import styles from "./ResponsiveHeader.module.css";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Accordion, AccordionTab } from "primereact/accordion";
 import LangBtn from "components/LangBtn/LangBtn";
 import { Button } from "primereact/button";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const resourcesLinks = [
-	{ label: "Blogs", href: "/blogs" },
-	{ label: "About us", href: "/about-us" },
-	{ label: "Partners", href: "/partners" },
-	{ label: "Tutorials", href: "/tutorials" },
-	{ label: "FAQs", href: "/faqs" },
-	{ label: "Our Team", href: "/team" },
-	{ label: "Our Videos", href: "/videos" },
-	{ label: "Our Gallery", href: "/gallery" },
+	{ label: "blogs", href: "/blogs" },
+	{ label: "aboutUs", href: "/about-us" },
+	{ label: "partners", href: "/partners" },
+	{ label: "tutorials", href: "/tutorials" },
+	{ label: "faqs", href: "/faqs" },
+	{ label: "ourTeam", href: "/team" },
+	{ label: "ourVideos", href: "/videos" },
+	{ label: "ourGallery", href: "/gallery" },
 ];
 
 const ResponsiveHeader = ({ isShow, onClose }) => {
 	const location = useLocation();
 	const [activeIndex, setActiveIndex] = useState(null);
+	const { t } = useTranslation();
 
 	useEffect(() => {
 		const isResourcesRoute = resourcesLinks.some((link) =>
@@ -62,32 +64,32 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 							to="/"
 							className={styles.menu_link}
 							onClick={handleNavigate}>
-							Home
+							{t("home")}
 						</NavLink>
 						<NavLink
 							to="/services"
 							className={styles.menu_link}
 							onClick={handleNavigate}>
-							Services
+							{t("services")}
 						</NavLink>
 						<NavLink
 							to="/pricing"
 							className={styles.menu_link}
 							onClick={handleNavigate}>
-							Pricing
+							{t("pricing")}
 						</NavLink>
 						<Accordion
 							className={styles.sidebar_accordion}
 							activeIndex={activeIndex}
 							onTabChange={(e) => setActiveIndex(e.index)}>
-							<AccordionTab header="Resources">
+							<AccordionTab header={t("resources")}>
 								{resourcesLinks.map((link) => (
 									<NavLink
 										key={link.href}
 										to={link.href}
 										className={styles.accordion_menu_link}
 										onClick={handleNavigate}>
-										{link.label}
+										{t(link.label)}
 									</NavLink>
 								))}
 							</AccordionTab>
@@ -96,7 +98,7 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 							to="/contact-us"
 							className={styles.menu_link}
 							onClick={handleNavigate}>
-							Contact Us
+							{t("contactUs")}
 						</NavLink>
 					</div>
 					<a
@@ -106,7 +108,7 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 							+971 58 5873082
 						</span>
 						<span className="py-[3px] px-2 bg-green rounded-[26px] flex items-center justify-center text-xs font-medium text-white">
-							Call Sales
+							{t("callSales")}
 						</span>
 					</a>
 					<LangBtn classes="py-2.5 px-4" />
@@ -116,14 +118,14 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 				<div className="flex flex-col gap-4">
 					<Button
 						type="button"
-						label="Login"
+						label={t("login")}
 						className="bg-white py-2.5 px-3 rounded-md flex items-center justify-center border border-dark text-xs xl:text-[13px] font-semibold text-dark transition duration-300 hover:bg-dark-bg"
 					/>
-					<Button
-						type="button"
-						label="Get Started"
-						className="bg-dark py-2.5 px-3 rounded-md flex items-center justify-center border border-transparent text-xs xl:text-[13px] font-semibold text-white transition duration-300 hover:bg-dark-hover"
-					/>
+					<Link
+						to="/contact-us"
+						className="bg-dark py-2.5 px-3 rounded-md flex items-center justify-center border border-transparent text-xs xl:text-[13px] font-semibold text-white transition duration-300 hover:bg-dark-hover">
+						{t("getStarted")}
+					</Link>
 				</div>
 			</div>
 		</aside>

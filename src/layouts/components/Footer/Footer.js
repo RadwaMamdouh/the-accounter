@@ -5,9 +5,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 import CopyRights from "./components/CopyRights/CopyRights";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
 	const [value, setValue] = useState("");
+	const { t } = useTranslation();
 
 	return (
 		<>
@@ -26,21 +28,21 @@ const Footer = () => {
 								<div className="mb-8">
 									<div className="mb-4">
 										<h5 className="text-white text-sm font-bold mb-0.5">
-											Sign up for email updates
+											{t("signUpForEmailUpdates")}
 										</h5>
 										<p className="text-light text-sm">
-											Subscribe to our newsletter The Accounter
+											{t("subscribeToOurNewsletterTheAccounter")}
 										</p>
 									</div>
 									<InputText
 										value={value}
 										onChange={(e) => setValue(e.target.value)}
-										placeholder="Enter your email"
+										placeholder={t("enterYourEmail")}
 										className="block bg-white border border-border-light rounded-md w-full py-3 px-2.5 !mb-4 transition duration-300 hover:border-primary"
 									/>
 									<Button
 										type="button"
-										label="Submit"
+										label={t("submit")}
 										className="py-2.5 px-3 flex items-center justify-center w-fit bg-primary rounded-md text-[13px] text-white font-semibold transition duration-300 hover:bg-primary-hover"
 									/>
 								</div>
@@ -74,65 +76,71 @@ const Footer = () => {
 						</div>
 						<div className="flex items-start justify-start lg:justify-between flex-wrap lg:flex-nowrap gap-8 sm:gap-28">
 							<div>
-								<h5 className="test-sm font-bold text-light mb-6">Services</h5>
+								<h5 className="test-sm font-bold text-light mb-6">
+									{t("services")}
+								</h5>
 								<div className={styles.footer_links}>
 									<Link to="" className={styles.footer_link}>
-										Complete Bookkeeping
+										{t("completeBookkeeping")}
 									</Link>
 									<Link to="" className={styles.footer_link}>
-										Track Expenses
+										{t("trackExpenses")}
 									</Link>
 									<Link to="" className={styles.footer_link}>
-										Custom Invoicing
+										{t("customInvoicing")}
 									</Link>
 									<Link to="" className={styles.footer_link}>
-										VAT Services
+										{t("vatServices")}
 									</Link>
 									<Link to="" className={styles.footer_link}>
-										Insights and reports
+										{t("insightsAndReports")}
 									</Link>
 								</div>
 							</div>
 							<div>
-								<h5 className="test-sm font-bold text-light mb-6">Resources</h5>
+								<h5 className="test-sm font-bold text-light mb-6">
+									{t("resources")}
+								</h5>
 								<div className={styles.footer_links}>
 									<Link to="/about-us" className={styles.footer_link}>
-										About us
+										{t("aboutUs")}
 									</Link>
 									<Link to="/blogs" className={styles.footer_link}>
-										Blog
+										{t("blog")}
 									</Link>
 									<Link to="/partners" className={styles.footer_link}>
-										Partners
+										{t("partners")}
 									</Link>
 									<Link to="/tutorials" className={styles.footer_link}>
-										Tutorials
+										{t("tutorials")}
 									</Link>
 									<Link to="/faqs" className={styles.footer_link}>
-										FAQs
+										{t("faqs")}
 									</Link>
 									<Link to="" className={styles.footer_link}>
-										Careers
+										{t("careers")}
 									</Link>
 									<Link to="/team" className={styles.footer_link}>
-										Our Team
+										{t("ourTeam")}
 									</Link>
 								</div>
 							</div>
 							<div>
-								<h5 className="test-sm font-bold text-light mb-6">Other</h5>
+								<h5 className="test-sm font-bold text-light mb-6">
+									{t("other")}
+								</h5>
 								<div className={styles.footer_links}>
 									<Link to="/pricing" className={styles.footer_link}>
-										Pricing
+										{t("pricing")}
 									</Link>
 									<Link to="/contact-us" className={styles.footer_link}>
-										Contact us
+										{t("contactUs")}
 									</Link>
 									<Link to="/privacy-policy" className={styles.footer_link}>
-										Privacy Policy
+										{t("privacyPolicy")}
 									</Link>
 									<Link to="" className={styles.footer_link}>
-										Terms of use
+										{t("termsOfUse")}
 									</Link>
 								</div>
 							</div>
