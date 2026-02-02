@@ -31,6 +31,17 @@ const ar = {
 	privacyPolicy: "سياسة الخصوصية",
 	termsOfUse: "شروط الاستخدام",
 	copyright: "جميع الحقوق محفوظة © 2023 ذا اكونتر.",
+	trustedByUaeBusinesses: "موثوق به من قبل أكثر من 1,000 شركة إماراتية",
+	stopWorryingAboutAccountingWeHandleEverything:
+		"توقف عن القلق بشأن المحاسبة. نحن نتولى كل شيء.",
+	heroDescription:
+		"قم برفع فواتيرك. برنامجنا سهل الاستخدام + خبراء المحاسبة المعتمدون يتولون الباقي: مسك الدفاتر، إعداد ضريبة القيمة المضافة وضريبة الشركات، التقارير المالية، وجميع الإيداعات لدى الهيئة الاتحادية للضرائب نيابة عنك. لا مواعيد نهائية فائتة. لا غرامات — فقط المزيد من الوقت لتنمية عملك.",
+	bookFreeConsultation: "احجز استشارة مجانية",
+	calculateMySavings: "احسب قيمة التوفير",
+	startingAt: "ابتداءً من 250 درهم شهرياً",
+	zeroAccountingKnowledgeNeeded: "لا حاجة لأي معرفة محاسبية",
+	wePayAnyFinesIfWeMakeAnError:
+		"التزام كامل 100%: ندفع نحن أي غرامات إذا أخطأنا",
 };
 
 export default ar;
