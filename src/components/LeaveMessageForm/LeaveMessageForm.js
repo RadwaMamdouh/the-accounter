@@ -2,8 +2,11 @@ import { useFormik } from "formik";
 import DarkButton from "components/DarkButton/DarkButton";
 import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
+import { useTranslation } from "react-i18next";
 
 const LeaveMessageForm = () => {
+	const { t } = useTranslation();
+
 	const formik = useFormik({
 		initialValues: {
 			name: "",
@@ -20,61 +23,58 @@ const LeaveMessageForm = () => {
 	return (
 		<div className="p-4 lg:p-8 bg-white border border-border-light rounded-lg lg:-mt-28 w-full">
 			<div className="mb-4 lg:mb-6">
-				<h4 className="font-bold text-dark mb-1">Leave a message</h4>
-				<p className="text-sm text-muted">
-					Lorem ipsum dolor sit amet consectetur.
-				</p>
+				<h4 className="font-bold text-dark">{t("leaveMessage")}</h4>
 			</div>
 			<form
 				onSubmit={formik.handleSubmit}
 				className="grid grid-cols-1 gap-4 lg:gap-6">
 				<div className="grid grid-cols-1 gap-5">
 					<div className="input_holder">
-						<h6 className="required">Name</h6>
+						<h6 className="required">{t("name")}</h6>
 						<InputText
 							type="text"
 							value={formik.values.name}
 							onChange={formik.handleChange}
-							placeholder="Your name"
+							placeholder={t("yourName")}
 							name="name"
 						/>
 					</div>
 					<div className="input_holder">
-						<h6 className="required">Email</h6>
+						<h6 className="required">{t("email")}</h6>
 						<InputText
 							type="email"
 							value={formik.values.email}
 							onChange={formik.handleChange}
-							placeholder="Your email"
+							placeholder={t("yourEmail")}
 							name="email"
 						/>
 					</div>
 					<div className="input_holder">
-						<h6 className="required">Phone Number</h6>
+						<h6 className="required">{t("phoneNumber")}</h6>
 						<InputText
 							type="text"
 							value={formik.values.phone}
 							onChange={formik.handleChange}
-							placeholder="Your phone number"
+							placeholder={t("yourPhoneNumber")}
 							name="phone"
 						/>
 					</div>
 					<div className="input_holder">
-						<h6 className="required">Company Name</h6>
+						<h6 className="required">{t("companyName")}</h6>
 						<InputText
 							type="text"
 							value={formik.values.companyName}
 							onChange={formik.handleChange}
-							placeholder="Company Name"
+							placeholder={t("companyName")}
 							name="companyName"
 						/>
 					</div>
 					<div className="input_holder">
-						<h6>Message</h6>
+						<h6>{t("message")}</h6>
 						<InputTextarea
 							value={formik.values.message}
 							onChange={formik.handleChange}
-							placeholder="Enter a message"
+							placeholder={t("enterMessage")}
 							name="message"
 						/>
 					</div>
@@ -83,7 +83,7 @@ const LeaveMessageForm = () => {
 				<DarkButton
 					isBtn
 					type="submit"
-					label="Book Free Call"
+					label={t("bookFreeCall")}
 					classes="w-fit"
 				/>
 			</form>

@@ -55,6 +55,24 @@ const en = {
 	howItWorksDesc: "Upload your invoices. We do the rest. It's that simple.",
 	getStartedToday: "Get Started Today!",
 	testimonials: "Testimonials",
+	monthly: "Monthly",
+	quarterly: "Quarterly",
+	choosePlan: "Choose Plan",
+	frequentlyAskedQuestions: "Frequently Asked Questions",
+	everythingYouNeedToKnowAboutTheAccounter:
+		"Everything you need to know about The Accounter",
+	getStartedWithTheAccounterToday: "Get Started With The Accounter Today!",
+	leaveMessage: "Leave a message",
+	name: "Name",
+	yourName: "Your name",
+	email: "Email",
+	yourEmail: "Your email",
+	phoneNumber: "Phone Number",
+	yourPhoneNumber: "Your phone number",
+	companyName: "Company Name",
+	message: "Message",
+	enterMessage: "Enter a message",
+	bookFreeCall: "Book Free Call",
 };
 
 export default en;

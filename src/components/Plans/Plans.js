@@ -4,28 +4,40 @@ import DarkButton from "components/DarkButton/DarkButton";
 import SelectBtn from "components/SelectBtn/SelectBtn";
 import PrimaryButton from "components/PrimaryButton/PrimaryButton";
 import { arrow_right, check } from "icons/index";
+import { useTranslation } from "react-i18next";
 
 const Plans = ({ gridView, hideBtn, showPlansFeatures }) => {
-	const options = ["Monthly", "Quarterly"];
-	const [value, setValue] = useState(options[0]);
+	const { t, i18n } = useTranslation();
+	const options = [
+		{ label: t("monthly"), value: "Monthly" },
+		{ label: t("quarterly"), value: "Quarterly" },
+	];
+	const [value, setValue] = useState(options[0].value);
+	const currentLanguage = i18n.language;
 
 	const plans = [
 		{
 			id: 1,
 			title: "STARTER",
+			titleAr: "الناشئة",
 			desc: "Up to 50 Docs Per Month",
+			descAr: "حتى 50 مستند شهرياً",
 			price: "250.00",
 		},
 		{
 			id: 2,
 			title: "GROWTH",
+			titleAr: "النامية",
 			desc: "Up to 150 Docs Per Month",
+			descAr: "حتى 150 مستند شهرياً",
 			price: "525.00",
 		},
 		{
 			id: 3,
 			title: "SCALE",
+			titleAr: "المتوسعة",
 			desc: "Up to 300 Docs Per Month",
+			descAr: "حتى 300 مستند شهرياً",
 			price: "975.00",
 		},
 	];
@@ -66,11 +78,14 @@ const Plans = ({ gridView, hideBtn, showPlansFeatures }) => {
 			<div className={styles.plans_head}>
 				<div className="container">
 					<h2 className="text-xl lg:text-[32px] lg:leading-relaxed font-bold text-dark text-center mb-4">
-						Plans for Every Business Size
+						{currentLanguage === "ar"
+							? "خطط مرنة لجميع الشركات"
+							: "Plans for Every Business Size"}
 					</h2>
 					<p className="text-sm text-dark text-center mb-4">
-						Your entire accounting department in one simple plan. Everything
-						included. Zero hidden fees.
+						{currentLanguage === "ar"
+							? "قسم المحاسبة الكامل في خطة واحدة بسيطة. كل شيء مشمول. لا يوجد رسوم مخفية."
+							: "Your entire accounting department in one simple plan. Everything included. Zero hidden fees."}
 					</p>
 					<div className="w-fit mx-auto relative mb-8 lg:mb-[58px]">
 						<SelectBtn
@@ -80,7 +95,9 @@ const Plans = ({ gridView, hideBtn, showPlansFeatures }) => {
 							classes="mb-6"
 						/>
 						<p className="text-sm text-dark text-center max-lg:px-5">
-							Get 20 documents for free with a quarterly plan!
+							{currentLanguage === "ar"
+								? "احصل على 20 مستند مجاناً مع الخطة الربع سنوية!"
+								: "Get 20 documents for free with a quarterly plan!"}
 						</p>
 						<img
 							src="/images/curved-arrow.svg"
@@ -96,19 +113,26 @@ const Plans = ({ gridView, hideBtn, showPlansFeatures }) => {
 					{plans.map((plan) => (
 						<div className={styles.plan_card} key={plan.id}>
 							<div>
-								<h4>{plan.title}</h4>
+								<h4>{currentLanguage === "ar" ? plan.titleAr : plan.title}</h4>
 								<p className={`${!gridView ? "lg:w-[95%]" : ""}`}>
-									{plan.desc}
+									{currentLanguage === "ar" ? plan.descAr : plan.desc}
 								</p>
 							</div>
 							<h3>{plan.price} AED</h3>
-							<DarkButton label="Choose Scale" classes="w-fit !px-10 mx-auto" />
+							<DarkButton
+								label={t("choosePlan")}
+								classes="w-fit !px-10 mx-auto"
+							/>
 						</div>
 					))}
 				</div>
 				{!hideBtn && (
 					<PrimaryButton
-						label="See Full Plans & Calculate Savings"
+						label={
+							currentLanguage === "ar"
+								? "اطلع على كافة الباقات واحسب ما ستوفره"
+								: "See Full Plans & Calculate Savings"
+						}
 						icon={arrow_right}
 						rotateIcon
 						classes="w-fit mx-auto mt-14"

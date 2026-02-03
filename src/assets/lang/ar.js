@@ -55,6 +55,23 @@ const ar = {
 	howItWorksDesc: "ارفع فواتيرك. نحن نتولى الباقي. الأمر بهذه البساطة.",
 	getStartedToday: "ابدأ الآن",
 	testimonials: "آراء العملاء",
+	monthly: "شهري",
+	quarterly: "ربع سنوي",
+	choosePlan: "اختر هذه الخطة",
+	frequentlyAskedQuestions: "الأسئلة الأكثر شيوعاً",
+	everythingYouNeedToKnowAboutTheAccounter: "كل ما تحتاج معرفته عن ذا أكونتر",
+	getStartedWithTheAccounterToday: "ابدأ مع ذا أكونتر اليوم!",
+	leaveMessage: "اترك لنا رسالة",
+	name: "الإسم",
+	yourName: "اسمك",
+	email: "عنوان البريد الالكتروني",
+	yourEmail: "بريدك الإلكتروني",
+	phoneNumber: "رقم الهاتف",
+	yourPhoneNumber: "رقم هاتفك",
+	companyName: "اسم الشركة",
+	message: "رسالتك",
+	enterMessage: "أدخل رسالة",
+	bookFreeCall: "احجز استشارة مجانية",
 };
 
 export default ar;
