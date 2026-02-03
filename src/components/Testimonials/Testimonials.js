@@ -14,7 +14,7 @@ import { arrow_left, arrow_right2 } from "icons/index";
 import Rate from "components/Rate/Rate";
 
 const Testimonials = () => {
-	const { i18n } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const currentLanguage = i18n.language;
 
 	const testimonials = [
@@ -64,12 +64,18 @@ const Testimonials = () => {
 		<section className="py-8 lg:py-[72px]">
 			<div className="container">
 				<div className="mb-8 lg:mb-[54px] flex flex-col gap-3">
-					<h6 className="text-sm text-primary text-center">Testimonials</h6>
+					<h6 className="text-sm text-primary text-center">
+						{t("testimonials")}
+					</h6>
 					<h2 className="text-xl lg:text-[32px] lg:leading-relaxed text-dark font-bold text-center">
-						Over 1,000 Happy Customers
+						{currentLanguage === "ar"
+							? "أكثر من 1,000 عميل سعيد"
+							: "Over 1,000 Happy Customers"}
 					</h2>
 					<p className="text-sm text-dark text-center">
-						Check out what our customers have been saying about us.
+						{currentLanguage === "ar"
+							? "اطلع على ما يقوله عملاؤنا عنا."
+							: "Check out what our customers have been saying about us."}
 					</p>
 				</div>
 

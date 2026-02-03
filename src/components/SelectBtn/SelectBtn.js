@@ -8,6 +8,7 @@ const SelectBtn = ({ options, value, onChange, classes }) => {
 			onChange={onChange}
 			options={options}
 			className={`${styles.select_btn} ${classes}`}
+			allowEmpty={false}
 		/>
 	);
 };

@@ -51,6 +51,10 @@ const en = {
 		"More than just accounting - your complete compliance and financial partner",
 	seeYourExactSavings: "See your exact savings",
 	readyToGetStarted: "Ready to Get Started?",
+	howItWorks: "How it works?",
+	howItWorksDesc: "Upload your invoices. We do the rest. It's that simple.",
+	getStartedToday: "Get Started Today!",
+	testimonials: "Testimonials",
 };
 
 export default en;
