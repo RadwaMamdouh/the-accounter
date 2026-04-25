@@ -1,0 +1,26 @@
+.additional_services {
+	background:
+		linear-gradient(
+			180deg,
+			rgba(245, 248, 250, 0) 0%,
+			#f5f7fa 50%,
+			rgba(245, 247, 250, 0) 100%
+		),
+		#ffffff;
+}
+
+.badge {
+	@apply shrink-0 flex items-center justify-center py-1 px-2 w-fit rounded-md text-xs font-medium text-dark;
+
+	&.blue {
+		@apply bg-primary-bg border border-primary-soft;
+	}
+
+	&.green {
+		@apply bg-green-bg border border-green-soft;
+	}
+
+	&.orange {
+		@apply bg-orange-bg border border-orange-soft;
+	}
+}

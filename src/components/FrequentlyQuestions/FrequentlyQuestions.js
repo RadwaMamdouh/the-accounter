@@ -62,11 +62,15 @@ const FrequentlyQuestions = () => {
 		<section className="py-8 lg:py-[100px]">
 			<div className="container">
 				<div className="mb-8 lg:mb-[50px]">
-					<h2 className="text-xl lg:text-[32px] lg:leading-relaxed font-bold text-dark text-center mb-3">
+					<h6 className="text-sm text-primary text-center uppercase mb-3">
 						{t("frequentlyAskedQuestions")}
+					</h6>
+					<h2 className="text-xl lg:text-[32px] font-bold text-dark text-center mb-3">
+						Everything you need to know.
 					</h2>
 					<p className="text-sm text-dark text-center">
-						{t("everythingYouNeedToKnowAboutTheAccounter")}
+						Still have questions? Book a free consultation our team will walk
+						you through everything.
 					</p>
 				</div>
 				<div className="lg:px-[100px]">

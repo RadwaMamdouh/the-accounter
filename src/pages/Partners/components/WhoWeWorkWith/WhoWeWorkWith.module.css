@@ -1,0 +1,30 @@
+.how_we_work_with {
+	background:
+		linear-gradient(
+			180deg,
+			rgba(245, 248, 250, 0) 0%,
+			#f5f7fa 50%,
+			rgba(245, 247, 250, 0) 100%
+		),
+		#ffffff;
+}
+
+.partner_card {
+	@apply flex flex-col items-center justify-center p-8 bg-white border border-border-light rounded-md transition-all duration-300 w-[364px] max-w-full;
+}
+
+.partner_card img {
+	@apply h-[120px] lg:h-[180px] mb-4;
+}
+
+.partner_card h3 {
+	@apply text-xs text-[18px] font-bold text-dark text-center mb-3;
+}
+
+.partner_card p {
+	@apply text-xs lg:text-sm text-muted text-center;
+}
+
+.partner_card:hover {
+	@apply shadow-[0px_4px_6px_0px_#1F29370A] cursor-pointer;
+}

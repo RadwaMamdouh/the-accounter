@@ -1,5 +1,5 @@
 .partner_card {
-	@apply shrink-0 flex flex-col items-center justify-center p-3 bg-white border border-border-light rounded-xl min-w-52 transition-all duration-300;
+	@apply shrink-0 flex flex-col items-center justify-center p-3 bg-white border border-border-light rounded-xl w-52 max-w-full transition-all duration-300;
 }
 
 .partner_card img {

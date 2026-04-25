@@ -50,7 +50,6 @@ const en = {
 	moreThanJustAccountingYourCompleteComplianceAndFinancialPartner:
 		"More than just accounting - your complete compliance and financial partner",
 	seeYourExactSavings: "See your exact savings",
-	readyToGetStarted: "Ready to Get Started?",
 	howItWorks: "How it works?",
 	howItWorksDesc: "Upload your invoices. We do the rest. It's that simple.",
 	getStartedToday: "Get Started Today!",
@@ -61,7 +60,8 @@ const en = {
 	frequentlyAskedQuestions: "Frequently Asked Questions",
 	everythingYouNeedToKnowAboutTheAccounter:
 		"Everything you need to know about The Accounter",
-	getStartedWithTheAccounterToday: "Get Started With The Accounter Today!",
+	getStartedWithTheAccounterToday:
+		"Get Started With <br /> The Accounter Today!",
 	leaveMessage: "Leave a message",
 	name: "Name",
 	yourName: "Your name",
@@ -73,6 +73,8 @@ const en = {
 	message: "Message",
 	enterMessage: "Enter a message",
 	bookFreeCall: "Book Free Call",
+	navHowItWorks: "How it works",
+	company: "Company",
 };
 
 export default en;

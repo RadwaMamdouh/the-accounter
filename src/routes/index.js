@@ -7,6 +7,7 @@ import CalculateYourSavings from "pages/CalculateYourSavings/CalculateYourSaving
 import ContactUs from "pages/ContactUs/ContactUs";
 import FAQs from "pages/FAQs/FAQs";
 import Home from "pages/Home/Home";
+import HowItWorks from "pages/HowItWorks/HowItWorks";
 import NotFound from "pages/NotFound/NotFound";
 import OurGallery from "pages/OurGallery/OurGallery";
 import OurTeam from "pages/OurTeam/OurTeam";
@@ -76,6 +77,10 @@ const AppRouter = () => {
 				{
 					path: "blogs/:id",
 					element: <BlogDetails />,
+				},
+				{
+					path: "how-it-works",
+					element: <HowItWorks />,
 				},
 			],
 		},

@@ -18,9 +18,21 @@ const resourcesLinks = [
 	{ label: "ourGallery", href: "/gallery" },
 ];
 
+const companyLinks = [
+	{ label: "blogs", href: "/blogs" },
+	{ label: "aboutUs", href: "/about-us" },
+	{ label: "partners", href: "/partners" },
+	{ label: "tutorials", href: "/tutorials" },
+	{ label: "faqs", href: "/faqs" },
+	{ label: "ourTeam", href: "/team" },
+	{ label: "ourVideos", href: "/videos" },
+	{ label: "ourGallery", href: "/gallery" },
+];
+
 const ResponsiveHeader = ({ isShow, onClose }) => {
 	const location = useLocation();
 	const [activeIndex, setActiveIndex] = useState(null);
+	const [companyActiveIndex, setCompanyActiveIndex] = useState(null);
 	const { t } = useTranslation();
 
 	useEffect(() => {
@@ -32,6 +44,16 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 			setActiveIndex(0); // open
 		} else {
 			setActiveIndex(null); // close (home or any other page)
+		}
+
+		const isCompanyRoute = companyLinks.some((link) =>
+			location.pathname.startsWith(link.href),
+		);
+
+		if (isCompanyRoute) {
+			setCompanyActiveIndex(1); // open
+		} else {
+			setCompanyActiveIndex(null); // close (home or any other page)
 		}
 	}, [location.pathname]);
 
@@ -60,12 +82,12 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 				<div className="mb-[62px]">
 					{/* Menu Links */}
 					<div className={styles.menu}>
-						<NavLink
+						{/* <NavLink
 							to="/"
 							className={styles.menu_link}
 							onClick={handleNavigate}>
 							{t("home")}
-						</NavLink>
+						</NavLink> */}
 						<NavLink
 							to="/services"
 							className={styles.menu_link}
@@ -78,6 +100,28 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 							onClick={handleNavigate}>
 							{t("pricing")}
 						</NavLink>
+						<NavLink
+							to="/how-it-works"
+							className={styles.menu_link}
+							onClick={handleNavigate}>
+							{t("navHowItWorks")}
+						</NavLink>
+						<Accordion
+							className={styles.sidebar_accordion}
+							activeIndex={companyActiveIndex}
+							onTabChange={(e) => setCompanyActiveIndex(e.index)}>
+							<AccordionTab header={t("company")}>
+								{companyLinks.map((link) => (
+									<NavLink
+										key={link.href}
+										to={link.href}
+										className={styles.accordion_menu_link}
+										onClick={handleNavigate}>
+										{t(link.label)}
+									</NavLink>
+								))}
+							</AccordionTab>
+						</Accordion>
 						<Accordion
 							className={styles.sidebar_accordion}
 							activeIndex={activeIndex}
@@ -94,14 +138,14 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 								))}
 							</AccordionTab>
 						</Accordion>
-						<NavLink
+						{/* <NavLink
 							to="/contact-us"
 							className={styles.menu_link}
 							onClick={handleNavigate}>
 							{t("contactUs")}
-						</NavLink>
+						</NavLink> */}
 					</div>
-					<a
+					{/* <a
 						href="tel:+971585873082"
 						className="py-3 px-4 flex items-center gap-3">
 						<span className="text-sm text-dark" dir="ltr">
@@ -110,7 +154,7 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 						<span className="py-[3px] px-2 bg-green rounded-[26px] flex items-center justify-center text-xs font-medium text-white">
 							{t("callSales")}
 						</span>
-					</a>
+					</a> */}
 					<LangBtn classes="py-2.5 px-4" />
 				</div>
 

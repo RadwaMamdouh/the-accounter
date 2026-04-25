@@ -10,7 +10,9 @@ import { useTranslation } from "react-i18next";
 
 const Header = () => {
 	const [isShow, setIsShow] = useState(false);
+	const [isShowCompany, setIsShowCompany] = useState(false);
 	const [isShowSidebar, setIsShowSidebar] = useState(false);
+	const opCompany = useRef(null);
 	const op = useRef(null);
 	const location = useLocation();
 	const { t } = useTranslation();
@@ -27,6 +29,21 @@ const Header = () => {
 	];
 
 	const isResourcesActive = resourcesLinks.some((link) =>
+		location.pathname.startsWith(link.href),
+	);
+
+	const companyLinks = [
+		{ label: t("blogs"), href: "/blogs" },
+		{ label: t("aboutUs"), href: "/about-us" },
+		{ label: t("partners"), href: "/partners" },
+		{ label: t("tutorials"), href: "/tutorials" },
+		{ label: t("faqs"), href: "/faqs" },
+		{ label: t("ourTeam"), href: "/team" },
+		{ label: t("ourVideos"), href: "/videos" },
+		{ label: t("ourGallery"), href: "/gallery" },
+	];
+
+	const isCompanyActive = companyLinks.some((link) =>
 		location.pathname.startsWith(link.href),
 	);
 
@@ -49,7 +66,7 @@ const Header = () => {
 	return (
 		<>
 			<header className="py-3.5 bg-white sticky top-0 z-50">
-				<div className="container mx-auto px-4">
+				<div className="container">
 					<div className="flex items-center justify-between gap-2 xl:gap-6">
 						<Link
 							to="/"
@@ -61,15 +78,42 @@ const Header = () => {
 							/>
 						</Link>
 						<div className={styles.menu}>
-							<NavLink to="/" className={styles.menu_link}>
+							{/* <NavLink to="/" className={styles.menu_link}>
 								{t("home")}
-							</NavLink>
+							</NavLink> */}
 							<NavLink to="/services" className={styles.menu_link}>
 								{t("services")}
 							</NavLink>
 							<NavLink to="/pricing" className={styles.menu_link}>
 								{t("pricing")}
 							</NavLink>
+							<NavLink to="/how-it-works" className={styles.menu_link}>
+								{t("navHowItWorks")}
+							</NavLink>
+							<>
+								<Button
+									type="button"
+									label={t("company")}
+									onClick={(e) => opCompany.current?.toggle(e)}
+									className={`${styles.ddl_lbl} ${isShowCompany ? styles.show : ""} ${isCompanyActive ? styles.active : ""}`}>
+									{arrowDropDown}
+								</Button>
+
+								<OverlayPanel
+									ref={opCompany}
+									className={styles.ddl_menu}
+									onShow={() => setIsShowCompany(true)}
+									onHide={() => setIsShowCompany(false)}>
+									{companyLinks.map((link) => (
+										<NavLink
+											key={link.href}
+											to={link.href}
+											className={`${styles.ddl_menu_link}`}>
+											{link.label}
+										</NavLink>
+									))}
+								</OverlayPanel>
+							</>
 							<>
 								<Button
 									type="button"
@@ -94,11 +138,11 @@ const Header = () => {
 									))}
 								</OverlayPanel>
 							</>
-							<NavLink to="/contact-us" className={styles.menu_link}>
+							{/* <NavLink to="/contact-us" className={styles.menu_link}>
 								{t("contactUs")}
-							</NavLink>
+							</NavLink> */}
 						</div>
-						<a
+						{/* <a
 							href="tel:+971585873082"
 							className="hidden lg:flex items-center gap-2">
 							<span className="py-[3px] px-2 bg-green rounded-[4px] flex items-center justify-center text-[10px] xl:text-xs font-medium text-white">
@@ -109,7 +153,7 @@ const Header = () => {
 								dir="ltr">
 								+971 58 5873082
 							</span>
-						</a>
+						</a> */}
 						<div className="hidden lg:flex items-center gap-3">
 							<LangBtn />
 							<Button

@@ -1,36 +1,33 @@
 import Page from "components/Page/Page";
-import styles from "./Partners.module.css";
-import PrimaryButton from "components/PrimaryButton/PrimaryButton";
-import OfficialPartners from "components/OfficialPartners/OfficialPartners";
+import PartnersHero from "./components/PartnersHero/PartnersHero";
+import WhoWeWorkWith from "./components/WhoWeWorkWith/WhoWeWorkWith";
+import PartnerRegisteration from "./components/PartnerRegisteration/PartnerRegisteration";
+import { useState } from "react";
+import NotPartnerMember from "./components/NotPartnerMember/NotPartnerMember";
+import Services from "./components/Services/Services";
 
 const Partners = () => {
+	const [clickedPartner, setClickedPartner] = useState("WEWORK");
+
+	const onClickPartner = (partner) => {
+		setClickedPartner(partner);
+
+		const section = document.getElementById("registerationRequest");
+		if (section) {
+			section.scrollIntoView({ behavior: "smooth" });
+		}
+	};
+
 	return (
 		<Page title="Partners">
-			<section className={styles.official_service_provider}>
-				<div className="container">
-					<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-[50px]">
-						<div className="lg:pt-[46px]">
-							<h1 className="text-xl lg:text-[32px] lg:leading-relaxed text-dark font-bold max-lg:text-center mb-3 lg:mb-4">
-								Official Accounting Service Provider
-							</h1>
-							<p className="text-sm text-dark max-lg:text-center mb-4">
-								We do your Accounting, So you do better Business.
-							</p>
-							<PrimaryButton
-								label="Get started today"
-								classes="w-fit max-lg:mx-auto"
-								to="/contact-us"
-							/>
-						</div>
-						<img
-							src="/images/service-provider.svg"
-							alt=""
-							className="h-64 lg:h-[300px] w-fit mx-auto max-lg:-order-1 object-cover"
-						/>
-					</div>
-				</div>
-			</section>
-			<OfficialPartners isFlexCol />
+			<PartnersHero />
+			<WhoWeWorkWith onClickPartner={onClickPartner} />
+			<Services />
+			<PartnerRegisteration
+				clickedPartner={clickedPartner}
+				onClickPartner={onClickPartner}
+			/>
+			<NotPartnerMember />
 		</Page>
 	);
 };

@@ -2,7 +2,7 @@ import Page from "components/Page/Page";
 import Hero from "./components/Hero/Hero";
 import OfficialPartners from "components/OfficialPartners/OfficialPartners";
 import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
-import GetStarted from "components/GetStarted/GetStarted";
+import ReadyToHandOff from "components/ReadyToHandOff/ReadyToHandOff";
 import HowItWorks from "./components/HowItWorks/HowItWorks";
 import Testimonials from "components/Testimonials/Testimonials";
 import Plans from "components/Plans/Plans";
@@ -16,7 +16,7 @@ const Home = () => {
 			<Hero />
 			<OfficialPartners />
 			<WhyChooseUs />
-			<GetStarted />
+			<ReadyToHandOff />
 			<HowItWorks />
 			<Testimonials />
 			<Plans />

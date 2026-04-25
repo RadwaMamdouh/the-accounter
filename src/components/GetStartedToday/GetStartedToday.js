@@ -1,18 +1,21 @@
 import { check } from "icons/index";
 import styles from "./GetStartedToday.module.css";
 import LeaveMessageForm from "components/LeaveMessageForm/LeaveMessageForm";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 const GetStartedToday = () => {
-	const { t, i18n } = useTranslation();
+	const { i18n } = useTranslation();
 	const currentLanguage = i18n.language;
 
 	return (
 		<section className="pb-28" id="getStartedToday">
 			<div className={styles.started_head}>
 				<div className="container">
-					<h2 className="text-xl lg:text-4xl font-bold text-dark text-center lg:text-start lg:w-[27%] max-w-full">
-						{t("getStartedWithTheAccounterToday")}
+					<h2 className="text-xl lg:text-4xl font-bold text-dark">
+						<Trans
+							i18nKey="getStartedWithTheAccounterToday"
+							components={{ br: <br /> }}
+						/>
 					</h2>
 				</div>
 			</div>

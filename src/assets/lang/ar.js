@@ -50,7 +50,6 @@ const ar = {
 	moreThanJustAccountingYourCompleteComplianceAndFinancialPartner:
 		"أكثر من مجرد محاسبة - شريكك الكامل في الامتثال والشؤون المالية",
 	seeYourExactSavings: "اكتشف قيمة التوفير الفعلية",
-	readyToGetStarted: "هل أنت مستعد للبدء؟",
 	howItWorks: "كيف تعمل الخدمة؟",
 	howItWorksDesc: "ارفع فواتيرك. نحن نتولى الباقي. الأمر بهذه البساطة.",
 	getStartedToday: "ابدأ الآن",
@@ -72,6 +71,8 @@ const ar = {
 	message: "رسالتك",
 	enterMessage: "أدخل رسالة",
 	bookFreeCall: "احجز استشارة مجانية",
+	navHowItWorks: "كيف تعمل الخدمة",
+	company: "الشركة",
 };
 
 export default ar;

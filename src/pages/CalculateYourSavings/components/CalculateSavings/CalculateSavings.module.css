@@ -1,4 +1,57 @@
-.head {
-	@apply py-8 lg:pt-[72px] lg:pb-36 bg-primary-bg bg-no-repeat bg-center bg-cover;
-	background-image: url("/public/images/plans-pattern.svg");
+.select_btn {
+	@apply flex items-center justify-start gap-2.5 bg-white;
+}
+
+.select_btn :global(.p-button) {
+	@apply p-2 rounded-md border border-border-light grow w-full;
+}
+
+.select_btn :global(.p-button) :global(.p-button-label) {
+	@apply text-sm text-muted;
+}
+
+.select_btn :global(.p-button):global(.p-highlight) {
+	@apply bg-primary-soft border-primary;
+}
+
+.select_btn :global(.p-button):global(.p-highlight) :global(.p-button-label) {
+	@apply text-dark;
+}
+
+.radio_btn {
+	@apply py-3 px-4 bg-white border border-border-light rounded-md flex items-center justify-start gap-3;
+}
+
+.radio_btn :global(.p-radiobutton) {
+	@apply w-[18px] h-[18px] relative inline-flex select-none align-bottom;
+}
+
+.radio_btn :global(.p-radiobutton) :global(.p-radiobutton-input) {
+	@apply appearance-none absolute top-0 left-0 w-full h-full p-0 m-0 opacity-0 z-[1] outline-none border-2 border-light rounded-full;
+}
+
+.radio_btn :global(.p-radiobutton) :global(.p-radiobutton-box) {
+	@apply flex items-center justify-center border-2 border-light w-[18px] h-[18px] bg-white rounded-full outline-transparent transition-all duration-[0.2s];
+	box-shadow: 0px 1px 8px 0px #020e1f0a;
+}
+
+.radio_btn
+	:global(.p-radiobutton)
+	:global(.p-radiobutton-box)
+	:global(.p-radiobutton-icon) {
+	@apply w-3 h-3 bg-white rounded-full invisible duration-[0.2s];
+	backface-visibility: hidden;
+}
+
+.radio_btn :global(.p-radiobutton.p-highlight) :global(.p-radiobutton-box) {
+	@apply bg-primary border-primary;
+}
+
+.radio_btn :global(.p-radiobutton.p-highlight) :global(.p-radiobutton-icon) {
+	@apply visible;
+	transform: translateZ(0) scale(1, 1);
+}
+
+.radio_btn:has(:global(.p-radiobutton.p-highlight)) {
+	@apply border-primary;
 }

@@ -1,0 +1,69 @@
+import styles from "./WhoWeWorkWith.module.css";
+
+const WhoWeWorkWith = ({ onClickPartner }) => {
+	const partners = [
+		{
+			id: 1,
+			img: "/images/khalifa-fund.svg",
+			name: "Khalifa Fund",
+			desc: "Supporting UAE entrepreneurs with funding and business development resources.",
+		},
+		{
+			id: 2,
+			img: "/images/we-work.svg",
+			name: "WEWORK",
+			desc: "Global workspace community connecting entrepreneurs and growing businesses.",
+		},
+		{
+			id: 3,
+			img: "/images/ruwad.svg",
+			name: "Ruwad",
+			desc: "Dubai International Financial Centre the region's leading financial hub.",
+		},
+		{
+			id: 4,
+			img: "/images/difc.svg",
+			name: "DIFC",
+			desc: "Sharjah Entrepreneurship Foundation supporting the next generation of UAE businesses.",
+		},
+		{
+			id: 5,
+			img: "/images/eea.svg",
+			name: "EEA",
+			desc: "A network of UAE’s most ambitious entrepreneurs and business owners.",
+		},
+	];
+
+	return (
+		<>
+			<section className={`py-8 lg:py-[72px] ${styles.how_we_work_with}`}>
+				<div className="container">
+					<div className="mb-8 lg:mb-[72px] flex flex-col gap-3">
+						<h6 className="text-sm text-dark">WHO WE WORK WITH</h6>
+						<h2 className="text-xl lg:text-[32px] lg:leading-normal text-dark font-bold">
+							Trusted by the UAE's top business communities.
+						</h2>
+						<p className="text-sm text-dark">
+							Members of our partner organizations get exclusive pricing and
+							priority onboarding. Select your partner below to see your rate.
+						</p>
+					</div>
+					<div className="flex flex-wrap justify-center gap-4 lg:gap-6">
+						{partners.map((partner) => (
+							<div
+								key={partner.id}
+								className={styles.partner_card}
+								onClick={() => onClickPartner(partner.name)}>
+								<img src={partner.img} alt={partner.name} />
+								<h3>{partner.name}</h3>
+								<p>{partner.desc}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+		</>
+	);
+};
+
+export default WhoWeWorkWith;

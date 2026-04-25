@@ -1,0 +1,4 @@
+.head {
+	@apply py-8 lg:py-[76px] bg-primary-bg bg-no-repeat bg-center bg-cover;
+	background-image: url("/public/images/plans-pattern.svg");
+}

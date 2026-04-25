@@ -1,0 +1,10 @@
+.the_process {
+	background:
+		linear-gradient(
+			180deg,
+			rgba(245, 248, 250, 0) 0%,
+			#f5f7fa 50%,
+			rgba(245, 247, 250, 0) 100%
+		),
+		#ffffff;
+}
