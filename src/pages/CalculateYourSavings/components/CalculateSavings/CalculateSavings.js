@@ -140,7 +140,7 @@ const CalculateSavings = () => {
 									<h6>
 										How much do you currently pay for accounting per month?
 									</h6>
-									<div className="relative overflow-hidden">
+									<div className="relative overflow-hidden rounded-md">
 										<InputText
 											type="text"
 											value={formik.values.accountingPay}
@@ -148,7 +148,7 @@ const CalculateSavings = () => {
 											placeholder="1500"
 											name="accountingPay"
 										/>
-										<p className="bg-ghost-white border border-border-light rounded-se-lg rounded-ee-lg py-[11px] px-2 absolute top-0 ltr:right-0 rtl:left-0 h-full z-[1] text-xs font-bold text-dark flex items-center justify-center">
+										<p className="bg-ghost-white border border-border-light rounded-se-md rounded-ee-md py-[11px] px-2 absolute top-0 ltr:right-0 rtl:left-0 h-full z-[1] text-xs font-bold text-dark flex items-center justify-center">
 											AED
 										</p>
 									</div>
