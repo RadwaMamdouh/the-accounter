@@ -1,8 +1,8 @@
 import { Button } from "primereact/button";
 import { OverlayPanel } from "primereact/overlaypanel";
-import { useEffect, useRef, useState } from "react";
+import { Children, useEffect, useRef, useState } from "react";
 import styles from "./Header.module.css";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { href, Link, NavLink, useLocation } from "react-router-dom";
 import { arrowDropDown } from "icons/index";
 import LangBtn from "components/LangBtn/LangBtn";
 import ResponsiveHeader from "./components/ResponsiveHeader/ResponsiveHeader";
@@ -16,6 +16,7 @@ const Header = () => {
 	const op = useRef(null);
 	const location = useLocation();
 	const { t } = useTranslation();
+	const [activeSubMenu, setActiveSubMenu] = useState(null);
 
 	const resourcesLinks = [
 		{ label: t("blogs"), href: "/blogs" },
@@ -34,7 +35,20 @@ const Header = () => {
 
 	const companyLinks = [
 		{ label: t("blogs"), href: "/blogs" },
-		{ label: t("aboutUs"), href: "/about-us" },
+		{
+			label: t("aboutUs"),
+			href: "/about-us",
+			children: [
+				{
+					label: "Item one",
+					href: "",
+				},
+				{
+					label: "Item Two",
+					href: "",
+				},
+			],
+		},
 		{ label: t("partners"), href: "/partners" },
 		{ label: t("tutorials"), href: "/tutorials" },
 		{ label: t("faqs"), href: "/faqs" },
@@ -46,6 +60,14 @@ const Header = () => {
 	const isCompanyActive = companyLinks.some((link) =>
 		location.pathname.startsWith(link.href),
 	);
+
+	const handleParentClick = (linkKey) => {
+		if (activeSubMenu === linkKey) {
+			setActiveSubMenu(null); // close if clicked again
+		} else {
+			setActiveSubMenu(linkKey); // open new
+		}
+	};
 
 	useEffect(() => {
 		// close dropdown when route changes
@@ -94,7 +116,10 @@ const Header = () => {
 								<Button
 									type="button"
 									label={t("company")}
-									onClick={(e) => opCompany.current?.toggle(e)}
+									onClick={(e) => {
+										op.current?.hide(); // close resources
+										opCompany.current?.toggle(e);
+									}}
 									className={`${styles.ddl_lbl} ${isShowCompany ? styles.show : ""} ${isCompanyActive ? styles.active : ""}`}>
 									{arrowDropDown}
 								</Button>
@@ -103,22 +128,71 @@ const Header = () => {
 									ref={opCompany}
 									className={styles.ddl_menu}
 									onShow={() => setIsShowCompany(true)}
-									onHide={() => setIsShowCompany(false)}>
-									{companyLinks.map((link) => (
-										<NavLink
-											key={link.href}
-											to={link.href}
-											className={`${styles.ddl_menu_link}`}>
-											{link.label}
-										</NavLink>
-									))}
+									onHide={() => {
+										setIsShowCompany(false);
+										setActiveSubMenu(null); // reset submenu
+									}}>
+									<div className={styles.menu_wrapper}>
+										{/* LEFT SIDE (main menu) */}
+										<div className={styles.menu_main}>
+											{companyLinks.map((link) => (
+												<div key={link.href} className={styles.menu_item}>
+													{/* If has children */}
+													{link.children ? (
+														<button
+															type="button"
+															onClick={() => handleParentClick(link.href)}
+															className={`${styles.ddl_menu_link} ${
+																activeSubMenu === link.href
+																	? styles.active_parent
+																	: ""
+															}`}>
+															{link.label}
+															<span className={styles.arrow}>
+																{arrowDropDown}
+															</span>
+														</button>
+													) : (
+														<NavLink
+															key={link.href}
+															to={link.href}
+															className={`${styles.ddl_menu_link}`}>
+															{link.label}
+														</NavLink>
+													)}
+												</div>
+											))}
+										</div>
+
+										{/* RIGHT SIDE (sub menu) */}
+										<div
+											className={`${styles.menu_sub} ${
+												activeSubMenu ? styles.open : ""
+											}`}>
+											<div key={activeSubMenu}>
+												{companyLinks
+													.find((l) => l.href === activeSubMenu)
+													?.children?.map((sub, i) => (
+														<NavLink
+															key={i}
+															to={sub.href}
+															className={styles.ddl_menu_link}>
+															{sub.label}
+														</NavLink>
+													))}
+											</div>
+										</div>
+									</div>
 								</OverlayPanel>
 							</>
 							<>
 								<Button
 									type="button"
 									label={t("resources")}
-									onClick={(e) => op.current?.toggle(e)}
+									onClick={(e) => {
+										opCompany.current?.hide(); // close company
+										op.current?.toggle(e);
+									}}
 									className={`${styles.ddl_lbl} ${isShow ? styles.show : ""} ${isResourcesActive ? styles.active : ""}`}>
 									{arrowDropDown}
 								</Button>

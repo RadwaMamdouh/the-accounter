@@ -1,5 +1,5 @@
 .menu {
-	@apply flex flex-col;
+	@apply flex flex-col gap-1;
 }
 
 .menu .menu_link {
@@ -50,9 +50,35 @@
 }
 
 .accordion_menu_link {
-	@apply py-3 px-4 text-sm text-dark transition duration-300 hover:bg-ghost-white;
+	@apply py-3 px-4 text-sm text-dark flex items-center justify-between transition duration-300 hover:bg-ghost-white;
 }
 
 .accordion_menu_link:global(.active) {
 	@apply bg-ghost-white;
+}
+
+.sidebar_accordion :global(.p-accordion-tab.p-accordion-tab-active) {
+	@apply border border-border-light rounded-lg overflow-hidden;
+	box-shadow: 0px 4px 6px 0px #1f29370a;
+}
+
+.sub_sidebar {
+	@apply absolute top-[79px] left-0 w-full h-full bg-white translate-x-full transition-transform duration-300 ease-in z-50 p-4;
+	height: calc(100% - 72px);
+}
+
+.sub_sidebar.open {
+	@apply translate-x-0;
+}
+
+.arrow {
+	@apply ltr:-rotate-90 rtl:rotate-90;
+}
+
+.sub_header {
+	@apply flex items-center gap-2 mb-3;
+}
+
+.back {
+	@apply w-5 h-5 ltr:rotate-90 rtl:-rotate-90;
 }
