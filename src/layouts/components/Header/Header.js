@@ -112,7 +112,7 @@ const Header = () => {
 							<NavLink to="/how-it-works" className={styles.menu_link}>
 								{t("navHowItWorks")}
 							</NavLink>
-							<>
+							<div className="relative">
 								<Button
 									type="button"
 									label={t("company")}
@@ -126,12 +126,13 @@ const Header = () => {
 
 								<OverlayPanel
 									ref={opCompany}
-									className={styles.ddl_menu}
+									className={`${styles.ddl_menu} ${styles.ddl_menu_company}`}
 									onShow={() => setIsShowCompany(true)}
 									onHide={() => {
 										setIsShowCompany(false);
 										setActiveSubMenu(null); // reset submenu
-									}}>
+									}}
+									appendTo="self">
 									<div className={styles.menu_wrapper}>
 										{/* LEFT SIDE (main menu) */}
 										<div className={styles.menu_main}>
@@ -184,7 +185,7 @@ const Header = () => {
 										</div>
 									</div>
 								</OverlayPanel>
-							</>
+							</div>
 							<>
 								<Button
 									type="button"
