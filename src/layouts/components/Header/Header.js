@@ -1,8 +1,8 @@
 import { Button } from "primereact/button";
 import { OverlayPanel } from "primereact/overlaypanel";
-import { Children, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.css";
-import { href, Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { arrowDropDown } from "icons/index";
 import LangBtn from "components/LangBtn/LangBtn";
 import ResponsiveHeader from "./components/ResponsiveHeader/ResponsiveHeader";
@@ -20,46 +20,53 @@ const Header = () => {
 
 	const resourcesLinks = [
 		{ label: t("blogs"), href: "/blogs" },
-		{ label: t("aboutUs"), href: "/about-us" },
-		{ label: t("partners"), href: "/partners" },
-		{ label: t("tutorials"), href: "/tutorials" },
-		{ label: t("faqs"), href: "/faqs" },
-		{ label: t("ourTeam"), href: "/team" },
-		{ label: t("ourVideos"), href: "/videos" },
-		{ label: t("ourGallery"), href: "/gallery" },
-	];
-
-	const isResourcesActive = resourcesLinks.some((link) =>
-		location.pathname.startsWith(link.href),
-	);
-
-	const companyLinks = [
-		{ label: t("blogs"), href: "/blogs" },
+		{ label: t("savingCalculator"), href: "/calculate-your-savings" },
 		{
-			label: t("aboutUs"),
-			href: "/about-us",
+			label: t("learningHub"),
+			href: "/learning-hub",
 			children: [
 				{
-					label: "Item one",
-					href: "",
+					label: t("faqs"),
+					href: "/faqs",
 				},
 				{
-					label: "Item Two",
-					href: "",
+					label: "Academy",
+					href: "/academy",
 				},
 			],
 		},
-		{ label: t("partners"), href: "/partners" },
-		{ label: t("tutorials"), href: "/tutorials" },
-		{ label: t("faqs"), href: "/faqs" },
-		{ label: t("ourTeam"), href: "/team" },
-		{ label: t("ourVideos"), href: "/videos" },
-		{ label: t("ourGallery"), href: "/gallery" },
 	];
 
-	const isCompanyActive = companyLinks.some((link) =>
-		location.pathname.startsWith(link.href),
-	);
+	const isResourcesActive = resourcesLinks.some((link) => {
+		// check parent
+		if (location.pathname.startsWith(link.href)) return true;
+
+		// check children
+		if (link.children) {
+			return link.children.some((child) =>
+				location.pathname.startsWith(child.href),
+			);
+		}
+
+		return false;
+	});
+
+	const companyLinks = [
+		{ label: t("aboutUs"), href: "/about-us" },
+		{ label: t("partners"), href: "/partners" },
+	];
+
+	const isCompanyActive = companyLinks.some((link) => {
+		if (location.pathname.startsWith(link.href)) return true;
+
+		if (link.children) {
+			return link.children.some((child) =>
+				location.pathname.startsWith(child.href),
+			);
+		}
+
+		return false;
+	});
 
 	const handleParentClick = (linkKey) => {
 		if (activeSubMenu === linkKey) {
@@ -84,6 +91,23 @@ const Header = () => {
 		setIsShowSidebar(false);
 		document.body.style.overflowY = "auto";
 	};
+
+	const isParentActive = (link) => {
+		// direct match
+		if (location.pathname.startsWith(link.href)) return true;
+
+		// check children
+		if (link.children) {
+			return link.children.some((child) =>
+				location.pathname.startsWith(child.href),
+			);
+		}
+
+		return false;
+	};
+
+	const isActiveParent = (link) =>
+		activeSubMenu === link.href || isParentActive(link);
 
 	return (
 		<>
@@ -126,7 +150,7 @@ const Header = () => {
 
 								<OverlayPanel
 									ref={opCompany}
-									className={`${styles.ddl_menu} ${styles.ddl_menu_company}`}
+									className={`${styles.ddl_menu} ${styles.ddl_menu_custom}`}
 									onShow={() => setIsShowCompany(true)}
 									onHide={() => {
 										setIsShowCompany(false);
@@ -144,9 +168,7 @@ const Header = () => {
 															type="button"
 															onClick={() => handleParentClick(link.href)}
 															className={`${styles.ddl_menu_link} ${
-																activeSubMenu === link.href
-																	? styles.active_parent
-																	: ""
+																isActiveParent(link) ? styles.active_parent : ""
 															}`}>
 															{link.label}
 															<span className={styles.arrow}>
@@ -186,7 +208,7 @@ const Header = () => {
 									</div>
 								</OverlayPanel>
 							</div>
-							<>
+							<div className="relative">
 								<Button
 									type="button"
 									label={t("resources")}
@@ -200,35 +222,66 @@ const Header = () => {
 
 								<OverlayPanel
 									ref={op}
-									className={styles.ddl_menu}
+									className={`${styles.ddl_menu} ${styles.ddl_menu_custom}`}
 									onShow={() => setIsShow(true)}
-									onHide={() => setIsShow(false)}>
-									{resourcesLinks.map((link) => (
-										<NavLink
-											key={link.href}
-											to={link.href}
-											className={`${styles.ddl_menu_link}`}>
-											{link.label}
-										</NavLink>
-									))}
+									onHide={() => {
+										setIsShow(false);
+										setActiveSubMenu(null); // reset submenu
+									}}
+									appendTo="self">
+									<div className={styles.menu_wrapper}>
+										{/* LEFT SIDE (main menu) */}
+										<div className={styles.menu_main}>
+											{resourcesLinks.map((link) => (
+												<div key={link.href} className={styles.menu_item}>
+													{/* If has children */}
+													{link.children ? (
+														<button
+															type="button"
+															onClick={() => handleParentClick(link.href)}
+															className={`${styles.ddl_menu_link} ${
+																isActiveParent(link) ? styles.active_parent : ""
+															}`}>
+															{link.label}
+															<span className={styles.arrow}>
+																{arrowDropDown}
+															</span>
+														</button>
+													) : (
+														<NavLink
+															key={link.href}
+															to={link.href}
+															className={`${styles.ddl_menu_link}`}>
+															{link.label}
+														</NavLink>
+													)}
+												</div>
+											))}
+										</div>
+
+										{/* RIGHT SIDE (sub menu) */}
+										<div
+											className={`${styles.menu_sub} ${
+												activeSubMenu ? styles.open : ""
+											}`}>
+											<div key={activeSubMenu}>
+												{resourcesLinks
+													.find((l) => l.href === activeSubMenu)
+													?.children?.map((sub, i) => (
+														<NavLink
+															key={i}
+															to={sub.href}
+															className={styles.ddl_menu_link}>
+															{sub.label}
+														</NavLink>
+													))}
+											</div>
+										</div>
+									</div>
 								</OverlayPanel>
-							</>
-							{/* <NavLink to="/contact-us" className={styles.menu_link}>
-								{t("contactUs")}
-							</NavLink> */}
+							</div>
 						</div>
-						{/* <a
-							href="tel:+971585873082"
-							className="hidden lg:flex items-center gap-2">
-							<span className="py-[3px] px-2 bg-green rounded-[4px] flex items-center justify-center text-[10px] xl:text-xs font-medium text-white">
-								{t("callSales")}
-							</span>
-							<span
-								className="text-xs xl:text-[13px] font-semibold text-dark"
-								dir="ltr">
-								+971 58 5873082
-							</span>
-						</a> */}
+
 						<div className="hidden lg:flex items-center gap-3">
 							<LangBtn />
 							<Button

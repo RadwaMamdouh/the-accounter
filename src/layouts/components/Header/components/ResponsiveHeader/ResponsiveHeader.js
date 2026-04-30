@@ -9,37 +9,26 @@ import { useTranslation } from "react-i18next";
 
 const resourcesLinks = [
 	{ label: "blogs", href: "/blogs" },
-	{ label: "aboutUs", href: "/about-us" },
-	{ label: "partners", href: "/partners" },
-	{ label: "tutorials", href: "/tutorials" },
-	{ label: "faqs", href: "/faqs" },
-	{ label: "ourTeam", href: "/team" },
-	{ label: "ourVideos", href: "/videos" },
-	{ label: "ourGallery", href: "/gallery" },
-];
-
-const companyLinks = [
-	{ label: "blogs", href: "/blogs" },
+	{ label: "savingCalculator", href: "/calculate-your-savings" },
 	{
-		label: "aboutUs",
-		href: "/about-us",
+		label: "learningHub",
+		href: "/learning-hub",
 		children: [
 			{
-				label: "Item one",
-				href: "",
+				label: "faqs",
+				href: "/faqs",
 			},
 			{
-				label: "Item Two",
-				href: "",
+				label: "Academy",
+				href: "/academy",
 			},
 		],
 	},
+];
+
+const companyLinks = [
+	{ label: "aboutUs", href: "/about-us" },
 	{ label: "partners", href: "/partners" },
-	{ label: "tutorials", href: "/tutorials" },
-	{ label: "faqs", href: "/faqs" },
-	{ label: "ourTeam", href: "/team" },
-	{ label: "ourVideos", href: "/videos" },
-	{ label: "ourGallery", href: "/gallery" },
 ];
 
 const ResponsiveHeader = ({ isShow, onClose }) => {
@@ -75,7 +64,7 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 		onClose();
 	};
 
-	const handleCompanyClick = (link) => {
+	const handleItemsClick = (link) => {
 		if (link.children) {
 			setSubMenu(link); // open sub sidebar
 		} else {
@@ -142,7 +131,7 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 											<button
 												type="button"
 												className={styles.accordion_menu_link}
-												onClick={() => handleCompanyClick(link)}>
+												onClick={() => handleItemsClick(link)}>
 												{t(link.label)}
 												<span className={styles.arrow}>{arrowDropDown}</span>
 											</button>
@@ -164,33 +153,28 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 							onTabChange={(e) => setActiveIndex(e.index)}>
 							<AccordionTab header={t("resources")}>
 								{resourcesLinks.map((link) => (
-									<NavLink
-										key={link.href}
-										to={link.href}
-										className={styles.accordion_menu_link}
-										onClick={handleNavigate}>
-										{t(link.label)}
-									</NavLink>
+									<>
+										{link.children ? (
+											<button
+												type="button"
+												className={styles.accordion_menu_link}
+												onClick={() => handleItemsClick(link)}>
+												{t(link.label)}
+												<span className={styles.arrow}>{arrowDropDown}</span>
+											</button>
+										) : (
+											<NavLink
+												to={link.href}
+												className={styles.accordion_menu_link}
+												onClick={handleNavigate}>
+												{t(link.label)}
+											</NavLink>
+										)}
+									</>
 								))}
 							</AccordionTab>
 						</Accordion>
-						{/* <NavLink
-							to="/contact-us"
-							className={styles.menu_link}
-							onClick={handleNavigate}>
-							{t("contactUs")}
-						</NavLink> */}
 					</div>
-					{/* <a
-						href="tel:+971585873082"
-						className="py-3 px-4 flex items-center gap-3">
-						<span className="text-sm text-dark" dir="ltr">
-							+971 58 5873082
-						</span>
-						<span className="py-[3px] px-2 bg-green rounded-[26px] flex items-center justify-center text-xs font-medium text-white">
-							{t("callSales")}
-						</span>
-					</a> */}
 					<hr className="border-border-light mt-1 mb-1" />
 					<LangBtn classes="py-2.5 px-4" />
 				</div>
@@ -223,7 +207,7 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 					<p className="flex items-center gap-2.5">
 						<span className="text-sm text-muted">Resources</span>
 						<span className="text-sm font-medium text-muted">/</span>
-						<span className="text-sm font-medium text-dark">Second option</span>
+						<span className="text-sm font-medium text-dark">Learning Hub</span>
 					</p>
 				</div>
 

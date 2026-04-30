@@ -75,6 +75,8 @@ const en = {
 	bookFreeCall: "Book Free Call",
 	navHowItWorks: "How it works",
 	company: "Company",
+	learningHub: "Learning Hub",
+	savingCalculator: "Saving Calculator",
 };
 
 export default en;

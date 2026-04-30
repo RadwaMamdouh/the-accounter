@@ -89,6 +89,6 @@
 	@apply bg-ghost-white;
 }
 
-.ddl_menu_company {
+.ddl_menu_custom {
 	@apply ltr:!-left-8 rtl:-right-8 !top-full;
 }

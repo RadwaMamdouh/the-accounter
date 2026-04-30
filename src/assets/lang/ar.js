@@ -73,6 +73,8 @@ const ar = {
 	bookFreeCall: "احجز استشارة مجانية",
 	navHowItWorks: "كيف تعمل الخدمة",
 	company: "الشركة",
+	learningHub: "مركز التعلم",
+	savingCalculator: "حاسبة التوفير",
 };
 
 export default ar;
