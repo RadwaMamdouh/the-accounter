@@ -31,7 +31,14 @@ const FREE_VALUE_ITEMS = [
 	{ label: "Bank Reconciliation", value: 3600 },
 	{ label: "Mobile Dashboard", value: 900 },
 ];
-const FREE_VALUE_TOTAL = 8330;
+
+// const FREE_VALUE_TOTAL = 8330;
+// Dynamic total (instead of hardcoded 8330)
+const FREE_VALUE_TOTAL = FREE_VALUE_ITEMS.reduce(
+	(sum, item) => sum + item.value,
+	0,
+);
+
 const SAVING_PCT_CAP = 87;
 
 const INCLUDED_SERVICES = [
@@ -62,6 +69,8 @@ function getRecommendedPlan(usePOS, transactions) {
  */
 function getEffectiveMonthlySpend(accountingPay, accountSetup) {
 	const entered = parseFloat(accountingPay);
+
+	// Safer numeric check
 	if (!isNaN(entered) && accountingPay !== "") return entered;
 	return DEFAULT_MONTHLY_SPEND[accountSetup] ?? 0;
 }
@@ -77,9 +86,14 @@ function calculateResults(values) {
 	);
 	const currentAnnual = monthlySpend * 12;
 	const annualSaving = currentAnnual - plan.annual;
-	const isEdgeCase = annualSaving <= 0;
+	// const isEdgeCase = annualSaving <= 0;
+
+	// Explicit spec rule for "Doing it myself"
+	const isEdgeCase =
+		values.accountSetup === "Doing it myself" || annualSaving <= 0;
 
 	let savingPct = 0;
+
 	if (!isEdgeCase && currentAnnual > 0) {
 		savingPct = Math.min(
 			SAVING_PCT_CAP,
@@ -139,7 +153,12 @@ const CalculateSavings = () => {
 	// ── Helpers ──────────────────────────────────────────────────────────────
 
 	/** Format a number as AED with thousand separators */
-	const fmtAED = (n) => Math.round(n).toLocaleString("en-AE") + " AED";
+	// const fmtAED = (n) => Math.round(n).toLocaleString("en-AE") + " AED";
+	const fmtAED = (n) =>
+		new Intl.NumberFormat("en-AE", {
+			minimumFractionDigits: 0,
+			maximumFractionDigits: 0,
+		}).format(n) + " AED";
 
 	return (
 		<Page title="Calculate Your Savings">
@@ -459,8 +478,10 @@ const ResultsPanel = ({ results, fmtAED }) => {
 						🎁 PLUS you get FREE (worth {fmtAED(FREE_VALUE_TOTAL)}/year)
 					</h3>
 					<ul>
-						{FREE_VALUE_ITEMS.map((item) => (
-							<li className="flex items-center justify-between gap-2 py-1">
+						{FREE_VALUE_ITEMS.map((item, index) => (
+							<li
+								key={index}
+								className="flex items-center justify-between gap-2 py-1">
 								<span className="text-sm text-muted">{item.label}</span>
 								<span className="text-sm font-medium text-dark">
 									{fmtAED(item.value)}
