@@ -4,7 +4,7 @@ import WhoWeWorkWith from "./components/WhoWeWorkWith/WhoWeWorkWith";
 import PartnerRegisteration from "./components/PartnerRegisteration/PartnerRegisteration";
 import { useState } from "react";
 import NotPartnerMember from "./components/NotPartnerMember/NotPartnerMember";
-import Services from "./components/Services/Services";
+import Features from "./components/Features/Features";
 
 const Partners = () => {
 	const [clickedPartner, setClickedPartner] = useState("WEWORK");
@@ -22,7 +22,7 @@ const Partners = () => {
 		<Page title="Partners">
 			<PartnersHero />
 			<WhoWeWorkWith onClickPartner={onClickPartner} />
-			<Services />
+			<Features />
 			<PartnerRegisteration
 				clickedPartner={clickedPartner}
 				onClickPartner={onClickPartner}

@@ -88,6 +88,19 @@ const en = {
 	fromPrice: "From {{price}} AED/month",
 	noLongTermContract: "No long-term contracts",
 	cancelAnytime: "Cancel anytime",
+	ourPartners: "OUR PARTNERS",
+	partnersHeroHeadline: "Official partners of UAE's leading organizations.",
+	partnersHeroSubText:
+		"We've partnered with the UAE's most trusted business ecosystems to give their members exclusive access to The Accounter at special rates.",
+	whoWeWorkWith: "WHO WE WORK WITH",
+	partnerRegisteration: "PARTNER REGISTRATION",
+	sendRegistrationRequest: "Send a Registration Request",
+	yourCompanyNameAsPerTradeLicense: "Your company name as per Trade License",
+	partner: "Partner",
+	selectAPartner: "Select a Partner",
+	fileNumber: "File Number",
+	with: "with",
+	send: "Send",
 };
 
 export default en;

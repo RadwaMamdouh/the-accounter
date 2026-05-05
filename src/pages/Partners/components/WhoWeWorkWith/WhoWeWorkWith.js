@@ -1,6 +1,10 @@
+import { useTranslation } from "react-i18next";
 import styles from "./WhoWeWorkWith.module.css";
 
 const WhoWeWorkWith = ({ onClickPartner }) => {
+	const { i18n, t } = useTranslation();
+	const currentLanguage = i18n.language;
+
 	const partners = [
 		{
 			id: 1,
@@ -39,13 +43,16 @@ const WhoWeWorkWith = ({ onClickPartner }) => {
 			<section className={`py-8 lg:py-[72px] ${styles.how_we_work_with}`}>
 				<div className="container">
 					<div className="mb-8 lg:mb-[72px] flex flex-col gap-3">
-						<h6 className="text-sm text-dark">WHO WE WORK WITH</h6>
+						<h6 className="text-sm text-dark">{t("whoWeWorkWith")}</h6>
 						<h2 className="text-xl lg:text-[32px] lg:leading-normal text-dark font-bold">
-							Trusted by the UAE's top business communities.
+							{currentLanguage === "ar"
+								? "أبرز مجتمعات الأعمال تثق بنا"
+								: "Trusted by the UAE's top business communities."}
 						</h2>
 						<p className="text-sm text-dark">
-							Members of our partner organizations get exclusive pricing and
-							priority onboarding. Select your partner below to see your rate.
+							{currentLanguage === "ar"
+								? "المؤسسات التابعة لشركائنا تحصل على أسعار خاصة وأولوية في بدء الخدمة."
+								: "Members of our partner organizations get exclusive pricing and priority onboarding. Select your partner below to see your rate."}
 						</p>
 					</div>
 					<div className="flex flex-wrap justify-center gap-4 lg:gap-6">

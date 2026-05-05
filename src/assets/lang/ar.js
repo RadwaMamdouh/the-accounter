@@ -86,6 +86,19 @@ const ar = {
 	fromPrice: "ابتداءً من {{price}} درهم شهريًا",
 	noLongTermContract: "بدون عقود طويلة",
 	cancelAnytime: " إلغاء في أي وقت",
+	ourPartners: "شركاؤنا",
+	partnersHeroHeadline: "شركاء رسميون مع أبرز المؤسسات في الإمارات",
+	partnersHeroSubText:
+		"نتعاون مع أهم هيئات الأعمال في الإمارات ونقدّم خدمات The Accounter للمؤسسات التابعة لها بأسعار خاصة.",
+	whoWeWorkWith: "مع من نعمل؟",
+	partnerRegisteration: "التسجيل عبر الشركاء",
+	sendRegistrationRequest: "أرسل طلب التسجيل!",
+	yourCompanyNameAsPerTradeLicense: "اسم شركتك كما هو مسجل في رخصة التجارة",
+	partner: "شريك",
+	selectAPartner: "اختر شريكًا",
+	fileNumber: "رقم الملف",
+	with: "مع",
+	send: "أرسل",
 };
 
 export default ar;
