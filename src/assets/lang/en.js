@@ -101,6 +101,17 @@ const en = {
 	fileNumber: "File Number",
 	with: "with",
 	send: "Send",
+	how_it_works: "HOW IT WORKS",
+	uploadYourInvoices: "Upload your invoices.",
+	weHandleEverythingElse: "We handle everything else.",
+	howItWorksSubText:
+		"No office visits. No accounting knowledge needed. Just upload and let our certified experts take care of the rest VAT, Corporate Tax, bookkeeping, and all FTA filings.",
+	theProcess: "THE PROCESS",
+	theProcessHeadline: "Three steps. Zero stress.",
+	theProcessSubText:
+		"From invoice upload to FTA submission everything is handled by our team. You stay focused on your business.",
+	complianceGuaranteed: "100% COMPLIANCE GUARANTEED",
+	everythingYouNeedToKnow: "Everything you need to know.",
 };
 
 export default en;

@@ -57,7 +57,7 @@ const ar = {
 	monthly: "شهري",
 	quarterly: "ربع سنوي",
 	choosePlan: "اختر هذه الخطة",
-	frequentlyAskedQuestions: "الأسئلة الأكثر شيوعاً",
+	frequentlyAskedQuestions: "الأسئلة الشائعة",
 	everythingYouNeedToKnowAboutTheAccounter: "كل ما تحتاج معرفته عن ذا أكونتر",
 	getStartedWithTheAccounterToday: "ابدأ مع ذا أكونتر اليوم!",
 	leaveMessage: "اترك لنا رسالة",
@@ -99,6 +99,17 @@ const ar = {
 	fileNumber: "رقم الملف",
 	with: "مع",
 	send: "أرسل",
+	how_it_works: "كيف يعمل النظام",
+	uploadYourInvoices: "ارفع مستنداتك!",
+	weHandleEverythingElse: "واترك لنا باقي المهمة.",
+	howItWorksSubText:
+		"لا تحتاج لإجراء أي مقابلات، ولا تحتاج لخبرة في المحاسبة. فقط ارفع صور مستنداتك ودع فريق خبرائنا يتولّى باقي المهمة: الضرائب. مسك الدفاتر. تقارير ومتطلبات الهيئة.",
+	theProcess: "الخطوات",
+	theProcessHeadline: "ثلاث خطوات. صفر ضغط.",
+	theProcessSubText:
+		"ركّز على أعمالك ودع فريقنا يتولّى كل شيء من أوّل رفع الفواتير حتى التقديم للهيئة!",
+	complianceGuaranteed: "ضمان الامتثال الكامل",
+	everythingYouNeedToKnow: "كل ما تحتاج معرفته.",
 };
 
 export default ar;

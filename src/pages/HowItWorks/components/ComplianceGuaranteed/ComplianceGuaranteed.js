@@ -1,40 +1,59 @@
+import { useTranslation } from "react-i18next";
+
 const ComplianceGuaranteed = () => {
+	const { i18n, t } = useTranslation();
+	const currentLanguage = i18n.language;
+
 	const features = [
 		{
 			id: 1,
-			title: "Tax Accountant",
-			description:
+			titleEn: "Tax Accountant",
+			titleAr: "محاسب ضريبي",
+			descriptionEn:
 				"Ensures full FTA compliance and accuracy on every transaction before anything is recorded.",
+			descriptionAr: "يتأكّد من الامتثال والدقة لكل عملية قبل التسجيل.",
 		},
 		{
 			id: 2,
-			title: "Accountant",
-			description:
+			titleEn: "Accountant",
+			titleAr: "محاسب قانوني",
+			descriptionEn:
 				"Categorizes and validates all transactions in line with IFRS accounting standards.",
+			descriptionAr:
+				"يصنّف ويوثّق كل المعاملات المالية بما يتوافق مع معايير التقارير المالية.",
 		},
 		{
 			id: 3,
-			title: "Reconciler",
-			description:
+			titleEn: "Reconciler",
+			titleAr: "تسوية بنكية",
+			descriptionEn:
 				"Matches every invoice against your bank records to ensure full consistency.",
+			descriptionAr: "مطابقة كل فاتورة مقابل سجلّات التعاملات البنكية.",
 		},
 		{
 			id: 4,
-			title: "Senior Reviewer",
-			description:
+			titleEn: "Senior Reviewer",
+			titleAr: "مراجل أوّل",
+			descriptionEn:
 				"Cross-checks all entries and flags any discrepancy before reports are finalized.",
+			descriptionAr:
+				"مقارنة جميع البيانات بشكل متكامل لكشف أي اختلاف قبل إصدار التقارير.",
 		},
 		{
 			id: 5,
-			title: "Tax Agent",
-			description:
+			titleEn: "Tax Agent",
+			titleAr: "وكيل ضرائب",
+			descriptionEn:
 				"Reviews all filings in full before FTA submission nothing goes through unverified.",
+			descriptionAr: "مراجعة شاملة لكل الأوراق قبل التقديم.",
 		},
 		{
 			id: 6,
-			title: "Quality Manager",
-			description:
+			titleEn: "Quality Manager",
+			titleAr: "مديرة الجودة",
+			descriptionEn:
 				"Final sign-off. Only after this approval is everything submitted to the FTA on your behalf.",
+			descriptionAr: "التأشيرة النهائية لتأكيد جاهزية كل شيء للتقديم.",
 		},
 	];
 
@@ -43,21 +62,25 @@ const ComplianceGuaranteed = () => {
 			<div className="container">
 				<div className="mb-8 lg:mb-[50px] lg:w-[776px] max-w-full mx-auto flex flex-col gap-3">
 					<h6 className="text-sm text-primary uppercase text-center">
-						100% COMPLIANCE GUARANTEED
+						{t("complianceGuaranteed")}
 					</h6>
 					<h2 className="text-2xl lg:text-[32px] leading-relaxed font-bold text-white text-center">
-						6 experts check your work before anything reaches the FTA.
+						{currentLanguage === "ar"
+							? "6 خبراء معتمدين يراجعون كل شيء قبل التقديم."
+							: "6 experts check your work before anything reaches the FTA."}
 					</h2>
-					<p className="text-sm text-light text-center">
-						Most accounting software runs algorithms. We run people. Every
-						transaction is reviewed by a team of certified professionals not a
-						single one goes through unchecked.
+					<p className="text-sm text-light text-center rtl:leading-relaxed">
+						{currentLanguage === "ar"
+							? "معظم تطبيقات المحاسبة تعتمد على الخوارزميات. نحن نعتمد على فريق حقيقي من خبراء مُعتمدين، يراجع كل عملية بالكامل قبل التقديم للهيئة."
+							: "Most accounting software runs algorithms. We run people. Every transaction is reviewed by a team of certified professionals not a single one goes through unchecked."}
 					</p>
 				</div>
 				<div className="p-6 bg-primary-bg border border-gray-bg rounded-[4px] flex items-center justify-center gap-4 mb-8 lg:mb-[50px]">
 					<h4 className="text-2xl lg:text-4xl font-bold text-primary">100%</h4>
 					<p className="text-lg font-bold text-dark">
-						We pay any fines if we make an error
+						{currentLanguage === "ar"
+							? "نتحمّل قيمة أي غرامة في حالة حدوث أي خطأ!"
+							: "We pay any fines if we make an error"}
 					</p>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -69,9 +92,13 @@ const ComplianceGuaranteed = () => {
 								{String(index + 1).padStart(2, "0")}
 							</h4>
 							<h5 className="text-lg font-bold text-white mb-3">
-								{feature.title}
+								{currentLanguage === "ar" ? feature.titleAr : feature.titleEn}
 							</h5>
-							<p className="text-sm text-light">{feature.description}</p>
+							<p className="text-sm text-light">
+								{currentLanguage === "ar"
+									? feature.descriptionAr
+									: feature.descriptionEn}
+							</p>
 						</div>
 					))}
 				</div>
