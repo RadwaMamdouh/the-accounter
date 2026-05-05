@@ -4,56 +4,91 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const OurServices = () => {
-	const { t } = useTranslation();
+	const { i18n, t } = useTranslation();
+	const currentLanguage = i18n.language;
 
 	const [active, setActive] = useState("vATFiling");
 	const links = [
-		{ id: "vATFiling", label: "VAT Filing" },
-		{ id: "corporateTax", label: "Corporate Tax" },
-		{ id: "bookkeeping", label: "Bookkeeping" },
-		{ id: "additionalServices", label: "Additional Services" },
+		{ id: "vATFiling", labelEn: "VAT Filing", labelAr: "ضريبة القيمة المضافة" },
+		{ id: "corporateTax", labelEn: "Corporate Tax", labelAr: "ضريبة الشركات" },
+		{ id: "bookkeeping", labelEn: "Bookkeeping", labelAr: "مسك الدفاتر" },
+		{
+			id: "additionalServices",
+			labelEn: "Additional Services",
+			labelAr: "خدمات إضافية",
+		},
 	];
 
 	const servicesList = [
 		{
 			id: "vATFiling",
-			title: "VAT Filing",
-			description:
+			titleEn: "VAT Filing",
+			titleAr: "ضريبة القيمة المضافة",
+			descriptionEn:
 				"We handle your full VAT cycle calculations, preparation, and FTA submission every quarter, on time. You don't need to know anything about VAT. We do.",
-			features: [
+			descriptionAr:
+				"نتولّى إدارة دورة ضريبة القيمة المضافة بالكامل: الحساب، والتحضير، والتقديم للهيئة الاتحادية للضرائب، في الوقت المحدد بشكل ربع سنوي. لست بحاجة للغرق في التفاصيل... نحن نهتم بكل شيء.",
+			featuresEn: [
 				"Review all invoices and categorize taxable transactions",
 				"Calculate output and input VAT accurately",
 				"Prepare and submit the VAT return to the FTA on your behalf",
 				"Monitor deadlines so nothing is ever missed",
 				"Handle any amendments or FTA queries",
 			],
+			featuresAr: [
+				"مراجعة جميع الفواتير وتصنيف العمليات الخاضعة للضريبة.",
+				"حساب ضريبة المُخرجات والمُدخلات بدقة.",
+				"إعداد وتقديم الإقرار الضريبي بالنيابة عنك.",
+				"متابعة المواعيد النهائية لضمان عدم التأخير.",
+				"التعامل مع أي تعديلات أو استفسارات من الهيئة.",
+			],
 			imgSrc: "/images/why-us-1.svg",
 		},
 		{
 			id: "corporateTax",
-			title: "Corporate Tax",
-			description:
+			titleEn: "Corporate Tax",
+			titleAr: "ضريبة الشركات",
+			descriptionEn:
 				"We prepare your full corporate tax return and file it with the FTA before the deadline every year. Small business relief applied automatically where eligible.",
-			features: [
+			descriptionAr:
+				"نجهّز الإقرار الضريبي السنوي الكامل للشركة ونقدّمه للهيئة الاتحادية للضرائب قبل الموعد النهائي. الشركات الصغيرة تحصل على الإعفاء الضريبي تلقائيًا بمجرّد استيفاء الشروط.",
+			featuresEn: [
 				"Review your full year of financials",
 				"Prepare the corporate tax return with all required disclosures",
 				"Apply small business relief where eligible (0% under AED 3M revenue)",
 				"Submit to the FTA within the 9-month window",
 				"Maintain records in FTA-compliant format",
 			],
+			featuresAr: [
+				"مراجعة بياناتك المالية السنوية بالكامل.",
+				"إعداد الإقرار الضريبي بجميع متطلباته.",
+				"تطبيق إعفاء الشركات الصغيرة (0% حتى 3 مليون درهم).",
+				"تقديم الإقرار خلال المهلة المحددة (9 أشهر).",
+				"حفظ السجلات وفق اشتراطات الهيئة.",
+			],
 			imgSrc: "/images/why-us-3.svg",
 		},
 		{
 			id: "bookkeeping",
-			title: "Bookkeeping",
-			description:
+			titleEn: "Bookkeeping",
+			titleAr: "مسك الدفاتر",
+			descriptionEn:
 				"Accurate books are the foundation of everything VAT, corporate tax, financial reports, and FTA compliance all depend on it. We take care of it every month so you never have to think about it.",
-			features: [
+			descriptionAr:
+				"الدفاتر الدقيقة هي الأساس الذي يعتمد عليه كل شيء، من الضرائب والتقارير المالية، حتى الامتثال لاشتراطات الهيئة. نتولّى إدارتها لك شهريًا، حتى لا تضطر إلى لانشغال بها.",
+			featuresEn: [
 				"Record and categorize every income and expense transaction",
 				"Maintain your chart of accounts",
 				"Reconcile bank statements against your books monthly",
 				"Prepare monthly financial statements",
 				"Keep records audit-ready at all times",
+			],
+			featuresAr: [
+				"تسجيل وتصنيف جميع الإيرادات والمصروفات.",
+				"إدارة دليل الحسابات الخاص بك.",
+				"تسوية الحسابات البنكية شهريًا.",
+				"إعداد التقارير المالية شهريًا.",
+				"الحفاظ على السجلات جاهزة لأي تدقيق.",
 			],
 			imgSrc: "/images/why-us-4.svg",
 		},
@@ -74,7 +109,7 @@ const OurServices = () => {
 										? "bg-primary text-white border-primary font-medium"
 										: "bg-white text-muted border-border-light hover:bg-ghost-white"
 								}`}>
-							{link.label}
+							{currentLanguage === "ar" ? link.labelAr : link.labelEn}
 						</a>
 					))}
 				</div>
@@ -88,12 +123,21 @@ const OurServices = () => {
 							<div className="flex flex-col gap-8 w-[543px] max-w-full">
 								<div>
 									<h4 className="text-2xl font-bold text-dark mb-3">
-										{service.title}
+										{currentLanguage === "ar"
+											? service.titleAr
+											: service.titleEn}
 									</h4>
-									<p className="text-sm text-muted">{service.description}</p>
+									<p className="text-sm text-muted">
+										{currentLanguage === "ar"
+											? service.descriptionAr
+											: service.descriptionEn}
+									</p>
 								</div>
 								<ul className="flex flex-col gap-3">
-									{service.features.map((feature, index) => (
+									{(currentLanguage === "ar"
+										? service.featuresAr
+										: service.featuresEn
+									).map((feature, index) => (
 										<li
 											key={index}
 											className="flex items-center justify-start gap-2.5">
@@ -111,7 +155,7 @@ const OurServices = () => {
 							</div>
 							<img
 								src={service.imgSrc}
-								alt={service.title}
+								alt={service.titleEn}
 								className="shrink-0 w-[543px] max-w-full rounded-xl object-cover"
 							/>
 						</div>

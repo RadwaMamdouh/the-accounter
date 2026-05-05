@@ -119,10 +119,7 @@ const Plans = ({ gridView, hideBtn, showPlansFeatures }) => {
 								</p>
 							</div>
 							<h3>{plan.price} AED</h3>
-							<DarkButton
-								label={t("choosePlan")}
-								classes="w-fit !px-10 mx-auto"
-							/>
+							<DarkButton label={t("choosePlan")} classes="w-full" />
 						</div>
 					))}
 				</div>

@@ -16,36 +16,65 @@ const Header = () => {
 	const op = useRef(null);
 	const location = useLocation();
 	const { t } = useTranslation();
+	const [activeSubMenu, setActiveSubMenu] = useState(null);
 
 	const resourcesLinks = [
 		{ label: t("blogs"), href: "/blogs" },
-		{ label: t("aboutUs"), href: "/about-us" },
-		{ label: t("partners"), href: "/partners" },
-		{ label: t("tutorials"), href: "/tutorials" },
-		{ label: t("faqs"), href: "/faqs" },
-		{ label: t("ourTeam"), href: "/team" },
-		{ label: t("ourVideos"), href: "/videos" },
-		{ label: t("ourGallery"), href: "/gallery" },
+		{ label: t("savingCalculator"), href: "/calculate-your-savings" },
+		{
+			label: t("learningHub"),
+			href: "/learning-hub",
+			children: [
+				{
+					label: t("faqs"),
+					href: "/faqs",
+				},
+				{
+					label: "Academy",
+					href: "/academy",
+				},
+			],
+		},
 	];
 
-	const isResourcesActive = resourcesLinks.some((link) =>
-		location.pathname.startsWith(link.href),
-	);
+	const isResourcesActive = resourcesLinks.some((link) => {
+		// check parent
+		if (location.pathname.startsWith(link.href)) return true;
+
+		// check children
+		if (link.children) {
+			return link.children.some((child) =>
+				location.pathname.startsWith(child.href),
+			);
+		}
+
+		return false;
+	});
 
 	const companyLinks = [
-		{ label: t("blogs"), href: "/blogs" },
 		{ label: t("aboutUs"), href: "/about-us" },
 		{ label: t("partners"), href: "/partners" },
-		{ label: t("tutorials"), href: "/tutorials" },
-		{ label: t("faqs"), href: "/faqs" },
-		{ label: t("ourTeam"), href: "/team" },
-		{ label: t("ourVideos"), href: "/videos" },
-		{ label: t("ourGallery"), href: "/gallery" },
 	];
 
-	const isCompanyActive = companyLinks.some((link) =>
-		location.pathname.startsWith(link.href),
-	);
+	const isCompanyActive = companyLinks.some((link) => {
+		if (location.pathname.startsWith(link.href)) return true;
+
+		if (link.children) {
+			return link.children.some((child) =>
+				location.pathname.startsWith(child.href),
+			);
+		}
+
+		return false;
+	});
+
+	const handleParentClick = (linkKey) => {
+		if (activeSubMenu === linkKey) {
+			setActiveSubMenu(null); // close if clicked again
+		} else {
+			setActiveSubMenu(linkKey); // open new
+		}
+	};
 
 	useEffect(() => {
 		// close dropdown when route changes
@@ -62,6 +91,23 @@ const Header = () => {
 		setIsShowSidebar(false);
 		document.body.style.overflowY = "auto";
 	};
+
+	const isParentActive = (link) => {
+		// direct match
+		if (location.pathname.startsWith(link.href)) return true;
+
+		// check children
+		if (link.children) {
+			return link.children.some((child) =>
+				location.pathname.startsWith(child.href),
+			);
+		}
+
+		return false;
+	};
+
+	const isActiveParent = (link) =>
+		activeSubMenu === link.href || isParentActive(link);
 
 	return (
 		<>
@@ -90,70 +136,152 @@ const Header = () => {
 							<NavLink to="/how-it-works" className={styles.menu_link}>
 								{t("navHowItWorks")}
 							</NavLink>
-							<>
+							<div className="relative">
 								<Button
 									type="button"
 									label={t("company")}
-									onClick={(e) => opCompany.current?.toggle(e)}
+									onClick={(e) => {
+										op.current?.hide(); // close resources
+										opCompany.current?.toggle(e);
+									}}
 									className={`${styles.ddl_lbl} ${isShowCompany ? styles.show : ""} ${isCompanyActive ? styles.active : ""}`}>
 									{arrowDropDown}
 								</Button>
 
 								<OverlayPanel
 									ref={opCompany}
-									className={styles.ddl_menu}
+									className={`${styles.ddl_menu} ${styles.ddl_menu_custom}`}
 									onShow={() => setIsShowCompany(true)}
-									onHide={() => setIsShowCompany(false)}>
-									{companyLinks.map((link) => (
-										<NavLink
-											key={link.href}
-											to={link.href}
-											className={`${styles.ddl_menu_link}`}>
-											{link.label}
-										</NavLink>
-									))}
+									onHide={() => {
+										setIsShowCompany(false);
+										setActiveSubMenu(null); // reset submenu
+									}}
+									appendTo="self">
+									<div className={styles.menu_wrapper}>
+										{/* LEFT SIDE (main menu) */}
+										<div className={styles.menu_main}>
+											{companyLinks.map((link) => (
+												<div key={link.href} className={styles.menu_item}>
+													{/* If has children */}
+													{link.children ? (
+														<button
+															type="button"
+															onClick={() => handleParentClick(link.href)}
+															className={`${styles.ddl_menu_link} ${
+																isActiveParent(link) ? styles.active_parent : ""
+															}`}>
+															{link.label}
+															<span className={styles.arrow}>
+																{arrowDropDown}
+															</span>
+														</button>
+													) : (
+														<NavLink
+															key={link.href}
+															to={link.href}
+															className={`${styles.ddl_menu_link}`}>
+															{link.label}
+														</NavLink>
+													)}
+												</div>
+											))}
+										</div>
+
+										{/* RIGHT SIDE (sub menu) */}
+										<div
+											className={`${styles.menu_sub} ${
+												activeSubMenu ? styles.open : ""
+											}`}>
+											<div key={activeSubMenu}>
+												{companyLinks
+													.find((l) => l.href === activeSubMenu)
+													?.children?.map((sub, i) => (
+														<NavLink
+															key={i}
+															to={sub.href}
+															className={styles.ddl_menu_link}>
+															{sub.label}
+														</NavLink>
+													))}
+											</div>
+										</div>
+									</div>
 								</OverlayPanel>
-							</>
-							<>
+							</div>
+							<div className="relative">
 								<Button
 									type="button"
 									label={t("resources")}
-									onClick={(e) => op.current?.toggle(e)}
+									onClick={(e) => {
+										opCompany.current?.hide(); // close company
+										op.current?.toggle(e);
+									}}
 									className={`${styles.ddl_lbl} ${isShow ? styles.show : ""} ${isResourcesActive ? styles.active : ""}`}>
 									{arrowDropDown}
 								</Button>
 
 								<OverlayPanel
 									ref={op}
-									className={styles.ddl_menu}
+									className={`${styles.ddl_menu} ${styles.ddl_menu_custom}`}
 									onShow={() => setIsShow(true)}
-									onHide={() => setIsShow(false)}>
-									{resourcesLinks.map((link) => (
-										<NavLink
-											key={link.href}
-											to={link.href}
-											className={`${styles.ddl_menu_link}`}>
-											{link.label}
-										</NavLink>
-									))}
+									onHide={() => {
+										setIsShow(false);
+										setActiveSubMenu(null); // reset submenu
+									}}
+									appendTo="self">
+									<div className={styles.menu_wrapper}>
+										{/* LEFT SIDE (main menu) */}
+										<div className={styles.menu_main}>
+											{resourcesLinks.map((link) => (
+												<div key={link.href} className={styles.menu_item}>
+													{/* If has children */}
+													{link.children ? (
+														<button
+															type="button"
+															onClick={() => handleParentClick(link.href)}
+															className={`${styles.ddl_menu_link} ${
+																isActiveParent(link) ? styles.active_parent : ""
+															}`}>
+															{link.label}
+															<span className={styles.arrow}>
+																{arrowDropDown}
+															</span>
+														</button>
+													) : (
+														<NavLink
+															key={link.href}
+															to={link.href}
+															className={`${styles.ddl_menu_link}`}>
+															{link.label}
+														</NavLink>
+													)}
+												</div>
+											))}
+										</div>
+
+										{/* RIGHT SIDE (sub menu) */}
+										<div
+											className={`${styles.menu_sub} ${
+												activeSubMenu ? styles.open : ""
+											}`}>
+											<div key={activeSubMenu}>
+												{resourcesLinks
+													.find((l) => l.href === activeSubMenu)
+													?.children?.map((sub, i) => (
+														<NavLink
+															key={i}
+															to={sub.href}
+															className={styles.ddl_menu_link}>
+															{sub.label}
+														</NavLink>
+													))}
+											</div>
+										</div>
+									</div>
 								</OverlayPanel>
-							</>
-							{/* <NavLink to="/contact-us" className={styles.menu_link}>
-								{t("contactUs")}
-							</NavLink> */}
+							</div>
 						</div>
-						{/* <a
-							href="tel:+971585873082"
-							className="hidden lg:flex items-center gap-2">
-							<span className="py-[3px] px-2 bg-green rounded-[4px] flex items-center justify-center text-[10px] xl:text-xs font-medium text-white">
-								{t("callSales")}
-							</span>
-							<span
-								className="text-xs xl:text-[13px] font-semibold text-dark"
-								dir="ltr">
-								+971 58 5873082
-							</span>
-						</a> */}
+
 						<div className="hidden lg:flex items-center gap-3">
 							<LangBtn />
 							<Button

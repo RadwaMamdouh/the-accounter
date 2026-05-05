@@ -1,4 +1,4 @@
-import { cancel } from "icons/index";
+import { arrowDropDown, cancel } from "icons/index";
 import styles from "./ResponsiveHeader.module.css";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Accordion, AccordionTab } from "primereact/accordion";
@@ -9,24 +9,26 @@ import { useTranslation } from "react-i18next";
 
 const resourcesLinks = [
 	{ label: "blogs", href: "/blogs" },
-	{ label: "aboutUs", href: "/about-us" },
-	{ label: "partners", href: "/partners" },
-	{ label: "tutorials", href: "/tutorials" },
-	{ label: "faqs", href: "/faqs" },
-	{ label: "ourTeam", href: "/team" },
-	{ label: "ourVideos", href: "/videos" },
-	{ label: "ourGallery", href: "/gallery" },
+	{ label: "savingCalculator", href: "/calculate-your-savings" },
+	{
+		label: "learningHub",
+		href: "/learning-hub",
+		children: [
+			{
+				label: "faqs",
+				href: "/faqs",
+			},
+			{
+				label: "academy",
+				href: "/academy",
+			},
+		],
+	},
 ];
 
 const companyLinks = [
-	{ label: "blogs", href: "/blogs" },
 	{ label: "aboutUs", href: "/about-us" },
 	{ label: "partners", href: "/partners" },
-	{ label: "tutorials", href: "/tutorials" },
-	{ label: "faqs", href: "/faqs" },
-	{ label: "ourTeam", href: "/team" },
-	{ label: "ourVideos", href: "/videos" },
-	{ label: "ourGallery", href: "/gallery" },
 ];
 
 const ResponsiveHeader = ({ isShow, onClose }) => {
@@ -34,6 +36,7 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 	const [activeIndex, setActiveIndex] = useState(null);
 	const [companyActiveIndex, setCompanyActiveIndex] = useState(null);
 	const { t } = useTranslation();
+	const [subMenu, setSubMenu] = useState(null);
 
 	useEffect(() => {
 		const isResourcesRoute = resourcesLinks.some((link) =>
@@ -61,25 +64,36 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 		onClose();
 	};
 
+	const handleItemsClick = (link) => {
+		if (link.children) {
+			setSubMenu(link); // open sub sidebar
+		} else {
+			handleNavigate(); // normal navigation
+		}
+	};
+
 	return (
 		<aside
 			className={`fixed top-0 ltr:left-0 rtl:right-0 flex lg:hidden flex-col h-dvh z-50 bg-white overflow-hidden transition-all duration-500 ${isShow ? "w-full" : "w-0"}`}>
 			{/* Sidebar Header */}
-			<div className="py-5 px-8 flex items-center justify-between">
+			<div className="py-5 px-8 flex items-center justify-between border-b border-border-light">
 				<div className="flex items-center justify-center shrink-0 overflow-hidden">
 					<img src="/images/logo.svg" alt="The Accounter" className="h-8" />
 				</div>
 				<button
 					type="button"
 					className="p-2 bg-white rounded-md flex items-center justify-center relative w-10 h-9.5 *:w-[22px] *:h-[22px]"
-					onClick={onClose}>
+					onClick={() => {
+						setSubMenu(null);
+						onClose();
+					}}>
 					{cancel}
 				</button>
 			</div>
 
 			{/* Sidebar Body */}
-			<div className="grow px-4 pb-4 overflow-y-auto">
-				<div className="mb-[62px]">
+			<div className="grow px-4 pb-4 overflow-y-auto relative">
+				<div className="mb-[62px] py-4">
 					{/* Menu Links */}
 					<div className={styles.menu}>
 						{/* <NavLink
@@ -112,13 +126,24 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 							onTabChange={(e) => setCompanyActiveIndex(e.index)}>
 							<AccordionTab header={t("company")}>
 								{companyLinks.map((link) => (
-									<NavLink
-										key={link.href}
-										to={link.href}
-										className={styles.accordion_menu_link}
-										onClick={handleNavigate}>
-										{t(link.label)}
-									</NavLink>
+									<>
+										{link.children ? (
+											<button
+												type="button"
+												className={styles.accordion_menu_link}
+												onClick={() => handleItemsClick(link)}>
+												{t(link.label)}
+												<span className={styles.arrow}>{arrowDropDown}</span>
+											</button>
+										) : (
+											<NavLink
+												to={link.href}
+												className={styles.accordion_menu_link}
+												onClick={handleNavigate}>
+												{t(link.label)}
+											</NavLink>
+										)}
+									</>
 								))}
 							</AccordionTab>
 						</Accordion>
@@ -128,33 +153,29 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 							onTabChange={(e) => setActiveIndex(e.index)}>
 							<AccordionTab header={t("resources")}>
 								{resourcesLinks.map((link) => (
-									<NavLink
-										key={link.href}
-										to={link.href}
-										className={styles.accordion_menu_link}
-										onClick={handleNavigate}>
-										{t(link.label)}
-									</NavLink>
+									<>
+										{link.children ? (
+											<button
+												type="button"
+												className={styles.accordion_menu_link}
+												onClick={() => handleItemsClick(link)}>
+												{t(link.label)}
+												<span className={styles.arrow}>{arrowDropDown}</span>
+											</button>
+										) : (
+											<NavLink
+												to={link.href}
+												className={styles.accordion_menu_link}
+												onClick={handleNavigate}>
+												{t(link.label)}
+											</NavLink>
+										)}
+									</>
 								))}
 							</AccordionTab>
 						</Accordion>
-						{/* <NavLink
-							to="/contact-us"
-							className={styles.menu_link}
-							onClick={handleNavigate}>
-							{t("contactUs")}
-						</NavLink> */}
 					</div>
-					{/* <a
-						href="tel:+971585873082"
-						className="py-3 px-4 flex items-center gap-3">
-						<span className="text-sm text-dark" dir="ltr">
-							+971 58 5873082
-						</span>
-						<span className="py-[3px] px-2 bg-green rounded-[26px] flex items-center justify-center text-xs font-medium text-white">
-							{t("callSales")}
-						</span>
-					</a> */}
+					<hr className="border-border-light mt-1 mb-1" />
 					<LangBtn classes="py-2.5 px-4" />
 				</div>
 
@@ -170,6 +191,39 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 						className="bg-dark py-2.5 px-3 rounded-md flex items-center justify-center border border-transparent text-xs xl:text-[13px] font-semibold text-white transition duration-300 hover:bg-dark-hover">
 						{t("getStarted")}
 					</Link>
+				</div>
+			</div>
+
+			{/* Sub Sidebar */}
+			<div className={`${styles.sub_sidebar} ${subMenu ? styles.open : ""}`}>
+				{/* Header */}
+				<div className={styles.sub_header}>
+					<Button
+						type="button"
+						onClick={() => setSubMenu(null)}
+						className={styles.back}>
+						{arrowDropDown}
+					</Button>
+					<p className="flex items-center gap-2.5">
+						<span className="text-sm text-muted">{t("resources")}</span>
+						<span className="text-sm font-medium text-muted">/</span>
+						<span className="text-sm font-medium text-dark">
+							{t("learningHub")}
+						</span>
+					</p>
+				</div>
+
+				{/* Items */}
+				<div className={styles.menu}>
+					{subMenu?.children?.map((item, i) => (
+						<NavLink
+							key={i}
+							to={item.href}
+							className={styles.accordion_menu_link}
+							onClick={handleNavigate}>
+							{t(item.label)}
+						</NavLink>
+					))}
 				</div>
 			</div>
 		</aside>

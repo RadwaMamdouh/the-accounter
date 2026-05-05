@@ -9,31 +9,46 @@ const faqs = [
 	{
 		id: 1,
 		question: "Which accounting software is best for small businesses?",
+		questionAr: "Which accounting software is best for small businesses?",
 		answer:
+			"-Ultricies quam porta tempor elit malesuada sollicitudin. Mi orci sit laoreet a et facilisi lectus eu eget. Lacus non augue a orci tristique posuere nisi sed dapibus. Quis in eget quam fusce. Nibh laoreet enim semper gravida fringilla. Nisl ipsum risus faucibus in. Felis tellus maecenas iaculis egestas facilisi turpis feugiat egestas. Sit consectetur viverra vulputate id enim mattis pretium. Tellus orci praesent auctor erat. Convallis dictumst congue pulvinar mattis malesuada vitae arcu. Viverra ut velit amet nisi blandit hendrerit iaculis. At faucibus pretium montes nam urna. Felis varius amet sed interdum.",
+		answerAr:
 			"-Ultricies quam porta tempor elit malesuada sollicitudin. Mi orci sit laoreet a et facilisi lectus eu eget. Lacus non augue a orci tristique posuere nisi sed dapibus. Quis in eget quam fusce. Nibh laoreet enim semper gravida fringilla. Nisl ipsum risus faucibus in. Felis tellus maecenas iaculis egestas facilisi turpis feugiat egestas. Sit consectetur viverra vulputate id enim mattis pretium. Tellus orci praesent auctor erat. Convallis dictumst congue pulvinar mattis malesuada vitae arcu. Viverra ut velit amet nisi blandit hendrerit iaculis. At faucibus pretium montes nam urna. Felis varius amet sed interdum.",
 	},
 	{
 		id: 2,
 		question: "How do I register?",
+		questionAr: "How do I register?",
 		answer:
+			"-Ultricies quam porta tempor elit malesuada sollicitudin. Mi orci sit laoreet a et facilisi lectus eu eget. Lacus non augue a orci tristique posuere nisi sed dapibus. Quis in eget quam fusce. Nibh laoreet enim semper gravida fringilla. Nisl ipsum risus faucibus in. Felis tellus maecenas iaculis egestas facilisi turpis feugiat egestas. Sit consectetur viverra vulputate id enim mattis pretium. Tellus orci praesent auctor erat. Convallis dictumst congue pulvinar mattis malesuada vitae arcu. Viverra ut velit amet nisi blandit hendrerit iaculis. At faucibus pretium montes nam urna. Felis varius amet sed interdum.",
+		answerAr:
 			"-Ultricies quam porta tempor elit malesuada sollicitudin. Mi orci sit laoreet a et facilisi lectus eu eget. Lacus non augue a orci tristique posuere nisi sed dapibus. Quis in eget quam fusce. Nibh laoreet enim semper gravida fringilla. Nisl ipsum risus faucibus in. Felis tellus maecenas iaculis egestas facilisi turpis feugiat egestas. Sit consectetur viverra vulputate id enim mattis pretium. Tellus orci praesent auctor erat. Convallis dictumst congue pulvinar mattis malesuada vitae arcu. Viverra ut velit amet nisi blandit hendrerit iaculis. At faucibus pretium montes nam urna. Felis varius amet sed interdum.",
 	},
 	{
 		id: 3,
 		question: "I have forgotten my password. How do I change it?",
+		questionAr: "I have forgotten my password. How do I change it?",
 		answer:
+			"-Ultricies quam porta tempor elit malesuada sollicitudin. Mi orci sit laoreet a et facilisi lectus eu eget. Lacus non augue a orci tristique posuere nisi sed dapibus. Quis in eget quam fusce. Nibh laoreet enim semper gravida fringilla. Nisl ipsum risus faucibus in. Felis tellus maecenas iaculis egestas facilisi turpis feugiat egestas. Sit consectetur viverra vulputate id enim mattis pretium. Tellus orci praesent auctor erat. Convallis dictumst congue pulvinar mattis malesuada vitae arcu. Viverra ut velit amet nisi blandit hendrerit iaculis. At faucibus pretium montes nam urna. Felis varius amet sed interdum.",
+		answerAr:
 			"-Ultricies quam porta tempor elit malesuada sollicitudin. Mi orci sit laoreet a et facilisi lectus eu eget. Lacus non augue a orci tristique posuere nisi sed dapibus. Quis in eget quam fusce. Nibh laoreet enim semper gravida fringilla. Nisl ipsum risus faucibus in. Felis tellus maecenas iaculis egestas facilisi turpis feugiat egestas. Sit consectetur viverra vulputate id enim mattis pretium. Tellus orci praesent auctor erat. Convallis dictumst congue pulvinar mattis malesuada vitae arcu. Viverra ut velit amet nisi blandit hendrerit iaculis. At faucibus pretium montes nam urna. Felis varius amet sed interdum.",
 	},
 	{
 		id: 4,
 		question: "What are the system Requirements for The Accounter?",
+		questionAr: "What are the system Requirements for The Accounter?",
 		answer:
+			"-Ultricies quam porta tempor elit malesuada sollicitudin. Mi orci sit laoreet a et facilisi lectus eu eget. Lacus non augue a orci tristique posuere nisi sed dapibus. Quis in eget quam fusce. Nibh laoreet enim semper gravida fringilla. Nisl ipsum risus faucibus in. Felis tellus maecenas iaculis egestas facilisi turpis feugiat egestas. Sit consectetur viverra vulputate id enim mattis pretium. Tellus orci praesent auctor erat. Convallis dictumst congue pulvinar mattis malesuada vitae arcu. Viverra ut velit amet nisi blandit hendrerit iaculis. At faucibus pretium montes nam urna. Felis varius amet sed interdum.",
+		answerAr:
 			"-Ultricies quam porta tempor elit malesuada sollicitudin. Mi orci sit laoreet a et facilisi lectus eu eget. Lacus non augue a orci tristique posuere nisi sed dapibus. Quis in eget quam fusce. Nibh laoreet enim semper gravida fringilla. Nisl ipsum risus faucibus in. Felis tellus maecenas iaculis egestas facilisi turpis feugiat egestas. Sit consectetur viverra vulputate id enim mattis pretium. Tellus orci praesent auctor erat. Convallis dictumst congue pulvinar mattis malesuada vitae arcu. Viverra ut velit amet nisi blandit hendrerit iaculis. At faucibus pretium montes nam urna. Felis varius amet sed interdum.",
 	},
 	{
 		id: 5,
 		question: "Can I access The Accounter on my mobile phone or tablet?",
+		questionAr: "Can I access The Accounter on my mobile phone or tablet?",
 		answer:
+			"-Ultricies quam porta tempor elit malesuada sollicitudin. Mi orci sit laoreet a et facilisi lectus eu eget. Lacus non augue a orci tristique posuere nisi sed dapibus. Quis in eget quam fusce. Nibh laoreet enim semper gravida fringilla. Nisl ipsum risus faucibus in. Felis tellus maecenas iaculis egestas facilisi turpis feugiat egestas. Sit consectetur viverra vulputate id enim mattis pretium. Tellus orci praesent auctor erat. Convallis dictumst congue pulvinar mattis malesuada vitae arcu. Viverra ut velit amet nisi blandit hendrerit iaculis. At faucibus pretium montes nam urna. Felis varius amet sed interdum.",
+		answerAr:
 			"-Ultricies quam porta tempor elit malesuada sollicitudin. Mi orci sit laoreet a et facilisi lectus eu eget. Lacus non augue a orci tristique posuere nisi sed dapibus. Quis in eget quam fusce. Nibh laoreet enim semper gravida fringilla. Nisl ipsum risus faucibus in. Felis tellus maecenas iaculis egestas facilisi turpis feugiat egestas. Sit consectetur viverra vulputate id enim mattis pretium. Tellus orci praesent auctor erat. Convallis dictumst congue pulvinar mattis malesuada vitae arcu. Viverra ut velit amet nisi blandit hendrerit iaculis. At faucibus pretium montes nam urna. Felis varius amet sed interdum.",
 	},
 ];

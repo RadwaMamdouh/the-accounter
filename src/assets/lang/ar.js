@@ -1,6 +1,6 @@
 const ar = {
 	home: "الرئيسية",
-	services: "خدمات",
+	services: "الخدمات",
 	pricing: "الخطط والأسعار",
 	resources: "الموارد",
 	contactUs: "اتصل بنا",
@@ -57,7 +57,7 @@ const ar = {
 	monthly: "شهري",
 	quarterly: "ربع سنوي",
 	choosePlan: "اختر هذه الخطة",
-	frequentlyAskedQuestions: "الأسئلة الأكثر شيوعاً",
+	frequentlyAskedQuestions: "الأسئلة الشائعة",
 	everythingYouNeedToKnowAboutTheAccounter: "كل ما تحتاج معرفته عن ذا أكونتر",
 	getStartedWithTheAccounterToday: "ابدأ مع ذا أكونتر اليوم!",
 	leaveMessage: "اترك لنا رسالة",
@@ -73,6 +73,44 @@ const ar = {
 	bookFreeCall: "احجز استشارة مجانية",
 	navHowItWorks: "كيف تعمل الخدمة",
 	company: "الشركة",
+	learningHub: "مركز التعلم",
+	savingCalculator: "حاسبة التوفير",
+	ourServices: "خدماتنا",
+	servicesHeroTitle: "إدارة كل حساباتك... من الألف للياء!",
+	servicesHeroSubTitle:
+		"بنفس الاشتراك تحصل على جميع خدمات الضرائب، ومسك الدفاتر المحاسبية بالكامل، وعبر فريق من الخبراء المعتمدين. ارفع صور الفواتير… ودعنا ندير الباقي.",
+	additionalServices: "خدمات إضافية",
+	additionalServicesHeadline: "أكثر مما تتوقع… وضمن اشتراكك.",
+	additionalServicesSubText:
+		"معظم هذه الخدمات مشمولة في اشتراكك الشهري بدون رسوم إضافية، وبدون مفاجآت.",
+	fromPrice: "ابتداءً من {{price}} درهم شهريًا",
+	noLongTermContract: "بدون عقود طويلة",
+	cancelAnytime: " إلغاء في أي وقت",
+	ourPartners: "شركاؤنا",
+	partnersHeroHeadline: "شركاء رسميون مع أبرز المؤسسات في الإمارات",
+	partnersHeroSubText:
+		"نتعاون مع أهم هيئات الأعمال في الإمارات ونقدّم خدمات The Accounter للمؤسسات التابعة لها بأسعار خاصة.",
+	whoWeWorkWith: "مع من نعمل؟",
+	partnerRegisteration: "التسجيل عبر الشركاء",
+	sendRegistrationRequest: "أرسل طلب التسجيل!",
+	yourCompanyNameAsPerTradeLicense: "اسم شركتك كما هو مسجل في رخصة التجارة",
+	partner: "شريك",
+	selectAPartner: "اختر شريكًا",
+	fileNumber: "رقم الملف",
+	with: "مع",
+	send: "أرسل",
+	how_it_works: "كيف يعمل النظام",
+	uploadYourInvoices: "ارفع مستنداتك!",
+	weHandleEverythingElse: "واترك لنا باقي المهمة.",
+	howItWorksSubText:
+		"لا تحتاج لإجراء أي مقابلات، ولا تحتاج لخبرة في المحاسبة. فقط ارفع صور مستنداتك ودع فريق خبرائنا يتولّى باقي المهمة: الضرائب. مسك الدفاتر. تقارير ومتطلبات الهيئة.",
+	theProcess: "الخطوات",
+	theProcessHeadline: "ثلاث خطوات. صفر ضغط.",
+	theProcessSubText:
+		"ركّز على أعمالك ودع فريقنا يتولّى كل شيء من أوّل رفع الفواتير حتى التقديم للهيئة!",
+	complianceGuaranteed: "ضمان الامتثال الكامل",
+	everythingYouNeedToKnow: "كل ما تحتاج معرفته.",
+	academy: "أكاديمية",
 };
 
 export default ar;

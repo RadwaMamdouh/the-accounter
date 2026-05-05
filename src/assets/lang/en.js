@@ -75,6 +75,44 @@ const en = {
 	bookFreeCall: "Book Free Call",
 	navHowItWorks: "How it works",
 	company: "Company",
+	learningHub: "Learning Hub",
+	savingCalculator: "Saving Calculator",
+	ourServices: "OUR SERVICES",
+	servicesHeroTitle: "Everything handled, A to Z.",
+	servicesHeroSubTitle:
+		"One subscription. Your VAT, Corporate Tax, and bookkeeping fully manage by certified experts. You upload invoices. We handle the rest.",
+	additionalServices: "ADDITIONAL SERVICES",
+	additionalServicesHeadline: "Easy-to-Use Accounting Features",
+	additionalServicesSubText:
+		"We do your Accounting, So you do better Business.",
+	fromPrice: "From {{price}} AED/month",
+	noLongTermContract: "No long-term contracts",
+	cancelAnytime: "Cancel anytime",
+	ourPartners: "OUR PARTNERS",
+	partnersHeroHeadline: "Official partners of UAE's leading organizations.",
+	partnersHeroSubText:
+		"We've partnered with the UAE's most trusted business ecosystems to give their members exclusive access to The Accounter at special rates.",
+	whoWeWorkWith: "WHO WE WORK WITH",
+	partnerRegisteration: "PARTNER REGISTRATION",
+	sendRegistrationRequest: "Send a Registration Request",
+	yourCompanyNameAsPerTradeLicense: "Your company name as per Trade License",
+	partner: "Partner",
+	selectAPartner: "Select a Partner",
+	fileNumber: "File Number",
+	with: "with",
+	send: "Send",
+	how_it_works: "HOW IT WORKS",
+	uploadYourInvoices: "Upload your invoices.",
+	weHandleEverythingElse: "We handle everything else.",
+	howItWorksSubText:
+		"No office visits. No accounting knowledge needed. Just upload and let our certified experts take care of the rest VAT, Corporate Tax, bookkeeping, and all FTA filings.",
+	theProcess: "THE PROCESS",
+	theProcessHeadline: "Three steps. Zero stress.",
+	theProcessSubText:
+		"From invoice upload to FTA submission everything is handled by our team. You stay focused on your business.",
+	complianceGuaranteed: "100% COMPLIANCE GUARANTEED",
+	everythingYouNeedToKnow: "Everything you need to know.",
+	academy: "Academy",
 };
 
 export default en;

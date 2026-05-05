@@ -4,8 +4,12 @@ import { Dropdown } from "primereact/dropdown";
 import { InputText } from "primereact/inputtext";
 // import { InputTextarea } from "primereact/inputtextarea";
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 const RegistrationRequest = ({ clickedPartner, onClickPartner }) => {
+	const { i18n, t } = useTranslation();
+	const currentLanguage = i18n.language;
+
 	const partners = [
 		{ name: "Khalifa Fund", value: "Khalifa Fund" },
 		{ name: "DIFC", value: "DIFC" },
@@ -43,11 +47,12 @@ const RegistrationRequest = ({ clickedPartner, onClickPartner }) => {
 		<div className="p-4 lg:p-8 bg-white border border-border-light rounded-lg lg:-mt-28 w-full">
 			<div className="mb-6">
 				<h4 className="text-xs lg:text-base font-bold text-dark mb-1">
-					Send a Registration Request
+					{t("sendRegistrationRequest")}
 				</h4>
 				<p className="text-xs sm:text-sm text-muted">
-					The Accounter offers special package prices for our partners members!
-					If you are a partner member, fill the below fields
+					{currentLanguage === "ar"
+						? "يقدم موقع The Accounter أسعار باقات خاصة لأعضائنا الشركاء! إذا كنت عضوًا شريكًا، يُرجى ملء الحقول أدناه."
+						: "The Accounter offers special package prices for our partners members! If you are a partner member, fill the below fields"}
 				</p>
 			</div>
 			<form
@@ -55,30 +60,30 @@ const RegistrationRequest = ({ clickedPartner, onClickPartner }) => {
 				onSubmit={formik.handleSubmit}
 				className="grid grid-cols-1 gap-5">
 				<div className="input_holder">
-					<h6 className="required">Name</h6>
+					<h6 className="required">{t("name")}</h6>
 					<InputText
 						type="text"
 						value={formik.values.name}
 						onChange={formik.handleChange}
-						placeholder="Your name"
+						placeholder={t("yourName")}
 						name="name"
 					/>
 				</div>
 				<div className="input_holder">
-					<h6 className="required">Company Name</h6>
+					<h6 className="required">{t("companyName")}</h6>
 					<InputText
 						type="text"
 						value={formik.values.companyName}
 						onChange={formik.handleChange}
-						placeholder="Company Name"
+						placeholder={t("companyName")}
 						name="companyName"
 					/>
 					<small className="text-xs text-muted">
-						Your company name as per Trade License
+						{t("yourCompanyNameAsPerTradeLicense")}
 					</small>
 				</div>
 				<div className="input_holder">
-					<h6 className="required">Partner</h6>
+					<h6 className="required">{t("partner")}</h6>
 					<Dropdown
 						value={formik.values.partner}
 						onChange={(e) => {
@@ -87,34 +92,36 @@ const RegistrationRequest = ({ clickedPartner, onClickPartner }) => {
 						}}
 						options={partners}
 						optionLabel="name"
-						placeholder="Select a Partner"
+						placeholder={t("selectAPartner")}
 						className="w-full"
 						panelClassName="dropdown_menu"
 						name="partners"
 					/>
 				</div>
 				<div className="input_holder">
-					<h6 className="required">File Number (with {clickedPartner})</h6>
+					<h6 className="required">
+						{t("fileNumber")} ({t("with")} {clickedPartner})
+					</h6>
 					<InputText
 						type="text"
 						value={formik.values.fileNumber}
 						onChange={formik.handleChange}
-						placeholder="File number"
+						placeholder={t("fileNumber")}
 						name="fileNumber"
 					/>
 				</div>
 				<div className="input_holder">
-					<h6 className="required">Email</h6>
+					<h6 className="required">{t("email")}</h6>
 					<InputText
 						type="email"
 						value={formik.values.email}
 						onChange={formik.handleChange}
-						placeholder="Your email"
+						placeholder={t("yourEmail")}
 						name="email"
 					/>
 				</div>
 				<div className="input_holder">
-					<h6 className="required">Phone Number</h6>
+					<h6 className="required">{t("phoneNumber")}</h6>
 					<InputText
 						type="text"
 						value={formik.values.phone}
@@ -136,7 +143,7 @@ const RegistrationRequest = ({ clickedPartner, onClickPartner }) => {
 				<div className="flex items-center justify-start">
 					<DarkButton
 						isBtn
-						label="Send"
+						label={t("send")}
 						classes="w-fit"
 						onClick={() => formRef.current?.requestSubmit()}
 					/>
