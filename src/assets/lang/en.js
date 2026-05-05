@@ -77,6 +77,17 @@ const en = {
 	company: "Company",
 	learningHub: "Learning Hub",
 	savingCalculator: "Saving Calculator",
+	ourServices: "OUR SERVICES",
+	servicesHeroTitle: "Everything handled, A to Z.",
+	servicesHeroSubTitle:
+		"One subscription. Your VAT, Corporate Tax, and bookkeeping fully manage by certified experts. You upload invoices. We handle the rest.",
+	additionalServices: "ADDITIONAL SERVICES",
+	additionalServicesHeadline: "Easy-to-Use Accounting Features",
+	additionalServicesSubText:
+		"We do your Accounting, So you do better Business.",
+	fromPrice: "From {{price}} AED/month",
+	noLongTermContract: "No long-term contracts",
+	cancelAnytime: "Cancel anytime",
 };
 
 export default en;

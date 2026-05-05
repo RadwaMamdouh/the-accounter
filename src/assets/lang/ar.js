@@ -1,6 +1,6 @@
 const ar = {
 	home: "الرئيسية",
-	services: "خدمات",
+	services: "الخدمات",
 	pricing: "الخطط والأسعار",
 	resources: "الموارد",
 	contactUs: "اتصل بنا",
@@ -75,6 +75,17 @@ const ar = {
 	company: "الشركة",
 	learningHub: "مركز التعلم",
 	savingCalculator: "حاسبة التوفير",
+	ourServices: "خدماتنا",
+	servicesHeroTitle: "إدارة كل حساباتك... من الألف للياء!",
+	servicesHeroSubTitle:
+		"بنفس الاشتراك تحصل على جميع خدمات الضرائب، ومسك الدفاتر المحاسبية بالكامل، وعبر فريق من الخبراء المعتمدين. ارفع صور الفواتير… ودعنا ندير الباقي.",
+	additionalServices: "خدمات إضافية",
+	additionalServicesHeadline: "أكثر مما تتوقع… وضمن اشتراكك.",
+	additionalServicesSubText:
+		"معظم هذه الخدمات مشمولة في اشتراكك الشهري بدون رسوم إضافية، وبدون مفاجآت.",
+	fromPrice: "ابتداءً من {{price}} درهم شهريًا",
+	noLongTermContract: "بدون عقود طويلة",
+	cancelAnytime: " إلغاء في أي وقت",
 };
 
 export default ar;
