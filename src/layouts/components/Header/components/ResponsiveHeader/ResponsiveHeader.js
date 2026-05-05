@@ -19,7 +19,7 @@ const resourcesLinks = [
 				href: "/faqs",
 			},
 			{
-				label: "Academy",
+				label: "academy",
 				href: "/academy",
 			},
 		],
@@ -205,9 +205,11 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 						{arrowDropDown}
 					</Button>
 					<p className="flex items-center gap-2.5">
-						<span className="text-sm text-muted">Resources</span>
+						<span className="text-sm text-muted">{t("resources")}</span>
 						<span className="text-sm font-medium text-muted">/</span>
-						<span className="text-sm font-medium text-dark">Learning Hub</span>
+						<span className="text-sm font-medium text-dark">
+							{t("learningHub")}
+						</span>
 					</p>
 				</div>
 
@@ -219,7 +221,7 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 							to={item.href}
 							className={styles.accordion_menu_link}
 							onClick={handleNavigate}>
-							{item.label}
+							{t(item.label)}
 						</NavLink>
 					))}
 				</div>

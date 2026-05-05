@@ -112,6 +112,7 @@ const en = {
 		"From invoice upload to FTA submission everything is handled by our team. You stay focused on your business.",
 	complianceGuaranteed: "100% COMPLIANCE GUARANTEED",
 	everythingYouNeedToKnow: "Everything you need to know.",
+	academy: "Academy",
 };
 
 export default en;

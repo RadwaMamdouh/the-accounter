@@ -2,7 +2,7 @@ import { flash, money, phone, shield_check } from "icons/index";
 import { useTranslation } from "react-i18next";
 
 const Features = () => {
-	const { i18n, t } = useTranslation();
+	const { i18n } = useTranslation();
 	const currentLanguage = i18n.language;
 
 	const features = [

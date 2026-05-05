@@ -110,6 +110,7 @@ const ar = {
 		"ركّز على أعمالك ودع فريقنا يتولّى كل شيء من أوّل رفع الفواتير حتى التقديم للهيئة!",
 	complianceGuaranteed: "ضمان الامتثال الكامل",
 	everythingYouNeedToKnow: "كل ما تحتاج معرفته.",
+	academy: "أكاديمية",
 };
 
 export default ar;
