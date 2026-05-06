@@ -30,7 +30,7 @@ const Header = () => {
 					href: "/faqs",
 				},
 				{
-					label: "Academy",
+					label: t("academy"),
 					href: "/academy",
 				},
 			],

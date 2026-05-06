@@ -111,6 +111,11 @@ const ar = {
 	complianceGuaranteed: "ضمان الامتثال الكامل",
 	everythingYouNeedToKnow: "كل ما تحتاج معرفته.",
 	academy: "أكاديمية",
+	notPartnerMember: "لست متعاونًا مع أحد الشركاء؟",
+	notPartnerMemberSubText:
+		"يمكنك البدء مباشرة. احجز استشارة مجانية وفريقنا سيوضح لك جميع الخدمات ويجهّز لك كل شئ من البداية.",
+	askQuestion: "اطرح سؤالاً...",
+	aboutTheAccounter: "نبذة عن The Accounter",
 };
 
 export default ar;

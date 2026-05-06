@@ -1,7 +1,10 @@
 import { NavLink, Outlet } from "react-router-dom";
 import styles from "./FaqsTutorialsHead.module.css";
+import { useTranslation } from "react-i18next";
 
 const FaqsTutorialsHead = ({ headTitle, headDesc, children }) => {
+	const { t } = useTranslation();
+
 	return (
 		<>
 			<div className={styles.head}>
@@ -9,10 +12,10 @@ const FaqsTutorialsHead = ({ headTitle, headDesc, children }) => {
 					<div className="flex flex-col gap-4 lg:gap-3">
 						<div className={styles.links_holder}>
 							<NavLink to="/faqs" className={styles.link}>
-								FAQ
+								{t("faqs")}
 							</NavLink>
 							<NavLink to="/tutorials" className={styles.link}>
-								Tutorials
+								{t("tutorials")}
 							</NavLink>
 						</div>
 						<div className="flex flex-col gap-3">

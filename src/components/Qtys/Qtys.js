@@ -12,7 +12,9 @@ const Qtys = ({ faqs }) => {
 				<AccordionTab
 					header={currentLanguage === "ar" ? faq.questionAr : faq.question}
 					key={faq.id}>
-					<p>{currentLanguage === "ar" ? faq.answerAr : faq.answer}</p>
+					<p className="rtl:leading-relaxed">
+						{currentLanguage === "ar" ? faq.answerAr : faq.answer}
+					</p>
 				</AccordionTab>
 			))}
 		</Accordion>
