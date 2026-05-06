@@ -46,7 +46,7 @@ const tutorials = [
 ];
 
 const Tutorials = () => {
-	const { i18n, t } = useTranslation();
+	const { t } = useTranslation();
 
 	const [searchTerm, setSearchTerm] = useState("");
 
