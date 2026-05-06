@@ -113,6 +113,9 @@ const en = {
 	complianceGuaranteed: "100% COMPLIANCE GUARANTEED",
 	everythingYouNeedToKnow: "Everything you need to know.",
 	academy: "Academy",
+	notPartnerMember: "Not a partner member?",
+	notPartnerMemberSubText:
+		"You can still get started with The Accounter. Book a free consultation and our team will walk you through the best plan for your business.",
 };
 
 export default en;
