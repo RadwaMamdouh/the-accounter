@@ -29,7 +29,7 @@
 	:global(.p-accordion-tab)
 	:global(.p-accordion-header)
 	:global(.p-accordion-header-text) {
-	@apply font-bold text-dark max-lg:text-xs;
+	@apply font-bold text-dark max-lg:text-xs rtl:leading-relaxed;
 }
 
 .faqs
