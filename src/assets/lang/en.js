@@ -118,6 +118,11 @@ const en = {
 		"You can still get started with The Accounter. Book a free consultation and our team will walk you through the best plan for your business.",
 	askQuestion: "Ask a question...",
 	aboutTheAccounter: "About The Accounter",
+	pageCannotBeFound: "Page cannot be found",
+	letsGetBackToBusiness: "Let’s get back to business",
+	goToHome: "Go to Home",
+	contactAnExpert: "Contact an Expert",
+	cancel: "Cancel",
 };
 
 export default en;

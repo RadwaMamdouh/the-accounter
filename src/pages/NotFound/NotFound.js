@@ -2,8 +2,11 @@ import Page from "components/Page/Page";
 import WhiteButton from "components/WhiteButton/WhiteButton";
 import Footer from "layouts/components/Footer/Footer";
 import Header from "layouts/components/Header/Header";
+import { useTranslation } from "react-i18next";
 
 const NotFound = () => {
+	const { t } = useTranslation();
+
 	return (
 		<Page title="Not Found">
 			<div className="min-h-dvh flex flex-col">
@@ -18,20 +21,20 @@ const NotFound = () => {
 							/>
 							<div className="flex flex-col gap-3">
 								<h1 className="text-2xl font-bold text-dark text-center">
-									Page cannot be found
+									{t("pageCannotBeFound")}
 								</h1>
 								<p className="text-sm text-dark text-center">
-									Let’s get back to business
+									{t("letsGetBackToBusiness")}
 								</p>
 							</div>
 							<div className="flex items-center justify-center gap-3">
 								<WhiteButton
 									to="/"
-									label="Go to Home"
+									label={t("goToHome")}
 									classes="!shadow-none !border-dark"
 								/>
 								<WhiteButton
-									label="Contact an Expert"
+									label={t("contactAnExpert")}
 									classes="!shadow-none !border-dark"
 								/>
 							</div>

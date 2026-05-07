@@ -116,6 +116,11 @@ const ar = {
 		"يمكنك البدء مباشرة. احجز استشارة مجانية وفريقنا سيوضح لك جميع الخدمات ويجهّز لك كل شئ من البداية.",
 	askQuestion: "اطرح سؤالاً...",
 	aboutTheAccounter: "نبذة عن The Accounter",
+	pageCannotBeFound: "الصفحة غير موجودة",
+	letsGetBackToBusiness: "لنعد إلى العمل",
+	goToHome: "انتقل إلى الصفحة الرئيسية",
+	contactAnExpert: "تواصل مع خبير",
+	cancel: "إلغاء",
 };
 
 export default ar;

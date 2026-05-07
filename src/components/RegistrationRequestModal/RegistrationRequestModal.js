@@ -6,12 +6,16 @@ import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
 import { useEffect, useRef } from "react";
 import { Dropdown } from "primereact/dropdown";
+import { useTranslation } from "react-i18next";
 
 const RegistrationRequestModal = ({
 	visible = true,
 	onHide,
 	clickedPartner,
 }) => {
+	const { i18n, t } = useTranslation();
+	const currentLanguage = i18n.language;
+
 	const partners = [
 		{ name: "Khalifa Fund", value: "Khalifa Fund" },
 		{ name: "DIFC", value: "DIFC" },
@@ -54,21 +58,22 @@ const RegistrationRequestModal = ({
 	const headerElement = (
 		<div className="px-8">
 			<h4 className="max-sm:text-xs font-bold text-dark mb-1">
-				Send a Registration Request
+				{t("sendRegistrationRequest")}
 			</h4>
 			<p className="text-xs sm:text-sm text-muted">
-				The Accounter offers special package prices for our partners members !
-				If you are a our partners member fill the below fields👇
+				{currentLanguage === "ar"
+					? "يقدم موقع The Accounter أسعار باقات خاصة لأعضائنا الشركاء! إذا كنت عضوًا شريكًا، يُرجى ملء الحقول أدناه."
+					: "The Accounter offers special package prices for our partners members ! If you are a our partners member fill the below fields👇"}
 			</p>
 		</div>
 	);
 
 	const footerContent = (
 		<div className="flex items-center justify-end gap-[10px] px-8">
-			<WhiteButton isBtn label="Cancel" classes="w-fit" onClick={onHide} />
+			<WhiteButton isBtn label={t("cancel")} classes="w-fit" onClick={onHide} />
 			<DarkButton
 				isBtn
-				label="Send"
+				label={t("send")}
 				classes="w-fit"
 				onClick={() => formRef.current?.requestSubmit()}
 			/>
@@ -95,77 +100,79 @@ const RegistrationRequestModal = ({
 				onSubmit={formik.handleSubmit}
 				className="py-4 sm:py-6 px-6 sm:px-8 grid grid-cols-1 gap-5">
 				<div className="input_holder">
-					<h6 className="required">Name</h6>
+					<h6 className="required">{t("name")}</h6>
 					<InputText
 						type="text"
 						value={formik.values.name}
 						onChange={formik.handleChange}
-						placeholder="Your name"
+						placeholder={t("yourName")}
 						name="name"
 					/>
 				</div>
 				<div className="input_holder">
-					<h6 className="required">Company Name</h6>
+					<h6 className="required">{t("companyName")}</h6>
 					<InputText
 						type="text"
 						value={formik.values.companyName}
 						onChange={formik.handleChange}
-						placeholder="Company Name"
+						placeholder={t("companyName")}
 						name="companyName"
 					/>
 					<small className="text-xs text-muted">
-						Your company name as per Trade License
+						{t("yourCompanyNameAsPerTradeLicense")}
 					</small>
 				</div>
 				<div className="input_holder">
-					<h6 className="required">Partner</h6>
+					<h6 className="required">{t("partner")}</h6>
 					<Dropdown
 						value={formik.values.partner}
 						onChange={(e) => formik.setFieldValue("partner", e.value)}
 						options={partners}
 						optionLabel="name"
-						placeholder="Select a Partner"
+						placeholder={t("selectAPartner")}
 						className="w-full"
 						panelClassName="dropdown_menu"
 						name="partners"
 					/>
 				</div>
 				<div className="input_holder">
-					<h6 className="required">File Number (with {clickedPartner})</h6>
+					<h6 className="required">
+						{t("fileNumber")} ({t("with")} {clickedPartner})
+					</h6>
 					<InputText
 						type="text"
 						value={formik.values.fileNumber}
 						onChange={formik.handleChange}
-						placeholder="File number"
+						placeholder={t("fileNumber")}
 						name="fileNumber"
 					/>
 				</div>
 				<div className="input_holder">
-					<h6 className="required">Email</h6>
+					<h6 className="required">{t("email")}</h6>
 					<InputText
 						type="email"
 						value={formik.values.email}
 						onChange={formik.handleChange}
-						placeholder="Your email"
+						placeholder={t("yourEmail")}
 						name="email"
 					/>
 				</div>
 				<div className="input_holder">
-					<h6 className="required">Phone Number</h6>
+					<h6 className="required">{t("phoneNumber")}</h6>
 					<InputText
 						type="text"
 						value={formik.values.phone}
 						onChange={formik.handleChange}
-						placeholder="Your phone number"
+						placeholder={t("yourPhoneNumber")}
 						name="phone"
 					/>
 				</div>
 				<div className="input_holder">
-					<h6>Message</h6>
+					<h6>{t("message")}</h6>
 					<InputTextarea
 						value={formik.values.message}
 						onChange={formik.handleChange}
-						placeholder="Enter a message"
+						placeholder={t("enterMessage")}
 						name="message"
 					/>
 				</div>
