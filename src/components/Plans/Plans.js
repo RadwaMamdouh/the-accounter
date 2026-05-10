@@ -45,31 +45,39 @@ const Plans = ({ gridView, hideBtn, showPlansFeatures }) => {
 	const plansFeatures = [
 		{
 			id: 1,
-			title: "Complete Bookkeeping",
+			titleEn: "Complete Bookkeeping",
+			titleAr: "مسك دفاتر متكامل",
 		},
 		{
 			id: 2,
-			title: "Customized Invoicing",
+			titleEn: "Customized Invoicing",
+			titleAr: "نظام فوترة مخصص",
 		},
 		{
 			id: 3,
-			title: "Daily Sales Report",
+			titleEn: "Daily Sales Report",
+			titleAr: "تقارير المبيعات اليومية",
 		},
 		{
 			id: 4,
-			title: "Complete VAT Services from registration to VAT filing",
+			titleEn: "Complete VAT Services from registration to VAT filing",
+			titleAr:
+				"خدمات ضريبة القيمة المضافة بالكامل، من التسجيل حتى تقديم الإقرار",
 		},
 		{
 			id: 5,
-			title: "Financial Statements",
+			titleEn: "Financial Statements",
+			titleAr: "القوائم والتقارير المالية",
 		},
 		{
 			id: 6,
-			title: "Bank Reconciliation",
+			titleEn: "Bank Reconciliation",
+			titleAr: "التسويات البنكية",
 		},
 		{
 			id: 7,
-			title: "Payables/ Receivables Reports",
+			titleEn: "Payables/ Receivables Reports",
+			titleAr: "تقارير الذمم الدائنة والمدينة",
 		},
 	];
 
@@ -144,7 +152,7 @@ const Plans = ({ gridView, hideBtn, showPlansFeatures }) => {
 					<div className="container">
 						<div className="p-8 bg-white border border-border-light rounded-xl shadow-[0px_4px_6px_0px_#1F29370A]">
 							<h4 className="text-lg text-dark font-bold mb-6">
-								All plans include these features
+								{t("allPlansIncludeTheseFeatures")}
 							</h4>
 							<ul className="flex flex-col gap-2">
 								{plansFeatures.map((feature) => (
@@ -154,7 +162,11 @@ const Plans = ({ gridView, hideBtn, showPlansFeatures }) => {
 										<span className="shrink-0 w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center *:w-5 *:h-5">
 											{check}
 										</span>
-										<span className="text-sm text-dark">{feature.title}</span>
+										<span className="text-sm text-dark">
+											{currentLanguage === "ar"
+												? feature.titleAr
+												: feature.titleEn}
+										</span>
 									</li>
 								))}
 							</ul>

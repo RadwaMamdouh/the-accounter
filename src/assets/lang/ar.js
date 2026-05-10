@@ -121,6 +121,7 @@ const ar = {
 	goToHome: "انتقل إلى الصفحة الرئيسية",
 	contactAnExpert: "تواصل مع خبير",
 	cancel: "إلغاء",
+	allPlansIncludeTheseFeatures: "جميع الباقات تشمل المزايا التالية:",
 };
 
 export default ar;

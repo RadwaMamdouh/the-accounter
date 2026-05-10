@@ -123,6 +123,7 @@ const en = {
 	goToHome: "Go to Home",
 	contactAnExpert: "Contact an Expert",
 	cancel: "Cancel",
+	allPlansIncludeTheseFeatures: "All plans include these features",
 };
 
 export default en;
