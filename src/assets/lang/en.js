@@ -124,6 +124,8 @@ const en = {
 	contactAnExpert: "Contact an Expert",
 	cancel: "Cancel",
 	allPlansIncludeTheseFeatures: "All plans include these features",
+	savingsCalculator: "SAVINGS CALCULATOR",
+	calculateYourSavings: "Calculate Your Savings",
 };
 
 export default en;

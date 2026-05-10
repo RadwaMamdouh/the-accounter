@@ -8,6 +8,7 @@ import { SelectButton } from "primereact/selectbutton";
 import styles from "./CalculateSavings.module.css";
 import { RadioButton } from "primereact/radiobutton";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 // ─── Calculation constants (from spec) ───────────────────────────────────────
 
@@ -112,6 +113,9 @@ function calculateResults(values) {
 }
 
 const CalculateSavings = () => {
+	const { i18n, t } = useTranslation();
+	const currentLanguage = i18n.language;
+
 	const [showResults, setShowResults] = useState(false);
 	const [results, setResults] = useState(null);
 
@@ -126,10 +130,22 @@ const CalculateSavings = () => {
 	];
 
 	const accountsSetup = [
-		{ name: "Traditional firm", value: "Traditional firm" },
-		{ name: "Freelancer", value: "Freelancer" },
-		{ name: "Doing it myself", value: "Doing it myself" },
-		{ name: "Software only", value: "Software only" },
+		{
+			name: "Traditional firm",
+			nameAr: "مكتب محاسبة تقليدي",
+			value: "Traditional firm",
+		},
+		{ name: "Freelancer", nameAr: "محاسب مستقل", value: "Freelancer" },
+		{
+			name: "Doing it myself",
+			nameAr: "أدير المحاسبة بنفسي",
+			value: "Doing it myself",
+		},
+		{
+			name: "Software only",
+			nameAr: "برنامج محاسبي فقط",
+			value: "Software only",
+		},
 	];
 
 	const formik = useFormik({
@@ -169,16 +185,22 @@ const CalculateSavings = () => {
 						<div className="p-4 lg:p-8 bg-white border border-border-light rounded-lg">
 							<div className="mb-6">
 								<h4 className="text-sm lg:text-base font-bold text-dark mb-[2px] lg:mb-1">
-									Calculate Your Savings
+									{t("calculateYourSavings")}
 								</h4>
-								<p className="text-sm text-muted">Calculate Your Savings</p>
+								<p className="text-sm text-muted">
+									{t("calculateYourSavings")}
+								</p>
 							</div>
 							<form
 								onSubmit={formik.handleSubmit}
 								className="grid grid-cols-1 gap-5">
 								{/* Business Type */}
 								<div className="input_holder">
-									<h6>What’s your Business Type?</h6>
+									<h6>
+										{currentLanguage === "ar"
+											? "ما نوع نشاطك التجاري؟"
+											: "What’s your Business Type?"}
+									</h6>
 									<SelectButton
 										value={formik.values.businessType}
 										onChange={(e) =>
@@ -195,11 +217,15 @@ const CalculateSavings = () => {
 								<div className="input_holder">
 									<div>
 										<h5 className="text-sm font-medium text-dark mb-0.5">
-											Do you use a POS system?
+											{currentLanguage === "ar"
+												? "هل تستخدم نظام نقاط بيع (POS)؟"
+												: "Do you use a POS system?"}
 										</h5>
-										<p className="text-sm text-muted">
-											Monthly Transactions / Documents?
-										</p>
+										{/* <p className="text-sm text-muted">
+											{currentLanguage === "ar"
+												? "كم عدد العمليات أو المستندات الشهرية؟"
+												: "Monthly Transactions / Documents?"}
+										</p> */}
 									</div>
 									<SelectButton
 										value={formik.values.usePOS}
@@ -215,7 +241,9 @@ const CalculateSavings = () => {
 								{formik.values.usePOS !== "Yes" && (
 									<div>
 										<h5 className="text-sm text-dark mb-5">
-											Monthly Transactions / Documents?
+											{currentLanguage === "ar"
+												? "كم عدد العمليات أو المستندات الشهرية؟"
+												: "Monthly Transactions / Documents?"}
 										</h5>
 										<div
 											dir="ltr"
@@ -249,7 +277,11 @@ const CalculateSavings = () => {
 
 								{/* Accounting Setup */}
 								<div className="input_holder">
-									<h6>Current Accounting Setup?</h6>
+									<h6>
+										{currentLanguage === "ar"
+											? "ما نظامك المحاسبي الحالي؟"
+											: "Current Accounting Setup?"}
+									</h6>
 									<div className="flex flex-col gap-1">
 										{accountsSetup.map((option, index) => (
 											<label key={index} className={styles.radio_btn}>
@@ -261,7 +293,11 @@ const CalculateSavings = () => {
 													}
 													checked={formik.values.accountSetup === option.value}
 												/>
-												<p className="text-sm text-dark">{option.name}</p>
+												<p className="text-sm text-dark">
+													{currentLanguage === "ar"
+														? option.nameAr
+														: option.name}
+												</p>
 											</label>
 										))}
 									</div>
@@ -272,7 +308,9 @@ const CalculateSavings = () => {
 								{/* Monthly Spend */}
 								<div className="input_holder">
 									<h6>
-										How much do you currently pay for accounting per month?
+										{currentLanguage === "ar"
+											? "كم تدفع حاليًا مقابل المحاسبة شهريًا؟"
+											: "How much do you currently pay for accounting per month?"}
 									</h6>
 									<div className="relative overflow-hidden rounded-md">
 										<InputText
@@ -299,7 +337,11 @@ const CalculateSavings = () => {
 								<PrimaryButton
 									isBtn
 									type="submit"
-									label="Calculate My Savings"
+									label={
+										currentLanguage === "ar"
+											? "احسب كم وفّرت"
+											: "Calculate My Savings"
+									}
 									classes="w-fit"
 									icon={arrow_right}
 									rotateIcon
@@ -319,11 +361,14 @@ const CalculateSavings = () => {
 									className="w-[162px] mx-auto max-w-full mb-4"
 								/>
 								<h4 className="text-sm lg:text-base font-bold text-dark text-center mb-1">
-									Your savings will appear here
+									{currentLanguage === "ar"
+										? "ستظهر مدخراتك هنا"
+										: "Your savings will appear here"}
 								</h4>
 								<p className="text-xs lg:text-sm text-muted text-center">
-									Fill in the form and click "Calculate My Savings" to see your
-									personalized breakdown.
+									{currentLanguage === "ar"
+										? 'املأ النموذج وانقر على "حساب مدخراتي" للاطلاع على تفاصيل مدخراتك الشخصية.'
+										: 'Fill in the form and click "Calculate My Savings" to see your personalized breakdown.'}
 								</p>
 							</div>
 						)}

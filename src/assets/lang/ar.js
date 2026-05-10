@@ -122,6 +122,8 @@ const ar = {
 	contactAnExpert: "تواصل مع خبير",
 	cancel: "إلغاء",
 	allPlansIncludeTheseFeatures: "جميع الباقات تشمل المزايا التالية:",
+	savingsCalculator: "حاسبة التوفير",
+	calculateYourSavings: "احسب التوفير الآن",
 };
 
 export default ar;
