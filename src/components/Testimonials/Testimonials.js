@@ -22,41 +22,41 @@ const Testimonials = () => {
 			id: 1,
 			rate: 5,
 			comment:
-				"I was spending 15+ hours every month on accounting. Now I spend 30 seconds uploading invoices. The Accounter gave me back my time so I can focus on growing my business. Revenue is already up 20% this year.",
-			name: "Ahmed Al Mansouri",
-			role: "Retail Business Owner",
-			address: "Abu Dhabi",
+				"كنت أقضي أكثر من 15 ساعة شهريًا في أمور المحاسبة، أما الآن فلا أحتاج سوى 30 ثانية لرفع الفواتير. The Accounter أعاد لي وقتي لأركّز على تطوير مشروعي. والإيرادات ارتفعت بالفعل بنسبة 20% هذا العام.",
+			name: "أحمد المنصوري",
+			role: "صاحب متجر تجزئة",
+			address: "أبوظبي",
 			image: "/images/testimonial-1.svg",
 		},
 		{
 			id: 2,
 			rate: 5,
 			comment:
-				"I was spending 15+ hours every month on accounting. Now I spend 30 seconds uploading invoices. The Accounter gave me back my time so I can focus on growing my business. Revenue is already up 20% this year.",
-			name: "Ahmed Al Mansouri",
-			role: "Retail Business Owner",
-			address: "Abu Dhabi",
+				"شركة المحاسبة الخارجية السابقة كانت تتقاضى 1,500 درهم شهريًا، ومع ذلك كنا نلاحقهم للحصول على التقارير. The Accounter يكلّفنا 525 درهم فقط شهريًا، ويشمل كل شيء، والتقارير تصل دائمًا في موعدها. لقد وفّرنا 11,700 درهم خلال هذا العام فقط.",
+			name: "خالد رحمن",
+			role: "شريك إداري في شركة مقاولات",
+			address: "الشارقة",
 			image: "/images/testimonial-1.svg",
 		},
 		{
 			id: 3,
 			rate: 5,
 			comment:
-				"I was spending 15+ hours every month on accounting. Now I spend 30 seconds uploading invoices. The Accounter gave me back my time so I can focus on growing my business. Revenue is already up 20% this year.",
-			name: "Ahmed Al Mansouri",
-			role: "Retail Business Owner",
-			address: "Abu Dhabi",
-			image: "/images/testimonial-1.svg",
+				"كنت أدفع 1,200 درهم شهريًا لمحاسب مستقل مقابل مسك الدفاتر، ومع ذلك كان يرتكب أخطاءً كادت أن تسبّب لي غرامات من الهيئة. The Accounter قدّم لي جودة أفضل مقابل 250 درهم فقط شهريًا. قيمة ممتازة مقابل التكلفة.",
+			name: "فاطمة الفهيم",
+			role: "مالكة مقهى",
+			address: "دبي",
+			image: "",
 		},
 		{
 			id: 4,
 			rate: 5,
 			comment:
-				"I was spending 15+ hours every month on accounting. Now I spend 30 seconds uploading invoices. The Accounter gave me back my time so I can focus on growing my business. Revenue is already up 20% this year.",
-			name: "Ahmed Al Mansouri",
-			role: "Retail Business Owner",
-			address: "Abu Dhabi",
-			image: "/images/testimonial-1.svg",
+				"لوحة التحكم المباشرة غيّرت طريقة إدارتي للمشروع، فقد أصبحت أرى هامش الربح، والتدفقات النقدية، والمصروفات الفورية. ساعدني ذلك على اتخاذ قرارات أفضل، وتقليل التكاليف غير الضرورية بنسبة 22%، وزيادة الربحية. هذا ليس مجرد نظام محاسبة، بل ذكاء أعمال.",
+			name: "بريا ميهتا",
+			role: "مالكة شركة Tech Solutions LLC",
+			address: "عجمان",
+			image: "",
 		},
 	];
 
@@ -110,7 +110,7 @@ const Testimonials = () => {
 						},
 					}}>
 					{testimonials.map((testimonial) => (
-						<SwiperSlide key={testimonial.id}>
+						<SwiperSlide key={testimonial.id} className="!h-auto">
 							<div className={styles.testimonial_card}>
 								<div className={styles.data}>
 									<Rate value={testimonial.rate} />
@@ -124,7 +124,13 @@ const Testimonials = () => {
 									</div>
 								</div>
 								<div className={styles.img}>
-									<img src={testimonial.image} alt="Testimonial Pic" />
+									{testimonial.image ? (
+										<img src={testimonial.image} alt="Testimonial Pic" />
+									) : (
+										<div className={styles.avatar_fallback}>
+											{testimonial.name.charAt(0)}
+										</div>
+									)}
 								</div>
 							</div>
 						</SwiperSlide>

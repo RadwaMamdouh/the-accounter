@@ -33,7 +33,7 @@ const ComplianceGuaranteed = () => {
 		{
 			id: 4,
 			titleEn: "Senior Reviewer",
-			titleAr: "مراجل أوّل",
+			titleAr: "مراجع أوّل",
 			descriptionEn:
 				"Cross-checks all entries and flags any discrepancy before reports are finalized.",
 			descriptionAr:
@@ -50,7 +50,7 @@ const ComplianceGuaranteed = () => {
 		{
 			id: 6,
 			titleEn: "Quality Manager",
-			titleAr: "مديرة الجودة",
+			titleAr: "مدير الجودة",
 			descriptionEn:
 				"Final sign-off. Only after this approval is everything submitted to the FTA on your behalf.",
 			descriptionAr: "التأشيرة النهائية لتأكيد جاهزية كل شيء للتقديم.",

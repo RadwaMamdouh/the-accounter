@@ -71,7 +71,7 @@ const ar = {
 	message: "رسالتك",
 	enterMessage: "أدخل رسالة",
 	bookFreeCall: "احجز استشارة مجانية",
-	navHowItWorks: "كيف تعمل الخدمة",
+	navHowItWorks: "الخطوات",
 	company: "الشركة",
 	learningHub: "مركز التعلم",
 	savingCalculator: "حاسبة التوفير",
@@ -105,7 +105,7 @@ const ar = {
 	howItWorksSubText:
 		"لا تحتاج لإجراء أي مقابلات، ولا تحتاج لخبرة في المحاسبة. فقط ارفع صور مستنداتك ودع فريق خبرائنا يتولّى باقي المهمة: الضرائب. مسك الدفاتر. تقارير ومتطلبات الهيئة.",
 	theProcess: "الخطوات",
-	theProcessHeadline: "ثلاث خطوات. صفر ضغط.",
+	theProcessHeadline: "ثلاث خطوات بدون تعقيدات",
 	theProcessSubText:
 		"ركّز على أعمالك ودع فريقنا يتولّى كل شيء من أوّل رفع الفواتير حتى التقديم للهيئة!",
 	complianceGuaranteed: "ضمان الامتثال الكامل",
@@ -124,6 +124,23 @@ const ar = {
 	allPlansIncludeTheseFeatures: "جميع الباقات تشمل المزايا التالية:",
 	savingsCalculator: "حاسبة التوفير",
 	calculateYourSavings: "احسب التوفير الآن",
+	AED: "درهم",
+	month: "شهريًا",
+	starter: "الأساسية",
+	growth: "المتقدمة",
+	scale: "الاحترافية",
+	plan: "الباقة",
+	year: "سنويًا",
+	yourCurrentAnnualCost: "تكلفتك السنوية الحالية",
+	withTheAccounter: "مع The Accounter",
+	VATPreparationFiling: "إعداد وتقديم إقرارات ضريبة القيمة المضافة",
+	corporateTaxPreparationFiling: "إعداد وتقديم إقرارات ضريبة الشركات",
+	monthlyFinancialReports: "تقارير مالية شهرية",
+	layerExpertValidation: "نظام مراجعة وتدقيق من 6 مراحل",
+	worth: "بقيمة",
+	plusYouGetFree: "وتحصل أيضًا مجانًا على خدمات",
+	totalFreeValue: "إجمالي القيمة الإضافية المجانية",
+	getStartedFrom: "اشترك الآن ابتداءً من {{price}} درهم شهريًا",
 };
 
 export default ar;

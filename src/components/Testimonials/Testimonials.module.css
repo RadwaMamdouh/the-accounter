@@ -1,5 +1,5 @@
 .testimonial_card {
-	@apply p-4 lg:p-8 flex items-center justify-between gap-4 lg:gap-6 max-lg:flex-col rounded-md border border-border-light;
+	@apply p-4 lg:p-8 flex items-center justify-between gap-4 lg:gap-6 max-lg:flex-col rounded-md border border-border-light h-full;
 	box-shadow: 0px 4px 6px 0px #1f29370a;
 }
 
@@ -41,4 +41,8 @@
 
 .testimonial_navigations :global(.testi-swiper-button-next) {
 	@apply shrink-0 w-12 h-11 flex items-center justify-center bg-white border border-primary text-primary rounded-lg transition-all duration-300 hover:bg-primary-bg *:rtl:rotate-180;
+}
+
+.avatar_fallback {
+	@apply w-full h-full bg-slate-200 flex items-center justify-center text-2xl font-bold;
 }

@@ -126,6 +126,23 @@ const en = {
 	allPlansIncludeTheseFeatures: "All plans include these features",
 	savingsCalculator: "SAVINGS CALCULATOR",
 	calculateYourSavings: "Calculate Your Savings",
+	AED: "AED",
+	month: "Month",
+	starter: "Starter",
+	growth: "Growth",
+	scale: "Scale",
+	plan: "Plan",
+	year: "year",
+	yourCurrentAnnualCost: "Your current annual cost",
+	withTheAccounter: "With The Accounter",
+	VATPreparationFiling: "VAT Preparation & Filing",
+	corporateTaxPreparationFiling: "Corporate Tax Preparation & Filing",
+	monthlyFinancialReports: "Monthly Financial Reports",
+	layerExpertValidation: "6-Layer Expert Validation",
+	worth: "worth",
+	plusYouGetFree: "PLUS you get FREE",
+	totalFreeValue: "Total Free Value",
+	getStartedFrom: "Get Started From {{price}} AED/month",
 };
 
 export default en;

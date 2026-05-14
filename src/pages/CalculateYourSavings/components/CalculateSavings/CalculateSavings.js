@@ -13,9 +13,9 @@ import { useTranslation } from "react-i18next";
 // ─── Calculation constants (from spec) ───────────────────────────────────────
 
 const PLANS = [
-	{ name: "Starter", monthly: 250, annual: 3000, maxDocs: 50 },
-	{ name: "Growth", monthly: 525, annual: 6300, maxDocs: 150 },
-	{ name: "Scale", monthly: 975, annual: 11700, maxDocs: 300 },
+	{ name: "starter", monthly: 250, annual: 3000, maxDocs: 50 },
+	{ name: "growth", monthly: 525, annual: 6300, maxDocs: 150 },
+	{ name: "scale", monthly: 975, annual: 11700, maxDocs: 300 },
 ];
 
 const DEFAULT_MONTHLY_SPEND = {
@@ -26,11 +26,23 @@ const DEFAULT_MONTHLY_SPEND = {
 };
 
 const FREE_VALUE_ITEMS = [
-	{ label: "Invoicing Software", value: 1380 },
-	{ label: "VAT Filing 4x/year", value: 1200 },
-	{ label: "Corporate Tax Filing", value: 1250 },
-	{ label: "Bank Reconciliation", value: 3600 },
-	{ label: "Mobile Dashboard", value: 900 },
+	{ label: "Invoicing Software", labelAr: "نظام الفوترة", value: 1380 },
+	{
+		label: "VAT Filing 4x/year",
+		labelAr: "تقديم إقرارات ضريبة القيمة المضافة (4 مرات سنويًا)",
+		value: 1200,
+	},
+	{
+		label: "Corporate Tax Filing",
+		labelAr: "إعداد وتقديم إقرار ضريبة الشركات",
+		value: 1250,
+	},
+	{ label: "Bank Reconciliation", labelAr: "التسويات البنكية", value: 3600 },
+	{
+		label: "Mobile Dashboard",
+		labelAr: "لوحة تحكم مالية عبر الجوال",
+		value: 900,
+	},
 ];
 
 // const FREE_VALUE_TOTAL = 8330;
@@ -43,11 +55,11 @@ const FREE_VALUE_TOTAL = FREE_VALUE_ITEMS.reduce(
 const SAVING_PCT_CAP = 87;
 
 const INCLUDED_SERVICES = [
-	"Complete Bookkeeping",
-	"VAT Preparation & Filing",
-	"Corporate Tax Preparation & Filing",
-	"Monthly Financial Reports",
-	"6-Layer Expert Validation",
+	"completeBookkeeping",
+	"VATPreparationFiling",
+	"corporateTaxPreparationFiling",
+	"monthlyFinancialReports",
+	"layerExpertValidation",
 ];
 
 // ─── Helper functions ─────────────────────────────────────────────────────────
@@ -174,7 +186,7 @@ const CalculateSavings = () => {
 		new Intl.NumberFormat("en-AE", {
 			minimumFractionDigits: 0,
 			maximumFractionDigits: 0,
-		}).format(n) + " AED";
+		}).format(n) + ` ${t("AED")}`;
 
 	return (
 		<Page title="Calculate Your Savings">
@@ -329,7 +341,7 @@ const CalculateSavings = () => {
 											name="accountingPay"
 										/>
 										<p className="bg-ghost-white border border-border-light rounded-se-md rounded-ee-md py-[11px] px-2 absolute top-0 ltr:right-0 rtl:left-0 h-full z-[1] text-xs font-bold text-dark flex items-center justify-center">
-											AED
+											{t("AED")}
 										</p>
 									</div>
 								</div>
@@ -383,24 +395,37 @@ const ResultsPanel = ({ results, fmtAED }) => {
 	const { plan, currentAnnual, annualSaving, savingPct, isEdgeCase, isPOS } =
 		results;
 
+	const { t, i18n } = useTranslation();
+	const currentLanguage = i18n.language;
+
 	return (
 		<div className="bg-white border border-border-light rounded-lg overflow-hidden">
 			{/* Hero */}
 			<div className="p-6 bg-dark flex flex-col gap-[7px]">
 				{isEdgeCase ? (
 					<>
-						<h6 className="text-sm text-light">You'll save</h6>
+						<h6 className="text-sm text-light">
+							{currentLanguage === "ar" ? "وفّر ما يصل إلى" : "You'll save"}
+						</h6>
 						<h3 className="text-2xl font-bold text-white">
 							{fmtAED(FREE_VALUE_TOTAL)}
 						</h3>
-						<p className="text-sm text-light">In services you don't have yet</p>
+						<p className="text-sm text-light">
+							{currentLanguage === "ar"
+								? "من الخدمات التي لا تحصل عليها حاليًا"
+								: "In services you don't have yet"}
+						</p>
 						<div className="flex items-center justify-center w-fit py-1 px-2 bg-primary-bg border border-primary-soft rounded-md text-xs font-medium text-dark">
-							in services you currently don't have
+							{currentLanguage === "ar"
+								? "من الخدمات التي لا تحصل عليها حاليًا"
+								: "in services you currently don't have"}
 						</div>
 					</>
 				) : (
 					<>
-						<h6 className="text-sm text-light">You'll save</h6>
+						<h6 className="text-sm text-light">
+							{currentLanguage === "ar" ? "وفّر ما يصل إلى" : "You'll save"}
+						</h6>
 						<h3 className="text-2xl font-bold text-white">
 							{fmtAED(annualSaving)}
 						</h3>
@@ -414,34 +439,40 @@ const ResultsPanel = ({ results, fmtAED }) => {
 			<div className="p-4 lg:p-8 flex flex-col gap-6">
 				{/* Plan pill */}
 				<div className="flex items-center justify-center py-1 px-2 bg-primary-bg border border-primary-soft rounded-md text-xs font-medium text-dark w-fit">
-					✦ {plan.name} Plan {plan.monthly} AED/month
+					✦{" "}
+					{currentLanguage === "ar"
+						? `${t("plan")} ${t(plan.name)}`
+						: `${t(plan.name)} ${t("plan")}`}{" "}
+					{plan.monthly} {t("AED")}/{t("month")}
 				</div>
 
 				{/* POS note (spec §3.1 / §6.2) */}
 				{isPOS && (
 					<p className="text-xs text-muted bg-ghost-white border border-border-light rounded-md p-3">
-						POS transactions can be consolidated — your plan will be based on
-						your consolidated document count, not individual transactions. Our
-						team will confirm during onboarding.
+						{currentLanguage === "ar"
+							? "يمكن تجميع عمليات نقاط البيع (POS) ضمن مستند موحّد بحيث يتم احتساب الباقة بناءً على عدد المستندات المجمّعة، وليس على كل عملية بيع بشكل منفصل، وسيقوم فريقنا بتحديد الإعداد الأنسب لنشاطك خلال مرحلة التهيئة."
+							: "POS transactions can be consolidated — your plan will be based on your consolidated document count, not individual transactions. Our team will confirm during onboarding."}
 					</p>
 				)}
 
 				{/* Edge-case value framing (spec §6.1) */}
 				{isEdgeCase && (
 					<p className="text-sm text-muted">
-						You currently spend{" "}
+						{currentLanguage === "ar"
+							? "أنت تنفق حاليًا"
+							: "You currently spend"}{" "}
 						<span className="font-medium text-dark">
-							{fmtAED(currentAnnual)}/year
+							{fmtAED(currentAnnual)}/{t("year")}
 						</span>{" "}
-						but are missing{" "}
+						{currentLanguage === "ar" ? "لكنك تفقد" : "but are missing"}{" "}
 						<span className="font-medium text-dark">
 							{fmtAED(FREE_VALUE_TOTAL)}
 						</span>{" "}
-						worth of services. With The Accounter, you get everything —
-						bookkeeping, VAT, Corporate Tax, bank reconciliation, invoicing, and
-						more — for just{" "}
+						{currentLanguage === "ar"
+							? 'خدمات بقيمة عالية. مع "The Accounter"، ستحصل على كل شيء - مسك الدفاتر، وضريبة القيمة المضافة، وضريبة الشركات، ومطابقة الحسابات البنكية، وإصدار الفواتير، والمزيد - مقابل مبلغ زهيد.'
+							: "worth of services. With The Accounter, you get everything — bookkeeping, VAT, Corporate Tax, bank reconciliation, invoicing, and more — for just"}{" "}
 						<span className="font-medium text-dark">
-							{fmtAED(plan.annual)}/year
+							{fmtAED(plan.annual)}/{t("year")}
 						</span>
 						.
 					</p>
@@ -451,15 +482,15 @@ const ResultsPanel = ({ results, fmtAED }) => {
 				{/* Cost comparison */}
 				<div className="p-3 border border-border-light rounded-lg">
 					<div className="flex items-center justify-between gap-2 py-1">
-						<h5 className="text-sm text-muted">Your current annual cost</h5>
+						<h5 className="text-sm text-muted">{t("yourCurrentAnnualCost")}</h5>
 						<h4 className="text-sm text-dark line-through">
-							{fmtAED(currentAnnual)}/year
+							{fmtAED(currentAnnual)}/{t("year")}
 						</h4>
 					</div>
 					<div className="flex items-center justify-between gap-2 py-1">
-						<h5 className="text-sm text-muted">With The Accounter</h5>
+						<h5 className="text-sm text-muted">{t("withTheAccounter")}</h5>
 						<h4 className="text-sm text-primary font-bold">
-							{fmtAED(plan.annual)}/year
+							{fmtAED(plan.annual)}/{t("year")}
 						</h4>
 					</div>
 				</div>
@@ -468,7 +499,9 @@ const ResultsPanel = ({ results, fmtAED }) => {
 				{/* Included services */}
 				<div>
 					<h3 className="max-lg:textsm font-bold text-dark mb-6">
-						EVERYTHING INCLUDED IN YOUR PLAN
+						{currentLanguage === "ar"
+							? "باقتك تشمل كل الخدمات"
+							: "EVERYTHING INCLUDED IN YOUR PLAN"}
 					</h3>
 					<ul className="flex flex-col gap-2">
 						{INCLUDED_SERVICES.map((service) => (
@@ -478,41 +511,9 @@ const ResultsPanel = ({ results, fmtAED }) => {
 								<span className="shrink-0 w-6 h-6 rounded-full bg-primary-bg border border-primary-soft text-dark flex items-center justify-center p-0.5 *:w-5 *:h-5">
 									{check}
 								</span>
-								<span className="text-sm text-dark">{service}</span>
+								<span className="text-sm text-dark">{t(service)}</span>
 							</li>
 						))}
-						{/* <li className="flex items-center justify-start gap-[10px] lg:gap-2">
-							<span className="shrink-0 w-6 h-6 rounded-full bg-primary-bg border border-primary-soft text-dark flex items-center justify-center p-0.5 *:w-5 *:h-5">
-								{check}
-							</span>
-							<span className="text-sm text-dark">
-								VAT Preparation & Filing
-							</span>
-						</li>
-						<li className="flex items-center justify-start gap-[10px] lg:gap-2">
-							<span className="shrink-0 w-6 h-6 rounded-full bg-primary-bg border border-primary-soft text-dark flex items-center justify-center p-0.5 *:w-5 *:h-5">
-								{check}
-							</span>
-							<span className="text-sm text-dark">
-								Corporate Tax Preparation & Filing
-							</span>
-						</li>
-						<li className="flex items-center justify-start gap-[10px] lg:gap-2">
-							<span className="shrink-0 w-6 h-6 rounded-full bg-primary-bg border border-primary-soft text-dark flex items-center justify-center p-0.5 *:w-5 *:h-5">
-								{check}
-							</span>
-							<span className="text-sm text-dark">
-								Monthly Financial Reports
-							</span>
-						</li>
-						<li className="flex items-center justify-start gap-[10px] lg:gap-2">
-							<span className="shrink-0 w-6 h-6 rounded-full bg-primary-bg border border-primary-soft text-dark flex items-center justify-center p-0.5 *:w-5 *:h-5">
-								{check}
-							</span>
-							<span className="text-sm text-dark">
-								6-Layer Expert Validation
-							</span>
-						</li> */}
 					</ul>
 				</div>
 
@@ -520,47 +521,34 @@ const ResultsPanel = ({ results, fmtAED }) => {
 				{/* Free value bundle */}
 				<div className="p-3 bg-orange-bg border border-orange-light rounded-lg">
 					<h3 className="text-sm font-bold text-orange-dark mb-4">
-						🎁 PLUS you get FREE (worth {fmtAED(FREE_VALUE_TOTAL)}/year)
+						🎁 {t("plusYouGetFree")} ({t("worth")} {fmtAED(FREE_VALUE_TOTAL)}/
+						{t("year")})
 					</h3>
 					<ul>
 						{FREE_VALUE_ITEMS.map((item, index) => (
 							<li
 								key={index}
 								className="flex items-center justify-between gap-2 py-1">
-								<span className="text-sm text-muted">{item.label}</span>
+								<span className="text-sm text-muted">
+									{currentLanguage === "ar" ? item.labelAr : item.label}
+								</span>
 								<span className="text-sm font-medium text-dark">
 									{fmtAED(item.value)}
 								</span>
 							</li>
 						))}
-						{/* <li className="flex items-center justify-between gap-2 py-1">
-							<span className="text-sm text-muted">VAT Filing 4x/year</span>
-							<span className="text-sm font-medium text-dark">1,200 AED</span>
-						</li>
-						<li className="flex items-center justify-between gap-2 py-1">
-							<span className="text-sm text-muted">Corporate Tax Filing</span>
-							<span className="text-sm font-medium text-dark">1,250 AED</span>
-						</li>
-						<li className="flex items-center justify-between gap-2 py-1">
-							<span className="text-sm text-muted">Bank Reconciliation</span>
-							<span className="text-sm font-medium text-dark">3,600 AED</span>
-						</li>
-						<li className="flex items-center justify-between gap-2 py-1">
-							<span className="text-sm text-muted">Mobile Dashboard</span>
-							<span className="text-sm font-medium text-dark">900 AED</span>
-						</li> */}
 						<hr className="border-orange-soft mt-3 mb-4" />
 						<li className="flex items-center justify-between gap-2 py-1">
-							<span className="text-sm text-muted">Total Free Value</span>
+							<span className="text-sm text-muted">{t("totalFreeValue")}</span>
 							<span className="text-sm font-bold text-dark">
-								{fmtAED(FREE_VALUE_TOTAL)}/year
+								{fmtAED(FREE_VALUE_TOTAL)}/{t("year")}
 							</span>
 						</li>
 					</ul>
 				</div>
 
 				<PrimaryButton
-					label="Get Started From 250 AED/month"
+					label={t("getStartedFrom", { price: 250 })}
 					classes="!leading-6"
 				/>
 			</div>

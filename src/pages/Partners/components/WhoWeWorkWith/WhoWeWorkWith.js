@@ -11,30 +11,39 @@ const WhoWeWorkWith = ({ onClickPartner }) => {
 			img: "/images/khalifa-fund.svg",
 			name: "Khalifa Fund",
 			desc: "Supporting UAE entrepreneurs with funding and business development resources.",
+			descAr:
+				"دعم روّاد الأعمال في الإمارات من خلال حلول التمويل وتطوير الأعمال",
 		},
 		{
 			id: 2,
 			img: "/images/we-work.svg",
 			name: "WEWORK",
 			desc: "Global workspace community connecting entrepreneurs and growing businesses.",
+			descAr:
+				"مجتمع أعمال عالمي يربط بين روّاد الأعمال والشركات الناشئة والنامية",
 		},
 		{
 			id: 3,
 			img: "/images/ruwad.svg",
 			name: "Ruwad",
 			desc: "Dubai International Financial Centre the region's leading financial hub.",
+			descAr: "مركز دبي المالي العالمي، المركز المالي الرائد في المنطقة",
 		},
 		{
 			id: 4,
 			img: "/images/difc.svg",
 			name: "DIFC",
 			desc: "Sharjah Entrepreneurship Foundation supporting the next generation of UAE businesses.",
+			descAr:
+				"مؤسسة الشارقة لريادة الأعمال، الداعمة للجيل القادم من الشركات الإماراتية",
 		},
 		{
 			id: 5,
 			img: "/images/eea.svg",
 			name: "EEA",
 			desc: "A network of UAE’s most ambitious entrepreneurs and business owners.",
+			descAr:
+				"شبكة تضم نخبة من أكثر روّاد الأعمال وأصحاب المشاريع طموحًا في الإمارات",
 		},
 	];
 
@@ -63,7 +72,9 @@ const WhoWeWorkWith = ({ onClickPartner }) => {
 								onClick={() => onClickPartner(partner.name)}>
 								<img src={partner.img} alt={partner.name} />
 								<h3>{partner.name}</h3>
-								<p>{partner.desc}</p>
+								<p>
+									{currentLanguage === "ar" ? partner.descAr : partner.desc}
+								</p>
 							</div>
 						))}
 					</div>

@@ -23,9 +23,9 @@ const WhyChooseUs = () => {
 		{
 			id: 2,
 			badge: "Save up to 87% of accounting & Tax costs",
-			badgeAr: "Save up to 87% of accounting & Tax costs",
+			badgeAr: "وفّر حتى 87٪ من تكاليف المحاسبة والضرائب",
 			title: "Save 15,000+ AED/Year vs. Traditional Solutions",
-			titleAr: "Save 15,000+ AED/Year vs. Traditional Solutions",
+			titleAr: "وفّر أكثر من 15,000 درهم سنويًا مقارنةً بالحلول التقليدية",
 			desc: "Complete bookkeeping, tax filing, invoicing, and bank reconciliation.  All included. One transparent price starting at 250 AED/month.",
 			descAr:
 				"مسك دفاتر كامل، تقديم الإقرارات الضريبية، إصدار الفواتير، ومطابقة الحسابات البنكية. كل شيء مشمول. سعر واحد شفاف يبدأ من 250 درهم شهرياً.",
