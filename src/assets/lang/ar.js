@@ -141,6 +141,8 @@ const ar = {
 	plusYouGetFree: "وتحصل أيضًا مجانًا على خدمات",
 	totalFreeValue: "إجمالي القيمة الإضافية المجانية",
 	getStartedFrom: "اشترك الآن ابتداءً من {{price}} درهم شهريًا",
+	overBusinessesUseTheAccounter:
+		"أكثر من <span>{{count}}</span> شركة تستخدم برنامج المحاسبة",
 };
 
 export default ar;

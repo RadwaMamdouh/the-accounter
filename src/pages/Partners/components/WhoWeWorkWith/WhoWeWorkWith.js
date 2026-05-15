@@ -16,6 +16,13 @@ const WhoWeWorkWith = ({ onClickPartner }) => {
 		},
 		{
 			id: 2,
+			img: "/images/difc.svg",
+			name: "DIFC",
+			desc: "Dubai International Financial Centre the region's leading financial hub.",
+			descAr: "مركز دبي المالي العالمي، المركز المالي الرائد في المنطقة",
+		},
+		{
+			id: 3,
 			img: "/images/we-work.svg",
 			name: "WEWORK",
 			desc: "Global workspace community connecting entrepreneurs and growing businesses.",
@@ -23,16 +30,9 @@ const WhoWeWorkWith = ({ onClickPartner }) => {
 				"مجتمع أعمال عالمي يربط بين روّاد الأعمال والشركات الناشئة والنامية",
 		},
 		{
-			id: 3,
+			id: 4,
 			img: "/images/ruwad.svg",
 			name: "Ruwad",
-			desc: "Dubai International Financial Centre the region's leading financial hub.",
-			descAr: "مركز دبي المالي العالمي، المركز المالي الرائد في المنطقة",
-		},
-		{
-			id: 4,
-			img: "/images/difc.svg",
-			name: "DIFC",
 			desc: "Sharjah Entrepreneurship Foundation supporting the next generation of UAE businesses.",
 			descAr:
 				"مؤسسة الشارقة لريادة الأعمال، الداعمة للجيل القادم من الشركات الإماراتية",

@@ -22,6 +22,7 @@ const Hero = () => {
 					<WhiteButton
 						label={t("calculateMySavings")}
 						classes="!text-white !bg-transparent"
+						to="/calculate-your-savings"
 					/>
 				</div>
 			</div>

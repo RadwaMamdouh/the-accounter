@@ -143,6 +143,8 @@ const en = {
 	plusYouGetFree: "PLUS you get FREE",
 	totalFreeValue: "Total Free Value",
 	getStartedFrom: "Get Started From {{price}} AED/month",
+	overBusinessesUseTheAccounter:
+		"Over <span>{{count}}</span> Businesses Use The Accounter",
 };
 
 export default en;
