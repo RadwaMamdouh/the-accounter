@@ -36,7 +36,7 @@ const Testimonials = () => {
 			name: "خالد رحمن",
 			role: "شريك إداري في شركة مقاولات",
 			address: "الشارقة",
-			image: "/images/testimonial-1.svg",
+			image: "/images/team3.svg",
 		},
 		{
 			id: 3,
@@ -46,7 +46,7 @@ const Testimonials = () => {
 			name: "فاطمة الفهيم",
 			role: "مالكة مقهى",
 			address: "دبي",
-			image: "",
+			image: "/images/team2.svg",
 		},
 		{
 			id: 4,
