@@ -1,7 +1,7 @@
 import { Trans, useTranslation } from "react-i18next";
 
 const OverBusinessesUse = () => {
-	const { t, i18n } = useTranslation();
+	const { i18n } = useTranslation();
 	const currentLanguage = i18n.language;
 
 	return (
