@@ -76,7 +76,9 @@ const AdditionalServices = () => {
 	];
 
 	return (
-		<section className={`py-8 lg:py-[72px] ${styles.additional_services}`}>
+		<section
+			className={`py-8 lg:py-[72px] ${styles.additional_services}`}
+			id="additionalServices">
 			<div className="container">
 				<div className="mb-8 lg:mb-[72px] flex flex-col gap-3">
 					<h6 className="text-sm text-dark uppercase">
