@@ -20,7 +20,6 @@ const Header = () => {
 
 	const resourcesLinks = [
 		{ label: t("blogs"), href: "/blogs" },
-		{ label: t("savingCalculator"), href: "/calculate-your-savings" },
 		{
 			label: t("learningHub"),
 			href: "/learning-hub",

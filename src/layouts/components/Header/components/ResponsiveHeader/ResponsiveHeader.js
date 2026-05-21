@@ -9,7 +9,6 @@ import { useTranslation } from "react-i18next";
 
 const resourcesLinks = [
 	{ label: "blogs", href: "/blogs" },
-	{ label: "savingCalculator", href: "/calculate-your-savings" },
 	{
 		label: "learningHub",
 		href: "/learning-hub",
