@@ -16,6 +16,7 @@ const NotPartnerMember = () => {
 				<WhiteButton
 					label={t("bookFreeConsultation")}
 					classes="w-fit mx-auto !text-primary"
+					to="/#getStartedToday"
 				/>
 			</div>
 		</section>

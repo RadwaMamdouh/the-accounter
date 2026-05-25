@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./WhiteButton.module.css";
+import { Ripple } from "primereact/ripple";
 
 const WhiteButton = ({
 	isBtn,
@@ -16,6 +17,7 @@ const WhiteButton = ({
 			type={type}
 			className={`${styles.white_button} ${classes}`}
 			onClick={onClick}>
+			<Ripple />
 			<span className={styles.button_text}>{label}</span>
 			{icon && (
 				<span
@@ -26,6 +28,7 @@ const WhiteButton = ({
 		</button>
 	) : (
 		<Link to={to} className={`${styles.white_button} ${classes}`}>
+			<Ripple />
 			<span className={styles.button_text}>{label}</span>
 			{icon && (
 				<span

@@ -80,7 +80,9 @@ const Footer = () => {
 									{t("services")}
 								</h5>
 								<div className={styles.footer_links}>
-									<Link to="" className={styles.footer_link}>
+									<Link
+										to="/services#bookkeeping"
+										className={styles.footer_link}>
 										{t("completeBookkeeping")}
 									</Link>
 									<Link to="" className={styles.footer_link}>
@@ -89,7 +91,7 @@ const Footer = () => {
 									<Link to="" className={styles.footer_link}>
 										{t("customInvoicing")}
 									</Link>
-									<Link to="" className={styles.footer_link}>
+									<Link to="/services#vATFiling" className={styles.footer_link}>
 										{t("vatServices")}
 									</Link>
 									<Link to="" className={styles.footer_link}>

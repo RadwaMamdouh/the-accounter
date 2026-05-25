@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./PrimaryButton.module.css";
+import { Ripple } from "primereact/ripple";
 
 const PrimaryButton = ({
 	isBtn,
@@ -17,6 +18,7 @@ const PrimaryButton = ({
 			type={type}
 			className={`${styles.primary_button} ${classes}`}
 			onClick={onClick}>
+			<Ripple />
 			<span className={styles.button_text}>{label}</span>
 			{icon && (
 				<span
@@ -27,6 +29,7 @@ const PrimaryButton = ({
 		</button>
 	) : isAHref ? (
 		<a href={to} className={`${styles.primary_button} ${classes}`}>
+			<Ripple />
 			<span className={styles.button_text}>{label}</span>
 			{icon && (
 				<span
@@ -37,6 +40,7 @@ const PrimaryButton = ({
 		</a>
 	) : (
 		<Link to={to} className={`${styles.primary_button} ${classes}`}>
+			<Ripple />
 			<span className={styles.button_text}>{label}</span>
 			{icon && (
 				<span

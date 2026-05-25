@@ -23,7 +23,6 @@ const ReadyToHandOff = () => {
 						label={t("bookFreeConsultation")}
 						classes="w-fit mx-auto"
 						to="/#getStartedToday"
-						isAHref
 					/>
 					<p className="text-sm text-light text-center mt-6">
 						✓ {t("fromPrice", { price: 250 })} · ✓ {t("cancelAnytime")}

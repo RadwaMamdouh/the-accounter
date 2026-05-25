@@ -1,5 +1,5 @@
 .white_button {
-	@apply py-2.5 px-4 bg-white rounded-lg flex items-center justify-center gap-1 text-dark text-sm font-semibold border border-border-light transition-all duration-300 hover:bg-ghost-white;
+	@apply py-2.5 px-4 bg-white rounded-lg flex items-center justify-center gap-1 text-dark text-sm font-semibold border border-border-light transition-all duration-300 hover:bg-ghost-white relative overflow-hidden;
 	box-shadow: 0px 4px 6px 0px #1f29370a;
 }
 

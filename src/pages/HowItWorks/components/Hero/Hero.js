@@ -18,7 +18,10 @@ const Hero = () => {
 					{t("howItWorksSubText")}
 				</p>
 				<div className="flex items-center justify-center gap-2.5 mt-6 flex-wrap">
-					<PrimaryButton label={t("bookFreeConsultation")} />
+					<PrimaryButton
+						label={t("bookFreeConsultation")}
+						to="/#getStartedToday"
+					/>
 					<WhiteButton
 						label={t("calculateMySavings")}
 						classes="!text-white !bg-transparent"

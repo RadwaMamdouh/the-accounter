@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./DarkButton.module.css";
+import { Ripple } from "primereact/ripple";
 
 const DarkButton = ({
 	isBtn,
@@ -17,6 +18,7 @@ const DarkButton = ({
 			type={type}
 			className={`${styles.dark_button} ${classes}`}
 			onClick={onClick}>
+			<Ripple />
 			<span className={styles.button_text}>{label}</span>
 			{icon && (
 				<span
@@ -27,6 +29,7 @@ const DarkButton = ({
 		</button>
 	) : isAHref ? (
 		<a href={to} className={`${styles.dark_button} ${classes}`}>
+			<Ripple />
 			<span className={styles.button_text}>{label}</span>
 			{icon && (
 				<span
@@ -37,6 +40,7 @@ const DarkButton = ({
 		</a>
 	) : (
 		<Link to={to} className={`${styles.dark_button} ${classes}`}>
+			<Ripple />
 			<span className={styles.button_text}>{label}</span>
 			{icon && (
 				<span

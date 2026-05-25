@@ -25,11 +25,11 @@ const ReadyToGetHandled = () => {
 							label={t("bookFreeConsultation")}
 							classes="border border-primary"
 							to="/#getStartedToday"
-							isAHref
 						/>
 						<WhiteButton
 							label={t("calculateMySavings")}
 							classes="!text-white !bg-transparent"
+							to="/calculate-your-savings"
 						/>
 					</div>
 					<p className="text-sm text-light text-center mt-6">
