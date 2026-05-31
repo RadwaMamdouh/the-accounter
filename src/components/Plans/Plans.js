@@ -126,7 +126,9 @@ const Plans = ({ gridView, hideBtn, showPlansFeatures }) => {
 									{currentLanguage === "ar" ? plan.descAr : plan.desc}
 								</p>
 							</div>
-							<h3>{plan.price} AED</h3>
+							<h3>
+								{plan.price} {t("AED")}
+							</h3>
 							<DarkButton label={t("choosePlan")} classes="w-full" />
 						</div>
 					))}
