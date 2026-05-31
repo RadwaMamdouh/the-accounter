@@ -83,7 +83,7 @@ const ar = {
 	additionalServicesHeadline: "أكثر مما تتوقع… وضمن اشتراكك.",
 	additionalServicesSubText:
 		"معظم هذه الخدمات مشمولة في اشتراكك الشهري بدون رسوم إضافية، وبدون مفاجآت.",
-	fromPrice: "ابتداءً من {{price}} درهم شهريًا",
+	fromPrice: "ابتداءً من {{price}} درهم/شهريًا",
 	noLongTermContract: "بدون عقود طويلة",
 	cancelAnytime: " إلغاء في أي وقت",
 	ourPartners: "شركاؤنا",
