@@ -1,4 +1,3 @@
-import PrimaryButton from "components/PrimaryButton/PrimaryButton";
 import styles from "./HowItWorks.module.css";
 import { useTranslation } from "react-i18next";
 
@@ -92,12 +91,6 @@ const HowItWorks = () => {
 						</div>
 						<img src="/images/how-works-3.svg" alt="Step 3" />
 					</div>
-					<PrimaryButton
-						label={t("getStartedToday")}
-						classes="w-fit mx-auto"
-						to="/#getStartedToday"
-						isAHref
-					/>
 				</div>
 			</div>
 		</section>

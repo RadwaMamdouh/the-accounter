@@ -102,7 +102,8 @@ const Plans = ({ gridView, hideBtn, showPlansFeatures }) => {
 							options={options}
 							classes="mb-6"
 						/>
-						<p className="text-sm text-dark text-center max-lg:px-5">
+						<p
+							className={`text-sm text-dark text-center max-lg:px-5 transition duration-300 ${value === "Quarterly" ? "visible" : "invisible"}`}>
 							{currentLanguage === "ar"
 								? "احصل على 20 مستند مجاناً مع الخطة الربع سنوية!"
 								: "Get 20 documents for free with a quarterly plan!"}

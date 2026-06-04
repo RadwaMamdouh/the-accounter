@@ -10,10 +10,6 @@
 	@apply max-lg:text-xs font-bold text-dark text-center mb-1;
 }
 
-.partner_card p {
-	@apply text-xs lg:text-sm text-muted text-center;
-}
-
 .partner_card:hover {
-	@apply shadow-[0px_4px_6px_0px_#1F29370A] cursor-pointer;
+	@apply shadow-[0px_4px_6px_0px_#1F29370A];
 }

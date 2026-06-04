@@ -19,7 +19,6 @@ const Header = () => {
 	const [activeSubMenu, setActiveSubMenu] = useState(null);
 
 	const resourcesLinks = [
-		{ label: t("blogs"), href: "/blogs" },
 		{ label: t("savingCalculator"), href: "/calculate-your-savings" },
 		{
 			label: t("learningHub"),
@@ -29,10 +28,10 @@ const Header = () => {
 					label: t("faqs"),
 					href: "/faqs",
 				},
-				{
-					label: t("academy"),
-					href: "/academy",
-				},
+				// {
+				// 	label: t("academy"),
+				// 	href: "/academy",
+				// },
 			],
 		},
 	];

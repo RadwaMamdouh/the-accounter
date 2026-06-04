@@ -85,16 +85,22 @@ const Footer = () => {
 										className={styles.footer_link}>
 										{t("completeBookkeeping")}
 									</Link>
-									<Link to="" className={styles.footer_link}>
-										{t("trackExpenses")}
-									</Link>
-									<Link to="" className={styles.footer_link}>
+									<Link
+										to="/services#additionalServices"
+										className={styles.footer_link}>
 										{t("customInvoicing")}
 									</Link>
 									<Link to="/services#vATFiling" className={styles.footer_link}>
 										{t("vatServices")}
 									</Link>
-									<Link to="" className={styles.footer_link}>
+									<Link
+										to="/services#corporateTax"
+										className={styles.footer_link}>
+										{t("corporateTax")}
+									</Link>
+									<Link
+										to="/services#additionalServices"
+										className={styles.footer_link}>
 										{t("insightsAndReports")}
 									</Link>
 								</div>
@@ -107,23 +113,11 @@ const Footer = () => {
 									<Link to="/about-us" className={styles.footer_link}>
 										{t("aboutUs")}
 									</Link>
-									<Link to="/blogs" className={styles.footer_link}>
-										{t("blog")}
-									</Link>
 									<Link to="/partners" className={styles.footer_link}>
 										{t("partners")}
 									</Link>
-									<Link to="/tutorials" className={styles.footer_link}>
-										{t("tutorials")}
-									</Link>
 									<Link to="/faqs" className={styles.footer_link}>
 										{t("faqs")}
-									</Link>
-									<Link to="" className={styles.footer_link}>
-										{t("careers")}
-									</Link>
-									<Link to="/team" className={styles.footer_link}>
-										{t("ourTeam")}
 									</Link>
 								</div>
 							</div>

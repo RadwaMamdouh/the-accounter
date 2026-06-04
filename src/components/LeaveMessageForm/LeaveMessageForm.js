@@ -23,7 +23,7 @@ const LeaveMessageForm = () => {
 	return (
 		<div className="p-4 lg:p-8 bg-white border border-border-light rounded-lg lg:-mt-28 w-full">
 			<div className="mb-4 lg:mb-6">
-				<h4 className="font-bold text-dark">{t("leaveMessage")}</h4>
+				<h4 className="font-bold text-dark">{t("bookFreeConsultation")}</h4>
 			</div>
 			<form
 				onSubmit={formik.handleSubmit}
@@ -80,12 +80,7 @@ const LeaveMessageForm = () => {
 					</div>
 				</div>
 
-				<DarkButton
-					isBtn
-					type="submit"
-					label={t("bookFreeCall")}
-					classes="w-fit"
-				/>
+				<DarkButton isBtn type="submit" label={t("submit")} classes="w-fit" />
 			</form>
 		</div>
 	);

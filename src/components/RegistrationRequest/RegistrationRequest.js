@@ -7,8 +7,8 @@ import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 const RegistrationRequest = ({ clickedPartner, onClickPartner }) => {
-	const { i18n, t } = useTranslation();
-	const currentLanguage = i18n.language;
+	const { t } = useTranslation();
+	// const currentLanguage = i18n.language;
 
 	const partners = [
 		{ name: "Khalifa Fund", value: "Khalifa Fund" },
@@ -45,7 +45,7 @@ const RegistrationRequest = ({ clickedPartner, onClickPartner }) => {
 
 	return (
 		<div className="p-4 lg:p-8 bg-white border border-border-light rounded-lg lg:-mt-28 w-full">
-			<div className="mb-6">
+			{/* <div className="mb-6">
 				<h4 className="text-xs lg:text-base font-bold text-dark mb-1">
 					{t("sendRegistrationRequest")}
 				</h4>
@@ -54,7 +54,7 @@ const RegistrationRequest = ({ clickedPartner, onClickPartner }) => {
 						? "يقدم موقع The Accounter أسعار باقات خاصة لأعضائنا الشركاء! إذا كنت عضوًا شريكًا، يُرجى ملء الحقول أدناه."
 						: "The Accounter offers special package prices for our partners members! If you are a partner member, fill the below fields"}
 				</p>
-			</div>
+			</div> */}
 			<form
 				ref={formRef}
 				onSubmit={formik.handleSubmit}

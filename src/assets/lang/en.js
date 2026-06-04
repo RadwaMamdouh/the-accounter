@@ -30,7 +30,7 @@ const en = {
 	other: "Other",
 	privacyPolicy: "Privacy Policy",
 	termsOfUse: "Terms of use",
-	copyright: "Copyright © 2023 The Accounter - All Rights Reserved.",
+	copyright: "Copyright © 2026 The Accounter - All Rights Reserved.",
 	trustedByUaeBusinesses: "Trusted by 1,000+ UAE Businesses",
 	stopWorryingAboutAccountingWeHandleEverything:
 		"Stop Worrying About Accounting. We Handle Everything.",
@@ -145,6 +145,7 @@ const en = {
 	getStartedFrom: "Get Started From {{price}} AED/month",
 	overBusinessesUseTheAccounter:
 		"Over <span>{{count}}</span> Businesses Use The Accounter",
+	corporateTax: "Corporate Tax",
 };
 
 export default en;

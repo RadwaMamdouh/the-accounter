@@ -151,7 +151,7 @@ const OurServices = () => {
 								<PrimaryButton
 									label={t("bookFreeConsultation")}
 									classes="w-fit"
-									to="/#getStartedToday"
+									to="/get-started"
 								/>
 							</div>
 							<img

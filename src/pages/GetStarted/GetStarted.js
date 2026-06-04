@@ -1,9 +1,9 @@
-import { check } from "icons/index";
-import styles from "./GetStartedToday.module.css";
-import LeaveMessageForm from "components/LeaveMessageForm/LeaveMessageForm";
 import { Trans, useTranslation } from "react-i18next";
+import styles from "./GetStarted.module.css";
+import { check } from "icons/index";
+import LeaveMessageForm from "components/LeaveMessageForm/LeaveMessageForm";
 
-const GetStartedToday = () => {
+const GetStarted = () => {
 	const { i18n } = useTranslation();
 	const currentLanguage = i18n.language;
 
@@ -36,7 +36,7 @@ const GetStartedToday = () => {
 									<span className="text-sm text-dark">
 										{currentLanguage === "ar"
 											? "وفر أكثر من 15 ساعة شهرياً وركز على تنمية عملك. نحن نتولى كل المحاسبة والضرائب."
-											: "Save 15+ hours monthly and focus on growing your business."}
+											: "Save 15+ hours monthly and focus on growing your business. We handle all Accounting & taxes."}
 									</span>
 								</li>
 								<li className="flex items-center justify-start gap-[10px] lg:gap-2">
@@ -109,4 +109,4 @@ const GetStartedToday = () => {
 	);
 };
 
-export default GetStartedToday;
+export default GetStarted;

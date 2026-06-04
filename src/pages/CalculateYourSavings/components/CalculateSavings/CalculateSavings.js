@@ -550,6 +550,7 @@ const ResultsPanel = ({ results, fmtAED }) => {
 				<PrimaryButton
 					label={t("getStartedFrom", { price: 250 })}
 					classes="!leading-6"
+					to="/get-started"
 				/>
 			</div>
 		</div>

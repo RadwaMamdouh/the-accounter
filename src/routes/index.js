@@ -1,11 +1,10 @@
 import GlobalPagesLayout from "layouts/GlobalPagesLayout/GlobalPagesLayout";
 import MainLayout from "layouts/MainLayout/MainLayout";
 import AboutUs from "pages/AboutUs/AboutUs";
-import BlogDetails from "pages/BlogDetails/BlogDetails";
-import Blogs from "pages/Blogs/Blogs";
 import CalculateYourSavings from "pages/CalculateYourSavings/CalculateYourSavings";
 import ContactUs from "pages/ContactUs/ContactUs";
 import FAQs from "pages/FAQs/FAQs";
+import GetStarted from "pages/GetStarted/GetStarted";
 import Home from "pages/Home/Home";
 import HowItWorks from "pages/HowItWorks/HowItWorks";
 import NotFound from "pages/NotFound/NotFound";
@@ -16,7 +15,6 @@ import Partners from "pages/Partners/Partners";
 import Pricing from "pages/Pricing/Pricing";
 import PrivacyPolicy from "pages/PrivacyPolicy/PrivacyPolicy";
 import Services from "pages/Services/Services";
-import Tutorials from "pages/Tutorials/Tutorials";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const AppRouter = () => {
@@ -59,10 +57,6 @@ const AppRouter = () => {
 					element: <FAQs />,
 				},
 				{
-					path: "tutorials",
-					element: <Tutorials />,
-				},
-				{
 					path: "gallery",
 					element: <OurGallery />,
 				},
@@ -71,16 +65,12 @@ const AppRouter = () => {
 					element: <OurVideos />,
 				},
 				{
-					path: "blogs",
-					element: <Blogs />,
-				},
-				{
-					path: "blogs/:id",
-					element: <BlogDetails />,
-				},
-				{
 					path: "how-it-works",
 					element: <HowItWorks />,
+				},
+				{
+					path: "get-started",
+					element: <GetStarted />,
 				},
 			],
 		},

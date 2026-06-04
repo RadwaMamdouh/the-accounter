@@ -1,5 +1,3 @@
-import PrimaryButton from "components/PrimaryButton/PrimaryButton";
-import WhiteButton from "components/WhiteButton/WhiteButton";
 import { useTranslation } from "react-i18next";
 
 const Hero = () => {
@@ -17,17 +15,6 @@ const Hero = () => {
 				<p className="text-sm text-light text-center lg:max-w-[48%] mx-auto rtl:leading-relaxed">
 					{t("howItWorksSubText")}
 				</p>
-				<div className="flex items-center justify-center gap-2.5 mt-6 flex-wrap">
-					<PrimaryButton
-						label={t("bookFreeConsultation")}
-						to="/#getStartedToday"
-					/>
-					<WhiteButton
-						label={t("calculateMySavings")}
-						classes="!text-white !bg-transparent"
-						to="/calculate-your-savings"
-					/>
-				</div>
 			</div>
 		</section>
 	);

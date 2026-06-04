@@ -30,7 +30,7 @@ const ar = {
 	other: "المزيد",
 	privacyPolicy: "سياسة الخصوصية",
 	termsOfUse: "شروط الاستخدام",
-	copyright: "جميع الحقوق محفوظة © 2023 ذا اكونتر.",
+	copyright: "جميع الحقوق محفوظة © 2026 ذا اكونتر.",
 	trustedByUaeBusinesses: "موثوق به من قبل أكثر من 1,000 شركة إماراتية",
 	stopWorryingAboutAccountingWeHandleEverything:
 		"توقف عن القلق بشأن المحاسبة. نحن نتولى كل شيء.",
@@ -143,6 +143,7 @@ const ar = {
 	getStartedFrom: "اشترك الآن ابتداءً من {{price}} درهم شهريًا",
 	overBusinessesUseTheAccounter:
 		"أكثر من <span>{{count}}</span> شركة تستخدم برنامج المحاسبة",
+	corporateTax: "ضريبة الشركات",
 };
 
 export default ar;
