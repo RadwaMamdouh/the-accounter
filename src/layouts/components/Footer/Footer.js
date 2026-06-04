@@ -48,25 +48,25 @@ const Footer = () => {
 								</div>
 								<div className="flex items-center justify-start gap-2">
 									<Link
-										to=""
+										to="https://www.facebook.com/theaccountertechnologies/"
 										target="_blank"
 										className="shrink-0 flex items-center justify-center w-10 h-[38px] bg-white rounded-md text-dark transition duration-300 hover:bg-[#1877F2] hover:text-white">
 										{facebook}
 									</Link>
 									<Link
-										to=""
+										to="https://x.com/theaccounter1"
 										target="_blank"
 										className="shrink-0 flex items-center justify-center w-10 h-[38px] bg-white rounded-md text-dark transition duration-300 hover:bg-[#1D9BF0] hover:text-white">
 										{twitter}
 									</Link>
 									<Link
-										to=""
+										to="https://www.linkedin.com/company/theaccounter"
 										target="_blank"
 										className="shrink-0 flex items-center justify-center w-10 h-[38px] bg-white rounded-md text-dark transition duration-300 hover:bg-[#0A66C2] hover:text-white">
 										{linkedin}
 									</Link>
 									<Link
-										to=""
+										to="https://www.instagram.com/the.accounter/?hl=en"
 										target="_blank"
 										className="shrink-0 flex items-center justify-center w-10 h-[38px] bg-white rounded-md text-dark transition duration-300 hover:bg-[radial-gradient(144.38%_122.74%_at_1.82%_90.84%,_#FED576_0%,_#F47133_26.34%,_#BC3081_60.91%,_#4C63D2_100%)] hover:text-white">
 										{instagram}
