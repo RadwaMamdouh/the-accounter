@@ -13,9 +13,10 @@ import { useTranslation } from "react-i18next";
 // ─── Calculation constants (from spec) ───────────────────────────────────────
 
 const PLANS = [
-	{ name: "starter", monthly: 250, annual: 3000, maxDocs: 50 },
-	{ name: "growth", monthly: 525, annual: 6300, maxDocs: 150 },
+	{ name: "starter", monthly: 250, annual: 3000, maxDocs: 57 },
+	{ name: "growth", monthly: 525, annual: 6300, maxDocs: 172 },
 	{ name: "scale", monthly: 975, annual: 11700, maxDocs: 300 },
+	// { name: "scale", monthly: 975, annual: 11700, maxDocs: Infinity },
 ];
 
 const DEFAULT_MONTHLY_SPEND = {
@@ -70,8 +71,8 @@ const INCLUDED_SERVICES = [
 function getRecommendedPlan(usePOS, transactions) {
 	if (usePOS === "Yes") return PLANS[0]; // Always Starter for POS users
 	const docs = Number(transactions) || 0;
-	if (docs <= 50) return PLANS[0];
-	if (docs <= 150) return PLANS[1];
+	if (docs <= 57) return PLANS[0];
+	if (docs <= 172) return PLANS[1];
 	return PLANS[2];
 }
 
@@ -178,6 +179,12 @@ const CalculateSavings = () => {
 
 	const { setFieldValue } = formik;
 
+	// const getPlanName = (docs) => {
+	// 	if (docs <= 57) return "Starter";
+	// 	if (docs <= 172) return "Growth";
+	// 	return "Scale";
+	// };
+
 	// ── Helpers ──────────────────────────────────────────────────────────────
 
 	/** Format a number as AED with thousand separators */
@@ -278,12 +285,19 @@ const CalculateSavings = () => {
 													}
 													min={0}
 													max={300}
+													step={1}
 												/>
 											</div>
 											<span className="text-xs text-muted font-medium">
 												+300
 											</span>
 										</div>
+
+										{/* <p className="text-sm text-primary font-medium mt-3">
+											{currentLanguage === "ar"
+												? `الباقة المقترحة: ${t(getPlanName(formik.values.transaction).toLowerCase())}`
+												: `Recommended Plan: ${t(getPlanName(formik.values.transaction).toLowerCase())}`}
+										</p> */}
 									</div>
 								)}
 

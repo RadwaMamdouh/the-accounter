@@ -78,8 +78,31 @@ const Header = () => {
 	useEffect(() => {
 		// close dropdown when route changes
 		op.current?.hide();
+		opCompany.current?.hide();
+
 		setIsShow(false);
+		setIsShowCompany(false);
+		setActiveSubMenu(null);
 	}, [location.pathname]);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (isShow || isShowCompany) {
+				op.current?.hide();
+				opCompany.current?.hide();
+
+				setIsShow(false);
+				setIsShowCompany(false);
+				setActiveSubMenu(null);
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, [isShow, isShowCompany]);
 
 	const onOpenSidebar = () => {
 		setIsShowSidebar(true);
@@ -178,7 +201,12 @@ const Header = () => {
 														<NavLink
 															key={link.href}
 															to={link.href}
-															className={`${styles.ddl_menu_link}`}>
+															className={`${styles.ddl_menu_link}`}
+															onClick={() => {
+																opCompany.current?.hide();
+																setIsShowCompany(false);
+																setActiveSubMenu(null);
+															}}>
 															{link.label}
 														</NavLink>
 													)}
@@ -250,7 +278,12 @@ const Header = () => {
 														<NavLink
 															key={link.href}
 															to={link.href}
-															className={`${styles.ddl_menu_link}`}>
+															className={`${styles.ddl_menu_link}`}
+															onClick={() => {
+																op.current?.hide();
+																setIsShow(false);
+																setActiveSubMenu(null);
+															}}>
 															{link.label}
 														</NavLink>
 													)}
@@ -270,7 +303,11 @@ const Header = () => {
 														<NavLink
 															key={i}
 															to={sub.href}
-															className={styles.ddl_menu_link}>
+															className={styles.ddl_menu_link}
+															onClick={() => {
+																opCompany.current?.hide(); // or op.current for resources
+																setActiveSubMenu(null);
+															}}>
 															{sub.label}
 														</NavLink>
 													))}
