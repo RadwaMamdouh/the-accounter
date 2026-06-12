@@ -24,12 +24,7 @@ const ReadyToGetHandled = () => {
 						<PrimaryButton
 							label={t("bookFreeConsultation")}
 							classes="border border-primary"
-							to="/#getStartedToday"
-						/>
-						<WhiteButton
-							label={t("calculateMySavings")}
-							classes="!text-white !bg-transparent"
-							to="/calculate-your-savings"
+							to="/get-started"
 						/>
 					</div>
 					<p className="text-sm text-light text-center mt-6">

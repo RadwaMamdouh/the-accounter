@@ -22,7 +22,7 @@ const ReadyToHandOff = () => {
 					<PrimaryButton
 						label={t("bookFreeConsultation")}
 						classes="w-fit mx-auto"
-						to="/#getStartedToday"
+						to="/get-started"
 					/>
 					<p className="text-sm text-light text-center mt-6">
 						✓ {t("fromPrice", { price: 250 })} · ✓ {t("cancelAnytime")}

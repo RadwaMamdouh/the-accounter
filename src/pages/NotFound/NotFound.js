@@ -36,7 +36,7 @@ const NotFound = () => {
 								<WhiteButton
 									label={t("contactAnExpert")}
 									classes="!shadow-none !border-dark"
-									to="/#getStartedToday"
+									to="/get-started"
 								/>
 							</div>
 						</div>
