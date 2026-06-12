@@ -1,5 +1,4 @@
 import PrimaryButton from "components/PrimaryButton/PrimaryButton";
-import WhiteButton from "components/WhiteButton/WhiteButton";
 import { useTranslation } from "react-i18next";
 
 const ReadyToGetHandled = () => {
