@@ -135,7 +135,9 @@ const Footer = () => {
 									<Link to="/privacy-policy" className={styles.footer_link}>
 										{t("privacyPolicy")}
 									</Link>
-									<Link to="" className={styles.footer_link}>
+									<Link
+										to="/terms-and-conditions"
+										className={styles.footer_link}>
 										{t("termsOfUse")}
 									</Link>
 								</div>
