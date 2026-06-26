@@ -6,6 +6,7 @@ import LangBtn from "components/LangBtn/LangBtn";
 import { Button } from "primereact/button";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import Logo from "components/Logo/Logo";
 
 const resourcesLinks = [
 	{ label: "blogs", href: "/blogs" },
@@ -77,9 +78,10 @@ const ResponsiveHeader = ({ isShow, onClose }) => {
 			className={`fixed top-0 ltr:left-0 rtl:right-0 flex lg:hidden flex-col h-dvh z-50 bg-white overflow-hidden transition-all duration-500 ${isShow ? "w-full" : "w-0"}`}>
 			{/* Sidebar Header */}
 			<div className="py-5 px-8 flex items-center justify-between border-b border-border-light">
-				<div className="flex items-center justify-center shrink-0 overflow-hidden">
+				{/* <div className="flex items-center justify-center shrink-0 overflow-hidden">
 					<img src="/images/logo.svg" alt="The Accounter" className="h-8" />
-				</div>
+				</div> */}
+				<Logo />
 				<button
 					type="button"
 					className="p-2 bg-white rounded-md flex items-center justify-center relative w-10 h-9.5 *:w-[22px] *:h-[22px]"

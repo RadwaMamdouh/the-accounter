@@ -12,6 +12,7 @@ import NotFound from "pages/NotFound/NotFound";
 import OurGallery from "pages/OurGallery/OurGallery";
 import OurTeam from "pages/OurTeam/OurTeam";
 import OurVideos from "pages/OurVideos/OurVideos";
+import PartnerLanding from "pages/PartnerLanding/PartnerLanding";
 import Partners from "pages/Partners/Partners";
 import Pricing from "pages/Pricing/Pricing";
 import PrivacyPolicy from "pages/PrivacyPolicy/PrivacyPolicy";
@@ -29,6 +30,10 @@ const AppRouter = () => {
 					index: true,
 					path: "",
 					element: <Home />,
+				},
+				{
+					path: "partner/:name",
+					element: <PartnerLanding />,
 				},
 				{
 					path: "partners",

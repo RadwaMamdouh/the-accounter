@@ -7,6 +7,7 @@ import { arrowDropDown } from "icons/index";
 import LangBtn from "components/LangBtn/LangBtn";
 import ResponsiveHeader from "./components/ResponsiveHeader/ResponsiveHeader";
 import { useTranslation } from "react-i18next";
+import Logo from "components/Logo/Logo";
 
 const Header = () => {
 	const [isShow, setIsShow] = useState(false);
@@ -136,15 +137,16 @@ const Header = () => {
 			<header className="py-3.5 bg-white sticky top-0 z-50">
 				<div className="container">
 					<div className="flex items-center justify-between gap-2 xl:gap-6">
-						<Link
+						{/* <Link
 							to="/"
-							className="flex items-center justify-center shrink-0 overflow-hidden h-8 xl:h-10">
+							className={`flex items-center justify-center shrink-0 overflow-hidden ${partnerConfig ? "h-16 xl:h-20" : "h-8 xl:h-10"}`}>
 							<img
 								src="/images/logo.svg"
 								alt="The Accounter"
 								className="w-full h-full"
 							/>
-						</Link>
+						</Link> */}
+						<Logo />
 						<div className={styles.menu}>
 							{/* <NavLink to="/" className={styles.menu_link}>
 								{t("home")}
