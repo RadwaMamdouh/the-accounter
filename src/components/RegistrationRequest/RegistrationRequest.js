@@ -6,16 +6,16 @@ import { InputText } from "primereact/inputtext";
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
-const RegistrationRequest = ({ clickedPartner, onClickPartner }) => {
+const RegistrationRequest = ({ clickedPartner, onClickPartner = () => {} }) => {
 	const { t } = useTranslation();
 	// const currentLanguage = i18n.language;
 
 	const partners = [
-		{ name: "Khalifa Fund", value: "Khalifa Fund" },
-		{ name: "DIFC", value: "DIFC" },
-		{ name: "WEWORK", value: "WEWORK" },
-		{ name: "Ruwad", value: "Ruwad" },
-		{ name: "EEA", value: "EEA" },
+		{ name: "Khalifa Fund", value: "Khalifa-Fund" },
+		{ name: "DIFC", value: "difc" },
+		{ name: "WEWORK", value: "wework" },
+		{ name: "Ruwad", value: "ruwad" },
+		{ name: "EEA", value: "eea" },
 	];
 
 	const formik = useFormik({
@@ -39,7 +39,7 @@ const RegistrationRequest = ({ clickedPartner, onClickPartner }) => {
 
 	useEffect(() => {
 		if (clickedPartner) {
-			setFieldValue("partner", clickedPartner);
+			setFieldValue("partner", clickedPartner.toLowerCase());
 		}
 	}, [clickedPartner, setFieldValue]);
 

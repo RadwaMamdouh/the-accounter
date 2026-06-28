@@ -6,16 +6,10 @@ import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 import CopyRights from "./components/CopyRights/CopyRights";
 import { useTranslation } from "react-i18next";
-import { usePartner } from "context/PartnerContext";
-import { partners } from "data/partners";
 
 const Footer = () => {
 	const [value, setValue] = useState("");
 	const { t } = useTranslation();
-
-	const { partner } = usePartner();
-	const partnerConfig = partner ? partners[partner] : null;
-	const logo = partnerConfig?.logo || "/images/logo-white.svg";
 
 	return (
 		<>
@@ -26,8 +20,7 @@ const Footer = () => {
 							<div>
 								<div className="relative mb-8 h-8 lg:h-[54px]">
 									<img
-										// src="/images/logo-white.svg"
-										src={logo}
+										src="/images/logo-white.svg"
 										alt="The Accounter"
 										className="h-full"
 									/>
