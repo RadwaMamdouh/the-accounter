@@ -41,7 +41,10 @@ const ContactUs = () => {
 									<span className="shrink-0 flex items-center justify-center w-5 h-5 text-dark *:w-full *:h-full">
 										{phone_cell}
 									</span>
-									<a href="tel:+971585873082" className="text-sm text-primary">
+									<a
+										href="tel:+971585873082"
+										className="text-sm text-primary"
+										style={{ direction: "ltr" }}>
 										+971 58 5873082
 									</a>
 								</div>

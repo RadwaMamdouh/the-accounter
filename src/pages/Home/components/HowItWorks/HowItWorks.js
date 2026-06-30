@@ -56,12 +56,12 @@ const HowItWorks = () => {
 								</li>
 								<li>
 									{currentLanguage === "ar"
-										? "محاسب: يصنف ويتحقق من المعاملات وفقاً لمعايير التقارير المالية الدولية."
+										? "محاسب: يصنف ويتحقق من المعاملات وفقاً للمعايير الدولية للتقارير المالية."
 										: "Accountant: Categorizes and validates transactions in line with IFRS standards."}
 								</li>
 								<li>
 									{currentLanguage === "ar"
-										? "مسوي: يطابق كل فاتورة مع سجلاتك البنكية لضمان التناسق."
+										? "مختص المطابقة المالية: يطابق كل فاتورة مع سجلاتك البنكية لضمان التناسق."
 										: "Reconciler: Matches every invoice with your bank records for consistency."}
 								</li>
 							</ol>

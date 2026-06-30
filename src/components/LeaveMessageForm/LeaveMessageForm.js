@@ -60,7 +60,7 @@ const LeaveMessageForm = () => {
 						/>
 					</div>
 					<div className="input_holder">
-						<h6 className="required">{t("companyName")}</h6>
+						<h6>{t("companyName")}</h6>
 						<InputText
 							type="text"
 							value={formik.values.companyName}

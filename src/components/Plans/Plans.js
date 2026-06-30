@@ -58,12 +58,12 @@ const Plans = ({ gridView, hideBtn, showPlansFeatures }) => {
 			titleEn: "Daily Sales Report",
 			titleAr: "تقارير المبيعات اليومية",
 		},
-		{
-			id: 4,
-			titleEn: "Complete VAT Services from registration to VAT filing",
-			titleAr:
-				"خدمات ضريبة القيمة المضافة بالكامل، من التسجيل حتى تقديم الإقرار",
-		},
+		// {
+		// 	id: 4,
+		// 	titleEn: "Complete VAT Services from registration to VAT filing",
+		// 	titleAr:
+		// 		"خدمات ضريبة القيمة المضافة بالكامل، من التسجيل حتى تقديم الإقرار",
+		// },
 		{
 			id: 5,
 			titleEn: "Financial Statements",
