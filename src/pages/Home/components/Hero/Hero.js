@@ -29,10 +29,12 @@ const Hero = () => {
 								<h5 className="text-primary-dark text-sm font-semibold mb-3">
 									⭐ {t("trustedByUaeBusinesses")}
 								</h5>
-								<h1 className="text-dark text-[32px] lg:text-4xl font-bold mb-6">
+								<h1 className="text-dark text-[32px] lg:text-4xl font-bold mb-6 !leading-normal">
 									{t("stopWorryingAboutAccountingWeHandleEverything")}
 								</h1>
-								<p className="text-dark text-sm mb-6">{t("heroDescription")}</p>
+								<p className="text-dark text-sm mb-6 leading-relaxed">
+									{t("heroDescription")}
+								</p>
 								<div className="flex items-center justify-start gap-4 mb-6 flex-wrap">
 									<PrimaryButton
 										isAHref
