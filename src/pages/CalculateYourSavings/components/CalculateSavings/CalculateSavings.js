@@ -9,6 +9,7 @@ import styles from "./CalculateSavings.module.css";
 import { RadioButton } from "primereact/radiobutton";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { InputNumber } from "primereact/inputnumber";
 
 // ─── Calculation constants (from spec) ───────────────────────────────────────
 
@@ -339,7 +340,7 @@ const CalculateSavings = () => {
 											: "How much do you currently pay for accounting per month?"}
 									</h6>
 									<div className="relative overflow-hidden rounded-md">
-										<InputText
+										{/* <InputText
 											type="text"
 											value={formik.values.accountingPay}
 											onChange={formik.handleChange}
@@ -353,6 +354,26 @@ const CalculateSavings = () => {
 													: "1500"
 											}
 											name="accountingPay"
+										/> */}
+										<InputNumber
+											value={formik.values.accountingPay}
+											onValueChange={(e) =>
+												formik.setFieldValue("accountingPay", e.value ?? "")
+											}
+											placeholder={
+												formik.values.accountSetup
+													? String(
+															DEFAULT_MONTHLY_SPEND[
+																formik.values.accountSetup
+															] ?? 1500,
+														)
+													: "1500"
+											}
+											useGrouping={false}
+											min={0}
+											maxFractionDigits={2}
+											inputMode="decimal"
+											className="w-full"
 										/>
 										<p className="bg-ghost-white border border-border-light rounded-se-md rounded-ee-md py-[11px] px-2 absolute top-0 ltr:right-0 rtl:left-0 h-full z-[1] text-xs font-bold text-dark flex items-center justify-center">
 											{t("AED")}

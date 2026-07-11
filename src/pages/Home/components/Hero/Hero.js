@@ -5,9 +5,10 @@ import "swiper/css/pagination";
 
 import styles from "./Hero.module.css";
 import { useTranslation } from "react-i18next";
-import { arrow_right, check } from "icons/index";
+import { check } from "icons/index";
+// import { arrow_right, check } from "icons/index";
 import PrimaryButton from "components/PrimaryButton/PrimaryButton";
-import DarkButton from "components/DarkButton/DarkButton";
+// import DarkButton from "components/DarkButton/DarkButton";
 
 const Hero = () => {
 	const { i18n, t } = useTranslation();
@@ -42,13 +43,13 @@ const Hero = () => {
 										label={t("bookFreeConsultation")}
 										classes="max-lg:w-full"
 									/>
-									<DarkButton
+									{/* <DarkButton
 										label={t("calculateMySavings")}
 										icon={arrow_right}
 										classes="max-lg:w-full"
 										rotateIcon
 										to="/calculate-your-savings"
-									/>
+									/> */}
 								</div>
 								<ul className="[&>li]:not-last:mb-1">
 									<li className="flex items-start justify-start gap-1">
