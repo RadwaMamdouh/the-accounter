@@ -1,6 +1,6 @@
 import Page from "components/Page/Page";
 import { useFormik } from "formik";
-import { InputText } from "primereact/inputtext";
+// import { InputText } from "primereact/inputtext";
 import PrimaryButton from "components/PrimaryButton/PrimaryButton";
 import { Slider } from "primereact/slider";
 import { arrow_right, check } from "icons/index";
